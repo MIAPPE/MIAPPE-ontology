@@ -22,11 +22,9 @@
     
 
 
-    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasRelatedSynonym -->
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014 -->
 
-    <owl:AnnotationProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasRelatedSynonym">
-        <rdfs:label xml:lang="en">has related synonym</rdfs:label>
-    </owl:AnnotationProperty>
+    <owl:AnnotationProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
     
 
 
@@ -34,6 +32,14 @@
 
     <owl:AnnotationProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasExactSynonym">
         <rdfs:label xml:lang="en">has exact synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasRelatedSynonym -->
+
+    <owl:AnnotationProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasRelatedSynonym">
+        <rdfs:label xml:lang="en">has related synonym</rdfs:label>
     </owl:AnnotationProperty>
     
 
@@ -166,7 +172,6 @@
     <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasOperator -->
 
     <owl:ObjectProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasOperator">
-        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
         <rdfs:range rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000013"/>
         <rdfs:label xml:lang="en">has operator</rdfs:label>
         <MIAPPE_000014 xml:lang="en">has collector</MIAPPE_000014>
@@ -241,6 +246,16 @@
     
 
 
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStorageLocation -->
+
+    <owl:ObjectProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStorageLocation">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000020"/>
+        <rdfs:label xml:lang="en">has storage location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTreatment -->
 
     <owl:ObjectProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTreatment">
@@ -268,6 +283,745 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:label xml:lang="en">part of</rdfs:label>
     </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAbbreviation -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAbbreviation">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has abbreviation</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAddress -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAddress">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000020"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has address</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAltitude -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAltitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000020"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">altitude of a location in metres</rdfs:comment>
+        <rdfs:label xml:lang="en">has altitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAssociatedPublication -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasAssociatedPublication">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000003"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has associated publication</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasBlockId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasBlockId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has block identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasColumnId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasColumnId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has column identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasCountryCode -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasCountryCode">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000019"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has country code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDataFile -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDataFile">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000003"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label xml:lang="en">has data file</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDatabaseId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDatabaseId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has database identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDateTime -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDateTime">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">has date-time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDescription -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDescription">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has description</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEmailContact -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEmailContact">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000013"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">the e-mail address of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">has e-mail contact</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEndDateTime -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEndDateTime">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">has end date-time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEntryNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEntryNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+        <rdfs:label xml:lang="en">has entry number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEntryType -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasEntryType">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has entry type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasExperimentalDesign -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasExperimentalDesign">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000002"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has experimental design</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasGenus -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasGenus">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has genus</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasGermplasmAccessionNumber -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasGermplasmAccessionNumber">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has germplasm accession number</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasInstituteCode -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasInstituteCode">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000021"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has institute code</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLatitude -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLatitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000020"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">latitude of a location in degrees, in the decimal system</rdfs:comment>
+        <rdfs:label xml:lang="en">has latitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLicense -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLicense">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000003"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has license</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLifeStage -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLifeStage">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has life stage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLongitude -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasLongitude">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000020"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment xml:lang="en">longitude of a location in degrees, in the decimal system</rdfs:comment>
+        <rdfs:label xml:lang="en">has longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasMaterialSource -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasMaterialSource">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has material source</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasMaterialSourceDOI -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasMaterialSourceDOI">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:label xml:lang="en">has material source DOI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasName -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasObjective -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasObjective">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000001"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has objective</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasObservationLevel -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasObservationLevel">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has observation level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasOrganismCount -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasOrganismCount">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has organism count</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasOxygenationStatus -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasOxygenationStatus">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has oxygenation status</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantBody -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantBody">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has plant body</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has plant identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantProduct -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantProduct">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has plant product</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantStructureDevelopmentStage -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlantStructureDevelopmentStage">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has plant structure development stage</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlotId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPlotId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has plot identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPublicReleaseDate -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasPublicReleaseDate">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000003"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">has public release date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasReplicateId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasReplicateId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has replicate identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasReplicationHierarchy -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasReplicationHierarchy">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">e.g.: block&gt;rep&gt;plot</rdfs:comment>
+        <rdfs:label xml:lang="en">has replication hierarchy</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasReplicationLevels -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasReplicationLevels">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">e.g.: block:1, plot:894, rep:1</rdfs:comment>
+        <rdfs:label xml:lang="en">has replication levels</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasRowId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasRowId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has row identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSalinity -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSalinity">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has salinity</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSamplingTime -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSamplingTime">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDateTime"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">has sampling time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSeason -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSeason">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000006"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has season</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSpeciesAuthority -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSpeciesAuthority">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has species authority</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSpecificEpithet -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSpecificEpithet">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has specific epithet</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStartDateTime -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStartDateTime">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">has start date-time</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStorageDuration -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStorageDuration">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has storage duration</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStorageTemperature -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasStorageTemperature">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has storage temperature</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSubmissionDate -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSubmissionDate">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDateTime"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000003"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <rdfs:label xml:lang="en">has submission date</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSubtaxon -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSubtaxon">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has subtaxon</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSubtaxonAuthority -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSubtaxonAuthority">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has subtaxon authority</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTaxonId -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTaxonId">
+        <rdfs:subPropertyOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasIdentifier"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has taxon identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTemperature -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTemperature">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has temperature</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTreatmentFactor -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTreatmentFactor">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000018"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has treatment factor</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTreatmentModality -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasTreatmentModality">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000018"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has treatment modality</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasType -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasType">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000002"/>
+                    <rdf:Description rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000020"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has type</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasValue -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasValue">
+        <rdfs:domain rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000006"/>
+        <rdfs:label xml:lang="en">has value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#isActive -->
+
+    <owl:DatatypeProperty rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#isActive">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
+        <rdfs:label xml:lang="en">is active</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -307,6 +1061,13 @@
                 <owl:onClass rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasDescription"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">study</rdfs:label>
         <hasExactSynonym xml:lang="en">experiment</hasExactSynonym>
     </owl:Class>
@@ -336,6 +1097,20 @@
     <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004 -->
 
     <owl:Class rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000004">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasGenus"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#hasSpecificEpithet"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">organism</rdfs:label>
         <hasExactSynonym xml:lang="en">germplasm</hasExactSynonym>
     </owl:Class>
@@ -453,9 +1228,7 @@
 
     <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014 -->
 
-    <owl:Class rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014">
-        <rdfs:label xml:lang="en">sample</rdfs:label>
-    </owl:Class>
+    <owl:Class rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014"/>
     
 
 
@@ -513,8 +1286,23 @@
     <!-- https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000021 -->
 
     <owl:Class rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000021">
+        <rdfs:subClassOf rdf:resource="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000020"/>
         <rdfs:label xml:lang="en">institution</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="https://github.com/MIAPPE/MIAPPE-ontology/MIAPPE.owl#MIAPPE_000014">
+        <rdfs:label xml:lang="en">sample</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
 
 
