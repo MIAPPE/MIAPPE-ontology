@@ -82,6 +82,23 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasBiosource -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasBiosource">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000002"/>
+                    <rdf:Description rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000005"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:label xml:lang="en">has biosource</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasContactInstitution -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasContactInstitution">
@@ -169,22 +186,22 @@
     
 
 
+    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOccurrence -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOccurrence">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000023"/>
+        <rdfs:label xml:lang="en">has occurrence</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOperator -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOperator">
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000013"/>
         <rdfs:label xml:lang="en">has operator</rdfs:label>
         <MIAPPE_000014 xml:lang="en">has collector</MIAPPE_000014>
-    </owl:ObjectProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOrganism -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOrganism">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000002"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000004"/>
-        <rdfs:label xml:lang="en">has organism</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -206,16 +223,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasProcess -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasProcess">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000005"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015"/>
-        <rdfs:label xml:lang="en">has process</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasQuality -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasQuality">
@@ -226,22 +233,22 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSample -->
-
-    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSample">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000005"/>
-        <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000014"/>
-        <rdfs:label xml:lang="en">has sample</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasScale -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasScale">
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000007"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000012"/>
         <rdfs:label xml:lang="en">has scale</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSetting -->
+
+    <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSetting">
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000005"/>
+        <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015"/>
+        <rdfs:label xml:lang="en">has setting</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -259,7 +266,7 @@
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasTreatment -->
 
     <owl:ObjectProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasTreatment">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000004"/>
+        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000005"/>
         <rdfs:range rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000018"/>
         <rdfs:label xml:lang="en">has treatment</rdfs:label>
     </owl:ObjectProperty>
@@ -665,23 +672,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOxygenationStatus -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOxygenationStatus">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000014"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:label xml:lang="en">has oxygenation status</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasPlantBody -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasPlantBody">
@@ -707,23 +697,6 @@
         <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000005"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">has plant identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasPlantProduct -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasPlantProduct">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000014"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:label xml:lang="en">has plant product</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -816,16 +789,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSalinity -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSalinity">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000014"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has salinity</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSamplingTime -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSamplingTime">
@@ -881,26 +844,6 @@
     
 
 
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasStorageDuration -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasStorageDuration">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000014"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has storage duration</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasStorageTemperature -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasStorageTemperature">
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000014"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has storage temperature</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSubmissionDate -->
 
     <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasSubmissionDate">
@@ -947,17 +890,6 @@
             </rdfs:Datatype>
         </rdfs:range>
         <rdfs:label xml:lang="en">has taxon identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasTemperature -->
-
-    <owl:DatatypeProperty rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasTemperature">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000014"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has temperature</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1056,7 +988,7 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasOrganism"/>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasBiosource"/>
                 <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
                 <owl:onClass rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000004"/>
             </owl:Restriction>
@@ -1111,7 +1043,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">organism</rdfs:label>
+        <rdfs:label xml:lang="en">biosource</rdfs:label>
         <hasExactSynonym xml:lang="en">germplasm</hasExactSynonym>
     </owl:Class>
     
@@ -1128,6 +1060,7 @@
         </rdfs:subClassOf>
         <rdfs:label xml:lang="en">observation unit</rdfs:label>
         <hasExactSynonym xml:lang="en">experiment unit</hasExactSynonym>
+        <hasRelatedSynonym xml:lang="en">sample</hasRelatedSynonym>
     </owl:Class>
     
 
@@ -1235,7 +1168,8 @@
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015 -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015">
-        <rdfs:label xml:lang="en">process</rdfs:label>
+        <rdfs:comment xml:lang="en">A setting describes the conditions of the observation unit, be they actively induced (treatment) or passive (environment), in a broad manner. Detailed measurements of the conditions should be recorded as observations.</rdfs:comment>
+        <rdfs:label xml:lang="en">setting</rdfs:label>
     </owl:Class>
     
 
@@ -1243,7 +1177,8 @@
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000016 -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000016">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000023"/>
+        <rdfs:comment xml:lang="en">An inadvertent occurrence, e.g.: a flood, a locust swarm.</rdfs:comment>
         <rdfs:label xml:lang="en">event</rdfs:label>
     </owl:Class>
     
@@ -1252,7 +1187,8 @@
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000017 -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000017">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015"/>
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000023"/>
+        <rdfs:comment xml:lang="en">A deliberate occurrence, e.g.: sowing, transplanting, pollination.</rdfs:comment>
         <rdfs:label xml:lang="en">operation</rdfs:label>
     </owl:Class>
     
@@ -1262,6 +1198,7 @@
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000018">
         <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015"/>
+        <rdfs:comment xml:lang="en">An actively induced setting of the observation unit, e.g.: irrigation regime, nutrient regime.</rdfs:comment>
         <rdfs:label xml:lang="en">treatment</rdfs:label>
     </owl:Class>
     
@@ -1286,8 +1223,32 @@
     <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000021 -->
 
     <owl:Class rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000021">
-        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000020"/>
         <rdfs:label xml:lang="en">institution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000022 -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000022">
+        <rdfs:subClassOf rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000015"/>
+        <rdfs:comment xml:lang="en">A passive setting of the observation unit, e.g.: mean precipitation, mean daily temperature.</rdfs:comment>
+        <rdfs:label xml:lang="en">environment</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000023 -->
+
+    <owl:Class rdf:about="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#MIAPPE_000023">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="https://raw.githubusercontent.com/MIAPPE/MIAPPE-ontology/master/MIAPPE.owl#hasDateTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A discrete change to the state of the observation unit that happened at a given point in time, be it deliberate (operation) or inadvertent (event).</rdfs:comment>
+        <rdfs:label xml:lang="en">occurrence</rdfs:label>
     </owl:Class>
     
 
@@ -1307,5 +1268,5 @@
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
