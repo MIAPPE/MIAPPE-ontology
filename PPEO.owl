@@ -22,12 +22,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000014 -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000014"/>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#hasExactSynonym -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasExactSynonym">
@@ -131,8 +125,8 @@
             </owl:Class>
         </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000013"/>
-        <rdfs:label xml:lang="en">has coordinator</rdfs:label>
         <hasExactSynonym xml:lang="en">has lead person</hasExactSynonym>
+        <rdfs:label xml:lang="en">has coordinator</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -201,7 +195,6 @@
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasOperator">
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000013"/>
         <rdfs:label xml:lang="en">has operator</rdfs:label>
-        <PPEO_000014 xml:lang="en">has collector</PPEO_000014>
     </owl:ObjectProperty>
     
 
@@ -256,7 +249,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasStorageLocation -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasStorageLocation">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000014"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000020"/>
         <rdfs:label xml:lang="en">has storage location</rdfs:label>
     </owl:ObjectProperty>
@@ -658,7 +650,6 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasOrganismCount">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000014"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -675,7 +666,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasPlantBody -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantBody">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000014"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -704,7 +694,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000014"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -793,7 +782,6 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasSamplingTime">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDateTime"/>
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000014"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
         <rdfs:label xml:lang="en">has sampling time</rdfs:label>
     </owl:DatatypeProperty>
@@ -971,8 +959,8 @@
     <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000001 -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000001">
-        <rdfs:label xml:lang="en">investigation</rdfs:label>
         <hasExactSynonym xml:lang="en">trial</hasExactSynonym>
+        <rdfs:label xml:lang="en">investigation</rdfs:label>
     </owl:Class>
     
 
@@ -1000,8 +988,8 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">study</rdfs:label>
         <hasExactSynonym xml:lang="en">experiment</hasExactSynonym>
+        <rdfs:label xml:lang="en">study</rdfs:label>
     </owl:Class>
     
 
@@ -1043,8 +1031,8 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">biosource</rdfs:label>
         <hasExactSynonym xml:lang="en">germplasm</hasExactSynonym>
+        <rdfs:label xml:lang="en">biosource</rdfs:label>
     </owl:Class>
     
 
@@ -1058,9 +1046,9 @@
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000002"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">observation unit</rdfs:label>
         <hasExactSynonym xml:lang="en">experiment unit</hasExactSynonym>
         <hasRelatedSynonym xml:lang="en">sample</hasRelatedSynonym>
+        <rdfs:label xml:lang="en">observation unit</rdfs:label>
     </owl:Class>
     
 
@@ -1159,12 +1147,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000014 -->
-
-    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000014"/>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000015 -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000015">
@@ -1250,20 +1232,6 @@
         <rdfs:comment xml:lang="en">A discrete change to the state of the observation unit that happened at a given point in time, be it deliberate (operation) or inadvertent (event).</rdfs:comment>
         <rdfs:label xml:lang="en">occurrence</rdfs:label>
     </owl:Class>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000014">
-        <rdfs:label xml:lang="en">sample</rdfs:label>
-    </rdf:Description>
 </rdf:RDF>
 
 
