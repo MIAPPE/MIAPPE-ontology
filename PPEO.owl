@@ -1150,7 +1150,7 @@
     <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000015 -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000015">
-        <rdfs:comment xml:lang="en">A setting describes the conditions of the observation unit, be they actively induced (treatment) or passive (environment), in a broad manner. Detailed measurements of the conditions should be recorded as observations.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A broad description of the conditions of the observation unit, be they actively induced (treatment) or passive (environment). Detailed measurements of the conditions should be recorded as observations.</rdfs:comment>
         <rdfs:label xml:lang="en">setting</rdfs:label>
     </owl:Class>
     
