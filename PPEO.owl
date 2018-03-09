@@ -4,9 +4,9 @@
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
-     xmlns:PPEO="http://purl.org/ppeo/PPEO.owl#"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:PPEO="http://purl.org/ppeo/PPEO.owl#">
     <owl:Ontology rdf:about="http://purl.org/ppeo/PPEO.owl"/>
     
 
@@ -1009,6 +1009,7 @@
                 </owl:unionOf>
             </owl:Class>
         </rdfs:subClassOf>
+        <rdfs:comment xml:lang="en">A MIAPPE-compliant dataset, derived from a study or investigation</rdfs:comment>
         <rdfs:label xml:lang="en">dataset</rdfs:label>
     </owl:Class>
     
@@ -1032,6 +1033,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <hasExactSynonym xml:lang="en">germplasm</hasExactSynonym>
+        <rdfs:comment xml:lang="en">An organism that was the subject of the study and/or was observed in an observation unit</rdfs:comment>
         <rdfs:label xml:lang="en">biosource</rdfs:label>
     </owl:Class>
     
@@ -1189,6 +1191,7 @@
     <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000019 -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000019">
+        <rdfs:comment xml:lang="en">A country in the world where the study took place</rdfs:comment>
         <rdfs:label xml:lang="en">country</rdfs:label>
     </owl:Class>
     
@@ -1205,6 +1208,7 @@
     <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000021 -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000021">
+        <rdfs:comment xml:lang="en">An institution (academic or industrial) involved in the investigation or study, or responsible for a given dataset</rdfs:comment>
         <rdfs:label xml:lang="en">institution</rdfs:label>
     </owl:Class>
     
