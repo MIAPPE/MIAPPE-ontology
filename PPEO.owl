@@ -142,6 +142,36 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEnvironment -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironment">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000002"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000022"/>
+        <rdfs:label xml:lang="en">has environment</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameter -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameter">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000022"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000030"/>
+        <rdfs:label xml:lang="en">has environment parameter</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasFactorValue -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasFactorValue">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000005"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000018"/>
+        <rdfs:label xml:lang="en">has factor value</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasLocation -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasLocation">
@@ -161,9 +191,21 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasModality -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasModality">
+        <owl:inverseOf rdf:resource="http://purl.org/ppeo/PPEO.owl#isModalityOf"/>
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000018"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000033"/>
+        <rdfs:label xml:lang="en">has modality</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasObservation -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservation">
+        <owl:inverseOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservedUnit"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -174,6 +216,32 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000006"/>
         <rdfs:label xml:lang="en">has observation</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationLevel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationLevel">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000002"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000005"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000027"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservedUnit -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservedUnit">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000006"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000005"/>
+        <rdfs:label xml:lang="en">has observed unit</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -231,6 +299,16 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasRole -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasRole">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000013"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000024"/>
+        <rdfs:label xml:lang="en">has role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasScale -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasScale">
@@ -251,11 +329,62 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSpatialDistribution -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasSpatialDistribution">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000005"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000026"/>
+        <rdfs:label xml:lang="en">has spatial distribution</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSpatialDistributionType -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasSpatialDistributionType">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000026"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000031"/>
+        <rdfs:label xml:lang="en">has spatial distribution type</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStatisticalDesign -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasStatisticalDesign">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000002"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000025"/>
+        <rdfs:label xml:lang="en">has statistical design</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasStorageLocation -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasStorageLocation">
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000020"/>
         <rdfs:label xml:lang="en">has storage location</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSublevel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasSublevel">
+        <owl:inverseOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSuperlevel"/>
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000027"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000027"/>
+        <rdfs:label xml:lang="en">has sublevel</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSuperlevel -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasSuperlevel">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000027"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000027"/>
+        <rdfs:label xml:lang="en">has superlevel</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -276,6 +405,16 @@
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000006"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000007"/>
         <rdfs:label xml:lang="en">has variable</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#isModalityOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#isModalityOf">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000033"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000018"/>
+        <rdfs:label xml:lang="en">is modality of</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -393,6 +532,16 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasCulturalPractices -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasCulturalPractices">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000002"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has cultural practices</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasDataFile -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFile">
@@ -489,6 +638,22 @@
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000002"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">has experimental design</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier">
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has external identifier</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -655,7 +820,16 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000005"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has observation level</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000002"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has observation unit description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -729,6 +903,23 @@
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000005"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">has plot identifier</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPreprocessing -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPreprocessing">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000004"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has preprocessing</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -896,6 +1087,16 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasTimeScale -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasTimeScale">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000007"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has time scale</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasTreatmentFactor -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasTreatmentFactor">
@@ -939,11 +1140,38 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasUncertainty -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasUncertainty">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000020"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:label xml:lang="en">has uncertainty</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasValue -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasValue">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000006"/>
         <rdfs:label xml:lang="en">has value</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasVersion -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasVersion">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000001"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000003"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:label xml:lang="en">has version</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1010,7 +1238,21 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasCulturalPractices"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
@@ -1281,6 +1523,110 @@
         <rdfs:comment xml:lang="en">A discrete change to the state of the observation unit that happened at a given point in time, be it deliberate (operation) or inadvertent (event).</rdfs:comment>
         <rdfs:label xml:lang="en">occurrence</rdfs:label>
     </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000024 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000024">
+        <rdfs:label xml:lang="en">role</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000025 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000025">
+        <rdfs:label xml:lang="en">statistical design</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000026 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000026">
+        <rdfs:label xml:lang="en">spatial distribution</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000027 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000027">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000031"/>
+        <rdfs:label xml:lang="en">observation level</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000028 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000028">
+        <rdfs:label xml:lang="en">growth facility</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000029 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000029">
+        <rdfs:label xml:lang="en">material source</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000030 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000030">
+        <rdfs:label xml:lang="en">environment parameter</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000031 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000031">
+        <rdfs:label xml:lang="en">spatial distribution type</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000032 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000032">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/PPEO.owl#PPEO_000031"/>
+        <rdfs:label xml:lang="en">spatial coordinate</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000033 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000033">
+        <rdfs:label xml:lang="en">factor value</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#PPEO_000034 -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#PPEO_000034">
+        <rdfs:label xml:lang="en">sample</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationLevel">
+        <rdfs:label xml:lang="en">has observation level</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
 
 
