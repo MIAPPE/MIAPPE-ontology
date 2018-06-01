@@ -1648,6 +1648,81 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#altitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#altitude">
+        <hasType xml:lang="en">altitude</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#column -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#column">
+        <hasType xml:lang="en">column</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#latitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#latitude">
+        <hasType xml:lang="en">latitude</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#longitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#longitude">
+        <hasType xml:lang="en">longitude</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#row -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#row">
+        <hasType xml:lang="en">row</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#x -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#x">
+        <hasType>x</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#y -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#y">
+        <hasType>y</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#z -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#z">
+        <hasType>z</hasType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Annotations
     //
     ///////////////////////////////////////////////////////////////////////////////////////
