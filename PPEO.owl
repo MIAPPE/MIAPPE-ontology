@@ -1041,7 +1041,7 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <hasExactSynonym xml:lang="en">germplasm</hasExactSynonym>
+        <hasBrAPISynonym xml:lang="en">germplasm</hasBrAPISynonym>
         <rdfs:comment xml:lang="en">An organism that was the subject of the study and/or was observed in an observation unit</rdfs:comment>
         <rdfs:label xml:lang="en">biological material</rdfs:label>
     </owl:Class>
@@ -1271,7 +1271,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <hasExactSynonym xml:lang="en">trial</hasExactSynonym>
+        <hasBrAPISynonym xml:lang="en">trial</hasBrAPISynonym>
         <rdfs:comment xml:lang="en">Investigations are research programmes with defined aims. They can exist at various scales (for example, they could encompass a grant-funded programme of work, the various components comprising a peer-reviewed publication, or a single experiment).
 An Investigation may have any number of associated literature publications.
 It is recommended that an Investigation have a description.</rdfs:comment>
