@@ -159,7 +159,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasEnvironment -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironment">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#environment"/>
         <rdfs:label xml:lang="en">has environment</rdfs:label>
@@ -190,7 +189,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasGrowthFacility -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasGrowthFacility">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#growth_facility"/>
         <rdfs:label xml:lang="en">has growth facility</rdfs:label>
@@ -210,7 +208,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSource -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSource">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
         <rdfs:label xml:lang="en">has material source</rdfs:label>
@@ -252,7 +249,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasObservationLevel -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationLevel">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_level"/>
         <rdfs:label xml:lang="en">has observation level</rdfs:label>
@@ -263,7 +259,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasObservationLevelHierarchy -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationLevelHierarchy">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#obsevation_level_hierarchy"/>
         <rdfs:label xml:lang="en">has observation level hierarchy</rdfs:label>
@@ -313,7 +308,6 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPublication">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
-        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#publication"/>
         <rdfs:label xml:lang="en">has publication</rdfs:label>
     </owl:ObjectProperty>
     
@@ -425,7 +419,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#isModalityOf -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#isModalityOf">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#factor"/>
         <rdfs:label xml:lang="en">is modality of</rdfs:label>
@@ -705,6 +698,14 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasInternalIdentifier">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
         <rdfs:comment xml:lang="en">An identifier used internally, either only in the MIAPPE submission itself, or also on a non-public database whence the information was retrieved. An internal identifier need only be unique among entities of the same type within a MIAPPE submission.</rdfs:comment>
         <rdfs:label xml:lang="en">has internal identifier</rdfs:label>
     </owl:DatatypeProperty>
@@ -1062,6 +1063,13 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSource"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTaxonId"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange>
@@ -1192,8 +1200,22 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasType"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
                         <owl:unionOf rdf:parseType="Collection">
@@ -1204,9 +1226,29 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasRelatedSynonym xml:lang="en">time factor</hasRelatedSynonym>
         <rdfs:comment xml:lang="en">A discrete change to the state of one or more observation units that happened at a given point in time, be it deliberate or inadvertent.</rdfs:comment>
         <rdfs:label xml:lang="en">event</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000006</hasOntologyRecommendation>
+    </owl:Axiom>
     
 
 
@@ -1418,8 +1460,55 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">method</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#method"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.cropontology.org/ (Method)</hasOntologyRecommendation>
+    </owl:Axiom>
     
 
 
@@ -1502,19 +1591,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationLevel"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_level"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#partOf"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationLevel"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_level"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInternalIdentifier"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
@@ -1564,8 +1654,22 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInternalIdentifier"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
                         <owl:unionOf rdf:parseType="Collection">
@@ -1580,6 +1684,25 @@
         <hasISASynonym xml:lang="en">assay</hasISASynonym>
         <rdfs:label xml:lang="en">observed variable</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#observed_variable"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/Variable</hasOntologyRecommendation>
+    </owl:Axiom>
     
 
 
@@ -1632,36 +1755,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#publication -->
-
-    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#publication">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
-                <owl:onDataRange>
-                    <rdfs:Datatype>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                        </owl:unionOf>
-                    </rdfs:Datatype>
-                </owl:onDataRange>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">A scientific publication, typically in a journal or conference. It should either be identified with a DOI or described with a textual reference.</rdfs:comment>
-        <rdfs:label xml:lang="en">publication</rdfs:label>
-    </owl:Class>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#role -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#role">
@@ -1702,7 +1795,7 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInternalIdentifier"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
@@ -1735,6 +1828,41 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">sample</rdfs:label>
     </owl:Class>
     
@@ -1750,8 +1878,41 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">scale</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#scale"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.cropontology.org/ (Scale)</hasOntologyRecommendation>
+    </owl:Axiom>
     
 
 
@@ -1862,6 +2023,12 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPart"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPart"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#observed_variable"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -1897,6 +2064,13 @@
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStatisticalDesign"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#statistical_design"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEnvironment"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#environment"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -1980,9 +2154,43 @@ It is recommended that a Study have a description.</rdfs:comment>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment>Name of the (plant or environmental) trait under observation</rdfs:comment>
         <rdfs:label xml:lang="en">trait</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#trait"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/to.owl</hasOntologyRecommendation>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#string">http://www.cropontology.org/ (traits)</hasOntologyRecommendation>
+    </owl:Axiom>
     
 
 
