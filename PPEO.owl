@@ -46,6 +46,14 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMIAPPESynonym -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasMIAPPESynonym">
+        <rdfs:label xml:lang="en">has MIAPPE synonym</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasOntologyRecommendation -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasOntologyRecommendation">
@@ -555,7 +563,6 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasDescription -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescription">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:label xml:lang="en">has description</rdfs:label>
     </owl:DatatypeProperty>
@@ -639,8 +646,15 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasGermplasmAccessionNumber">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialIdentifier"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#material_source"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -733,6 +747,31 @@
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
         <rdfs:comment xml:lang="en">longitude of a location in degrees, in the decimal system</rdfs:comment>
         <rdfs:label xml:lang="en">has longitude</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialIdentifier -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialIdentifier">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#material_source"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">has material identifier</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1097,6 +1136,20 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialIdentifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTaxonId"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange>
@@ -1128,6 +1181,25 @@
         <rdfs:comment xml:lang="en">An organism that was the subject of the study and/or was observed in an observation unit.</rdfs:comment>
         <rdfs:label xml:lang="en">biological material</rdfs:label>
     </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTaxonId"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <hasMIAPPESynonym xml:lang="en">Organism</hasMIAPPESynonym>
+    </owl:Axiom>
     
 
 
@@ -1453,15 +1525,16 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
-                <owl:someValuesFrom>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialIdentifier"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange>
                     <rdfs:Datatype>
                         <owl:unionOf rdf:parseType="Collection">
                             <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
                             <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
                         </owl:unionOf>
                     </rdfs:Datatype>
-                </owl:someValuesFrom>
+                </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
