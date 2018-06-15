@@ -279,7 +279,14 @@
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservedSubject">
         <owl:inverseOf rdf:resource="http://purl.org/ppeo/PPEO.owl#isSubjectOfObservation"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#observation"/>
-        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#sample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
         <rdfs:label xml:lang="en">has observed subject</rdfs:label>
     </owl:ObjectProperty>
     
@@ -312,6 +319,24 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPersonWithRole -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonWithRole">
+        <owl:inverseOf rdf:resource="http://purl.org/ppeo/PPEO.owl#isRoleOfPersonIn"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#investigation"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#study"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#role"/>
+        <rdfs:label xml:lang="en">has person with role</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasQuality -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasQuality">
@@ -325,6 +350,7 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasRole -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasRole">
+        <owl:inverseOf rdf:resource="http://purl.org/ppeo/PPEO.owl#isRoleOf"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#role"/>
         <rdfs:label xml:lang="en">has role</rdfs:label>
@@ -425,10 +451,44 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#isRoleOf -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#isRoleOf">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#role"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+        <rdfs:label xml:lang="en">is role of</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#isRoleOfPersonIn -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#isRoleOfPersonIn">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#role"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#investigation"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#study"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+        <rdfs:label xml:lang="en">is role of person in</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#isSubjectOfObservation -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#isSubjectOfObservation">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#sample"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#observation"/>
         <rdfs:label xml:lang="en">is subject of observation</rdfs:label>
     </owl:ObjectProperty>
@@ -1101,20 +1161,6 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAltitude"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasUncertainty"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
         <rdfs:label xml:lang="en">GPS location</rdfs:label>
     </owl:Class>
     
@@ -1209,6 +1255,12 @@
     <!-- http://purl.org/ppeo/PPEO.owl#country -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#country">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A country in the world that either presently exists (i.e. is recognized in status by most entities) or existed at the time of the study.</rdfs:comment>
         <rdfs:label xml:lang="en">country</rdfs:label>
     </owl:Class>
@@ -1474,6 +1526,12 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonWithRole"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#role"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
@@ -1670,11 +1728,16 @@
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#observation">
         <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservedSubject"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#sample"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservedSubject"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
@@ -1884,7 +1947,13 @@
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#role">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#partOf"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#isRoleOf"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#isRoleOfPersonIn"/>
                 <owl:someValuesFrom>
                     <owl:Class>
                         <owl:unionOf rdf:parseType="Collection">
@@ -2113,7 +2182,8 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2158,12 +2228,6 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#partOf"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasContactInstitution"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#institution"/>
@@ -2188,6 +2252,13 @@
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStatisticalDesign"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#statistical_design"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#partOf"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
