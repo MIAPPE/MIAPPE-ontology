@@ -101,9 +101,9 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#hasBiosource -->
+    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterial -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiosource">
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterial">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
