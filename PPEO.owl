@@ -292,9 +292,9 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#hasOccurrence -->
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEvent -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasOccurrence">
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEvent">
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -1786,7 +1786,7 @@
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiosource"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSource"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
             </owl:Restriction>
         </rdfs:subClassOf>
@@ -2230,7 +2230,7 @@
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#study">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiosource"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSource"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
             </owl:Restriction>
         </rdfs:subClassOf>
