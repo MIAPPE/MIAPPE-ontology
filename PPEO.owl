@@ -184,6 +184,23 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEvent -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEvent">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#study"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
+        <rdfs:label xml:lang="en">has event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasFactorValue -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasFactorValue">
@@ -292,29 +309,34 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEvent -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEvent">
-        <rdfs:domain>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
-                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#study"/>
-                </owl:unionOf>
-            </owl:Class>
-        </rdfs:domain>
-        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
-        <rdfs:label xml:lang="en">has event</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#hasPart -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPart">
         <owl:inverseOf rdf:resource="http://purl.org/ppeo/PPEO.owl#partOf"/>
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
         <rdfs:label xml:lang="en">has part</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasParticipatingInstitution -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasParticipatingInstitution">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#investigation"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#study"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#institution"/>
+        <owl:propertyChainAxiom rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonWithRole"/>
+            <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#isRoleOf"/>
+            <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasAffiliation"/>
+        </owl:propertyChainAxiom>
+        <rdfs:label xml:lang="en">has participating institution</rdfs:label>
     </owl:ObjectProperty>
     
 
