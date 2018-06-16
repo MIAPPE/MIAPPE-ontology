@@ -651,6 +651,25 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasDOI -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasDOI">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">An external identifier that is specifically a DOI, given either as just the DOI code (string) or as an URI. The entity &lt;=&gt; DOI relation should be bijective.</rdfs:comment>
+        <rdfs:label xml:lang="en">has DOI</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasEmailContact -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEmailContact">
@@ -864,25 +883,6 @@
             </rdfs:Datatype>
         </rdfs:range>
         <rdfs:label xml:lang="en">has material identifier</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI">
-        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:comment xml:lang="en">An external identifier that is specifically a DOI, given either as just the DOI code (string) or as an URI. The entity &lt;=&gt; DOI relation should be bijective.</rdfs:comment>
-        <rdfs:label xml:lang="en">has DOI</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1650,7 +1650,7 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDOI"/>
                 <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
