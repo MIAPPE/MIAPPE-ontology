@@ -1326,7 +1326,7 @@
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#environment_parameter"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An environmental parameter or experimental conditions that was kept constant throughout the study and did not change betweeen observation units or assays.</rdfs:comment>
+        <rdfs:comment xml:lang="en">The set of environmental parameters or experimental conditions that were kept constant during the study and did not change betweeen observation units or assays.</rdfs:comment>
         <rdfs:label xml:lang="en">environment</rdfs:label>
     </owl:Class>
     
@@ -1346,7 +1346,15 @@
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasValue"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#float"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#int"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">A parameter of the environment which is represented by a name and a value.</rdfs:comment>
@@ -1361,8 +1369,7 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDateTime"/>
-                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
