@@ -1059,9 +1059,9 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#hasTaxonId -->
+    <!-- http://purl.org/ppeo/PPEO.owl#hasTaxonIdentifier -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasTaxonId">
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasTaxonIdentifier">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range>
@@ -1213,7 +1213,7 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTaxonId"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTaxonIdentifier"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
@@ -1249,7 +1249,7 @@
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTaxonId"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTaxonIdentifier"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
