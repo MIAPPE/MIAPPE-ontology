@@ -1772,16 +1772,18 @@
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#observation">
         <rdfs:subClassOf>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#sample"/>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservedSubject"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
-                    </owl:Restriction>
-                </owl:unionOf>
-            </owl:Class>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservedSubject"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+                            <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#sample"/>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:onClass>
+            </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
