@@ -1260,7 +1260,7 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <hasMIAPPESynonym xml:lang="en">Organism</hasMIAPPESynonym>
+        <hasMIAPPESynonym xml:lang="en">organism</hasMIAPPESynonym>
     </owl:Axiom>
     
 
