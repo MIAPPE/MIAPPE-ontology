@@ -908,9 +908,9 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPlantBody -->
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantBody">
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
         <rdfs:range>
             <rdfs:Datatype>
@@ -920,7 +920,7 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:label xml:lang="en">has plant body</rdfs:label>
+        <rdfs:label xml:lang="en">has plant anatomical entity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -2088,7 +2088,7 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPlantBody"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onDataRange>
                     <rdfs:Datatype>
