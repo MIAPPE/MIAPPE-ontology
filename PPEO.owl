@@ -1062,7 +1062,6 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasTaxonId">
         <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier"/>
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range>
             <rdfs:Datatype>
