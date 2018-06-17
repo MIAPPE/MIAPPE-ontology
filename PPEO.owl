@@ -1846,7 +1846,7 @@
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSource"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterial"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
             </owl:Restriction>
         </rdfs:subClassOf>
