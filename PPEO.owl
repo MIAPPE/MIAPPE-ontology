@@ -1494,7 +1494,8 @@
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2184,8 +2185,11 @@
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#longitude"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#row"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#x"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#x_m"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#y"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#y_m"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#z"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#z_m"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -2524,6 +2528,14 @@ It is recommended that a Study have a description.</rdfs:comment>
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#x_m -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#x_m">
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x(m)</hasType>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#y -->
 
     <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#y">
@@ -2533,12 +2545,28 @@ It is recommended that a Study have a description.</rdfs:comment>
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#y_m -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#y_m">
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y(m)</hasType>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#z -->
 
     <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#z">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z</hasType>
     </owl:Thing>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#z_m -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#z_m">
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z(m)</hasType>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
