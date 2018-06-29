@@ -725,6 +725,24 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalDesignMap -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalDesignMap">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">A map of the experimental design of the study, in gis or excel</rdfs:comment>
+        <rdfs:label xml:lang="en">has experimental design map</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier">
