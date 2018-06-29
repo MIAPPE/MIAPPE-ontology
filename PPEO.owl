@@ -2262,8 +2262,11 @@
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#longitude"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#row"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#x"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#x_m"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#y"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#y_m"/>
                     <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#z"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#z_m"/>
                 </owl:oneOf>
             </owl:Class>
         </owl:equivalentClass>
@@ -2600,76 +2603,114 @@ It is recommended that a Study have a description.</rdfs:comment>
 
     <!-- http://purl.org/ppeo/PPEO.owl#altitude -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#altitude">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#altitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">altitude</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The global spatial coordinate altitude (in meters)</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/ppeo/PPEO.owl#column -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#column">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#column">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">column</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The local spatial coordinate identifying the column</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/ppeo/PPEO.owl#latitude -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#latitude">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#latitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">latitude</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The global spatial coordinate latitude (in degrees in the decimal system)</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/ppeo/PPEO.owl#longitude -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#longitude">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#longitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">longitude</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The global spatial coordinate latitude (in degrees in the decimal system)</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/ppeo/PPEO.owl#row -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#row">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#row">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">row</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The local spatial coordinate identifying the row</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/ppeo/PPEO.owl#x -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#x">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#x">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The local spatial coordinate x (numeric, discrete)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#x_m -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#x_m">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">x (m)</hasType>
+        <rdfs:comment xml:lang="en">The local spatial coordinate x (in meters)</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/ppeo/PPEO.owl#y -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#y">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#y">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The local spatial coordinate y (numeric, discrete)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#y_m -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#y_m">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">y (m)</hasType>
+        <rdfs:comment xml:lang="en">The local spatial coordinate y (in meters)</rdfs:comment>
+    </owl:NamedIndividual>
     
 
 
     <!-- http://purl.org/ppeo/PPEO.owl#z -->
 
-    <owl:Thing rdf:about="http://purl.org/ppeo/PPEO.owl#z">
-        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#z">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z</hasType>
-    </owl:Thing>
+        <rdfs:comment xml:lang="en">The local spatial coordinate z (numeric, discrete)</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#z_m -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#z_m">
+        <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
+        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z (m)</hasType>
+        <rdfs:comment xml:lang="en">The local spatial coordinate z (in meters)</rdfs:comment>
+    </owl:NamedIndividual>
 </rdf:RDF>
 
 
 
-<!-- Generated by the OWL API (version 4.2.6.20160910-2108) https://github.com/owlcs/owlapi -->
+<!-- Generated by the OWL API (version 4.2.8.20170104-2310) https://github.com/owlcs/owlapi -->
 
