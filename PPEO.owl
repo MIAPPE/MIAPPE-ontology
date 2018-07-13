@@ -1369,6 +1369,7 @@ http://purl.obolibrary.org/obo/OBI_0000747</hasOntologyRecommendation>
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#environment_parameter"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>environment system (http://purl.obolibrary.org/obo/ENVO_01000254) as used in AGRO</hasOntologyRecommendation>
         <hasOntologyRecommendation>environmental feature
 (http://purl.obolibrary.org/obo/ENVO_00002297)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">The set of environmental parameters or experimental conditions that were kept constant during the study and did not change betweeen observation units or assays.</rdfs:comment>
@@ -1496,6 +1497,9 @@ http://purl.obolibrary.org/obo/OBI_0000747</hasOntologyRecommendation>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasISASynonym>ISA Study Factor</hasISASynonym>
+        <hasOntologyRecommendation>experimental factor
+http://purl.obolibrary.org/obo/AGRO_00000341</hasOntologyRecommendation>
         <hasOntologyRecommendation>http://purl.obolibrary.org/obo/OBI_0000750</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A condition that varies between observation units, by taking different values or modalities, assessing the effect of which is the goal of the study. A factor may be biotic (pest, disease interaction) or abiotic (treatment, cultural practice) in nature. It must have at least two values or modalities.</rdfs:comment>
         <rdfs:label xml:lang="en">factor</rdfs:label>
@@ -1601,7 +1605,7 @@ http://purl.obolibrary.org/obo/STATO_0000265</hasOntologyRecommendation>
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <hasOntologyRecommendation>organization (http://purl.obolibrary.org/obo/OBI_0000245)</hasOntologyRecommendation>
+        <hasOntologyRecommendation>organization (http://purl.obolibrary.org/obo/OBI_0000245) (also used by AGRO)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">An institution (academic or industrial) involved in the investigation or study.</rdfs:comment>
         <rdfs:label xml:lang="en">institution</rdfs:label>
     </owl:Class>
@@ -1701,6 +1705,8 @@ http://purl.obolibrary.org/obo/STATO_0000265</hasOntologyRecommendation>
     <!-- http://purl.org/ppeo/PPEO.owl#location -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#location">
+        <hasOntologyRecommendation>experimental site:
+http://purl.obolibrary.org/obo/AGRO_00000360</hasOntologyRecommendation>
         <hasOntologyRecommendation>geographic location: (/GAZ_00000448)</hasOntologyRecommendation>
         <hasOntologyRecommendation>site (http://purl.obolibrary.org/obo/BFO_0000029)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A physical location, typically on planet Earth, identified by GPS coordinates and/or name and address.</rdfs:comment>
@@ -1798,6 +1804,7 @@ http://purl.obolibrary.org/obo/STATO_0000265</hasOntologyRecommendation>
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>plan specification (http://purl.obolibrary.org/obo/IAO_0000104) as used in AGRO</hasOntologyRecommendation>
         <hasOntologyRecommendation>protocol:
 (http://purl.obolibrary.org/obo/OBI_0000272)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">method</rdfs:label>
@@ -2041,7 +2048,7 @@ http://purl.obolibrary.org/obo/STATO_0000265</hasOntologyRecommendation>
         <hasBrAPISynonym xml:lang="en">observation variable</hasBrAPISynonym>
         <hasISASynonym xml:lang="en">assay</hasISASynonym>
         <hasOntologyRecommendation>variable:
-(http://purl.obolibrary.org/obo/OBI_0000750)</hasOntologyRecommendation>
+(http://purl.obolibrary.org/obo/OBI_0000751)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">observed variable</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2138,6 +2145,7 @@ http://purl.obolibrary.org/obo/STATO_0000265</hasOntologyRecommendation>
             </owl:Restriction>
         </rdfs:subClassOf>
         <hasOntologyRecommendation>http://purl.obolibrary.org/obo/BFO_0000023</hasOntologyRecommendation>
+        <hasOntologyRecommendation>http://purl.obolibrary.org/obo/CHEBI_50906 (as used by AGRO)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">role</rdfs:label>
     </owl:Class>
     
@@ -2223,7 +2231,7 @@ http://purl.obolibrary.org/obo/STATO_0000265</hasOntologyRecommendation>
             </owl:Restriction>
         </rdfs:subClassOf>
         <hasOntologyRecommendation>specimen:
-http://purl.obolibrary.org/obo/OBI_0100051</hasOntologyRecommendation>
+http://purl.obolibrary.org/obo/OBI_0100051 (also used by AGRO)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">sample</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2291,6 +2299,7 @@ http://purl.obolibrary.org/obo/OBI_0100051</hasOntologyRecommendation>
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>http://purl.obolibrary.org/obo/UO_0000000 (as used in AGRO)</hasOntologyRecommendation>
         <hasOntologyRecommendation>measurement unit label
 (http://purl.obolibrary.org/obo/IAO_0000003)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">scale</rdfs:label>
