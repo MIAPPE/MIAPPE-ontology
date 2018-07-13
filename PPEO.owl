@@ -1211,6 +1211,8 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/PPEO.owl#location"/>
+        <hasOntologyRecommendation>cartesian spartial coordinate datum
+http://purl.obolibrary.org/obo/IAO_0000400</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">GPS location</rdfs:label>
     </owl:Class>
     
@@ -1276,6 +1278,8 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <hasBrAPISynonym xml:lang="en">germplasm</hasBrAPISynonym>
+        <hasOntologyRecommendation>material sample
+http://purl.obolibrary.org/obo/OBI_0000747</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">An organism that was the subject of the study and/or was observed in an observation unit.</rdfs:comment>
         <rdfs:label xml:lang="en">biological material</rdfs:label>
     </owl:Class>
@@ -1310,6 +1314,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>national geopolitical entity: (http://purl.obolibrary.org/obo/ENVO_00000009)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A country in the world that either presently exists (i.e. is recognized in status by most entities) or existed at the time of the study.</rdfs:comment>
         <rdfs:label xml:lang="en">country</rdfs:label>
     </owl:Class>
@@ -1347,6 +1352,8 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>data set:
+(http://purl.obolibrary.org/obo/IAO_0000100)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A description of and link to a file or data stream holding some or all of the data described by the MIAPPE submission.</rdfs:comment>
         <rdfs:label xml:lang="en">data file</rdfs:label>
     </owl:Class>
@@ -1362,6 +1369,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#environment_parameter"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>environmental feature
+(http://purl.obolibrary.org/obo/ENVO_00002297)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">The set of environmental parameters or experimental conditions that were kept constant during the study and did not change betweeen observation units or assays.</rdfs:comment>
         <rdfs:label xml:lang="en">environment</rdfs:label>
     </owl:Class>
@@ -1436,6 +1445,7 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>unplanned occurrence effecting an investigation (http://purl.obolibrary.org/obo/OBI_0000076)</hasOntologyRecommendation>
         <hasRelatedSynonym xml:lang="en">time factor</hasRelatedSynonym>
         <rdfs:comment xml:lang="en">A discrete change to the state of one or more observation units that happened at a given point in time, be it deliberate or inadvertent.</rdfs:comment>
         <rdfs:label xml:lang="en">event</rdfs:label>
@@ -1486,6 +1496,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>http://purl.obolibrary.org/obo/OBI_0000750</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A condition that varies between observation units, by taking different values or modalities, assessing the effect of which is the goal of the study. A factor may be biotic (pest, disease interaction) or abiotic (treatment, cultural practice) in nature. It must have at least two values or modalities.</rdfs:comment>
         <rdfs:label xml:lang="en">factor</rdfs:label>
     </owl:Class>
@@ -1517,6 +1528,8 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>factor level
+http://purl.obolibrary.org/obo/STATO_0000265</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A value or modality of a factor.</rdfs:comment>
         <rdfs:label xml:lang="en">factor value</rdfs:label>
     </owl:Class>
@@ -1588,6 +1601,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>organization (http://purl.obolibrary.org/obo/OBI_0000245)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">An institution (academic or industrial) involved in the investigation or study.</rdfs:comment>
         <rdfs:label xml:lang="en">institution</rdfs:label>
     </owl:Class>
@@ -1645,6 +1659,8 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <hasBrAPISynonym xml:lang="en">trial</hasBrAPISynonym>
+        <hasOntologyRecommendation>investigation
+(http://purl.obolibrary.org/obo/OBI_0000066)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A research programme with defined aims, which can vary in scale from a single experiment, to a grant-funded programme or various components comprising a peer-reviewed publication.</rdfs:comment>
         <rdfs:label xml:lang="en">investigation</rdfs:label>
     </owl:Class>
@@ -1685,6 +1701,8 @@
     <!-- http://purl.org/ppeo/PPEO.owl#location -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#location">
+        <hasOntologyRecommendation>geographic location: (/GAZ_00000448)</hasOntologyRecommendation>
+        <hasOntologyRecommendation>site (http://purl.obolibrary.org/obo/BFO_0000029)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A physical location, typically on planet Earth, identified by GPS coordinates and/or name and address.</rdfs:comment>
         <rdfs:label xml:lang="en">location</rdfs:label>
     </owl:Class>
@@ -1780,6 +1798,8 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>protocol:
+(http://purl.obolibrary.org/obo/OBI_0000272)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">method</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -1829,6 +1849,7 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/PPEO.owl#location"/>
+        <hasOntologyRecommendation>geographic location: (http://purl.obolibrary.org/obo/GAZ_00000448)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">named location</rdfs:label>
     </owl:Class>
     
@@ -1872,6 +1893,8 @@
                 </owl:allValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>data acquisition/information acquisition
+(http://purl.obolibrary.org/obo/OBI_0600013)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">observation</rdfs:label>
     </owl:Class>
     
@@ -1944,6 +1967,7 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <hasExactSynonym xml:lang="en">experiment unit</hasExactSynonym>
+        <hasOntologyRecommendation>member_of some &quot;STATO:study group population) (http://purl.obolibrary.org/obo/STATO_0000193)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">observation unit</rdfs:label>
     </owl:Class>
     
@@ -2016,6 +2040,8 @@
         </rdfs:subClassOf>
         <hasBrAPISynonym xml:lang="en">observation variable</hasBrAPISynonym>
         <hasISASynonym xml:lang="en">assay</hasISASynonym>
+        <hasOntologyRecommendation>variable:
+(http://purl.obolibrary.org/obo/OBI_0000750)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">observed variable</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2076,6 +2102,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>type of homo sapiens / bioinformation resource centre contact person (http://purl.obolibrary.org/obo/OBI_0001883)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">person</rdfs:label>
     </owl:Class>
     
@@ -2110,6 +2137,7 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>http://purl.obolibrary.org/obo/BFO_0000023</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">role</rdfs:label>
     </owl:Class>
     
@@ -2194,6 +2222,8 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>specimen:
+http://purl.obolibrary.org/obo/OBI_0100051</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">sample</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2261,6 +2291,8 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>measurement unit label
+(http://purl.obolibrary.org/obo/IAO_0000003)</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">scale</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2306,6 +2338,8 @@
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_distribution_type"/>
+        <hasOntologyRecommendation>cartesian spartial coordinate datum
+http://purl.obolibrary.org/obo/IAO_0000400</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">spatial coordinate</rdfs:label>
     </owl:Class>
     
@@ -2387,6 +2421,7 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>http://purl.obolibrary.org/obo/OBI_0500000</hasOntologyRecommendation>
         <rdfs:label xml:lang="en">statistical design</rdfs:label>
     </owl:Class>
     <owl:Axiom>
@@ -2537,6 +2572,8 @@
             </owl:Restriction>
         </rdfs:subClassOf>
         <hasExactSynonym xml:lang="en">experiment</hasExactSynonym>
+        <hasOntologyRecommendation>investigation
+(http://purl.obolibrary.org/obo/OBI_0000066)</hasOntologyRecommendation>
         <rdfs:comment xml:lang="en">A study (or experiment) comprises a series of assays (or measurements) of one or more types, undertaken to answer a particular biological question.
 It is recommended that a Study have a description.</rdfs:comment>
         <rdfs:label xml:lang="en">study</rdfs:label>
@@ -2599,6 +2636,8 @@ It is recommended that a Study have a description.</rdfs:comment>
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasOntologyRecommendation>phenotype:
+(http://purl.obolibrary.org/obo/OGMS_0000023)</hasOntologyRecommendation>
         <rdfs:comment>Name of the (plant or environmental) trait under observation</rdfs:comment>
         <rdfs:label xml:lang="en">trait</rdfs:label>
     </owl:Class>
