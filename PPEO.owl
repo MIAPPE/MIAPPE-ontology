@@ -2213,7 +2213,7 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0009012</hasOntologyRecommendation>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0025131</hasOntologyRecommendation>
     </owl:Axiom>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
@@ -2232,7 +2232,7 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </owl:annotatedTarget>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0025131</hasOntologyRecommendation>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0009012</hasOntologyRecommendation>
     </owl:Axiom>
     
 
