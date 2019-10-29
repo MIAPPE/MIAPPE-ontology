@@ -422,12 +422,12 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStatisticalDesign -->
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasStatisticalDesign">
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
-        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#statistical_design"/>
-        <rdfs:label xml:lang="en">has statistical design</rdfs:label>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
+        <rdfs:label xml:lang="en">has experimental design</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -2375,9 +2375,9 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#statistical_design -->
+    <!-- http://purl.org/ppeo/PPEO.owl#experimental_design -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#statistical_design">
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#experimental_design">
         <rdfs:subClassOf>
             <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
@@ -2399,10 +2399,10 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">statistical design</rdfs:label>
+        <rdfs:label xml:lang="en">experimental design</rdfs:label>
     </owl:Class>
     <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#statistical_design"/>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget>
             <owl:Restriction>
@@ -2473,9 +2473,9 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStatisticalDesign"/>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#statistical_design"/>
+                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
