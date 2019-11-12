@@ -845,6 +845,17 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasInfraspecificName -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasInfraspecificName">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Name of any subtaxa level, including variety, crossing name, etc. It can be used to store any additional taxonomic identifier. Either free text description or key-value pair list format (the key is the name of the rank and the value is the value of  the rank). Ranks can be among the following terms: subspecies, cultivar, variety, subvariety, convariety, group, subgroup, hybrid, line, form, subform. For MCPD compliance, the following abbreviations are allowed: ‘subsp.’ (subspecies); ‘convar.’ (convariety); ‘var.’ (variety); ‘f.’ (form); ‘Group’ (cultivar group).</rdfs:comment>
+        <rdfs:label xml:lang="en">has infraspecific name</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#hasInstituteCode -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasInstituteCode">
