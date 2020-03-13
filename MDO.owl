@@ -13,6 +13,23 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#contains -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#contains"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Classes
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -21,9 +38,23 @@
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#Object -->
+    <!-- http://purl.org/ppeo/MDO.owl#field -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#Object"/>
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#field"/>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#object -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#object"/>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#section -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#section">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+    </owl:Class>
 </rdf:RDF>
 
 
