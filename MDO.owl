@@ -13,6 +13,25 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#hasExample -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasExample">
+        <rdfs:label xml:lang="en">has example</rdfs:label>
+    </owl:AnnotationProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
     // Object Properties
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -23,7 +42,74 @@
 
     <!-- http://purl.org/ppeo/MDO.owl#contains -->
 
-    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#contains"/>
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#contains">
+        <rdfs:label xml:lang="en">contains</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#containsAtLeastOne -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#containsAtLeastOne">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+        <rdfs:label xml:lang="en">contains at least one</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#containsExactlyOne -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#containsExactlyOne">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+        <rdfs:label xml:lang="en">contains exactly one</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#containsMoreThanOne -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#containsMoreThanOne">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+        <rdfs:label xml:lang="en">contains more than one</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#mayContainAtLeastOne -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#mayContainAtLeastOne">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+        <rdfs:label xml:lang="en">may contain at least one</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#mayContainExactlyOne -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne">
+        <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+        <rdfs:label xml:lang="en">may contain exactly one</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#isTopSection -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#isTopSection">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:label xml:lang="en">is top section</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -40,13 +126,17 @@
 
     <!-- http://purl.org/ppeo/MDO.owl#field -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#field"/>
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#field">
+        <rdfs:label xml:lang="en">field</rdfs:label>
+    </owl:Class>
     
 
 
     <!-- http://purl.org/ppeo/MDO.owl#object -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#object"/>
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#object">
+        <rdfs:label xml:lang="en">object</rdfs:label>
+    </owl:Class>
     
 
 
@@ -54,6 +144,7 @@
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#section">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <rdfs:label xml:lang="en">section</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
