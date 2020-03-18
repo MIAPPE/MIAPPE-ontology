@@ -1,14 +1,16 @@
 <?xml version="1.0"?>
 <rdf:RDF xmlns="http://purl.org/ppeo/PPEO.owl#"
      xml:base="http://purl.org/ppeo/PPEO.owl"
-     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:MDO="http://purl.org/ppeo/MDO.owl#"
      xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
      xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:dc="http://purl.org/dc/elements/1.1/"
-     xmlns:PPEO="http://purl.org/ppeo/PPEO.owl#">
+     xmlns:PPEO="http://purl.org/ppeo/PPEO.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.org/ppeo/PPEO.owl">
+        <owl:imports rdf:resource="http://purl.org/ppeo/MDO.owl"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bruno Vasques Costa</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyril Pommier</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Faria</dc:creator>
@@ -21,6 +23,7 @@
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pascal Neveu</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Pierre Larmande</dc:creator>
     </owl:Ontology>
+    
 
 
     <!-- 
@@ -31,6 +34,12 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/dc/elements/1.1/creator -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
     
 
 
@@ -108,7 +117,6 @@
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasAffiliation">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#institution"/>
-        <rdfs:label xml:lang="en">has affiliation</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -209,6 +217,16 @@
         </rdfs:domain>
         <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
         <rdfs:label xml:lang="en">has event</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
+        <rdfs:label xml:lang="en">has experimental design</rdfs:label>
     </owl:ObjectProperty>
     
 
@@ -422,16 +440,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
-        <rdfs:range rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
-        <rdfs:label xml:lang="en">has experimental design</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#hasSublevel -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasSublevel">
@@ -600,7 +608,6 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:label xml:lang="en">has associated publication</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -688,7 +695,6 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescription">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -716,8 +722,6 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEmailContact">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">The e-mail address of a person</rdfs:comment>
-        <rdfs:label xml:lang="en">has e-mail contact</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -840,7 +844,6 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:label xml:lang="en">has identifier</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -905,7 +908,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has license</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -927,7 +929,6 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:label xml:lang="en">has MIAPPE version</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -962,8 +963,6 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasName">
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <hasExactSynonym xml:lang="en">has title</hasExactSynonym>
-        <rdfs:label xml:lang="en">has name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1036,7 +1035,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label xml:lang="en">has public release date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1093,7 +1091,6 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
-        <rdfs:label xml:lang="en">has submission date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1485,6 +1482,54 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#experimental_design -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#experimental_design">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">experimental design</rdfs:label>
+    </owl:Class>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
+        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
+        <owl:annotatedTarget>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasType"/>
+                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
+                <owl:onDataRange>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:onDataRange>
+            </owl:Restriction>
+        </owl:annotatedTarget>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000003</hasOntologyRecommendation>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#factor -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#factor">
@@ -1611,8 +1656,6 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:comment xml:lang="en">An institution (academic or industrial) involved in the investigation or study.</rdfs:comment>
-        <rdfs:label xml:lang="en">institution</rdfs:label>
     </owl:Class>
     
 
@@ -1667,9 +1710,6 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <hasBrAPISynonym xml:lang="en">trial</hasBrAPISynonym>
-        <rdfs:comment xml:lang="en">A research programme with defined aims, which can vary in scale from a single experiment, to a grant-funded programme or various components comprising a peer-reviewed publication.</rdfs:comment>
-        <rdfs:label xml:lang="en">investigation</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
@@ -1682,25 +1722,6 @@
             </owl:Restriction>
         </owl:annotatedTarget>
         <hasMIAPPESynonym xml:lang="en">investigation title</hasMIAPPESynonym>
-    </owl:Axiom>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange>
-                    <rdfs:Datatype>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                        </owl:unionOf>
-                    </rdfs:Datatype>
-                </owl:onDataRange>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <hasMIAPPESynonym xml:lang="en">investigation unique ID</hasMIAPPESynonym>
     </owl:Axiom>
     
 
@@ -2099,7 +2120,6 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">person</rdfs:label>
     </owl:Class>
     
 
@@ -2133,7 +2153,6 @@
                 <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">role</rdfs:label>
     </owl:Class>
     
 
@@ -2386,54 +2405,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#experimental_design -->
-
-    <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#experimental_design">
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasType"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange>
-                    <rdfs:Datatype>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                        </owl:unionOf>
-                    </rdfs:Datatype>
-                </owl:onDataRange>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:label xml:lang="en">experimental design</rdfs:label>
-    </owl:Class>
-    <owl:Axiom>
-        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
-        <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
-        <owl:annotatedTarget>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasType"/>
-                <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:maxQualifiedCardinality>
-                <owl:onDataRange>
-                    <rdfs:Datatype>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                        </owl:unionOf>
-                    </rdfs:Datatype>
-                </owl:onDataRange>
-            </owl:Restriction>
-        </owl:annotatedTarget>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000003</hasOntologyRecommendation>
-    </owl:Axiom>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#study -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#study">
@@ -2470,6 +2441,13 @@
         </rdfs:subClassOf>
         <rdfs:subClassOf>
             <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasGrowthFacility"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#growth_facility"/>
@@ -2480,13 +2458,6 @@
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasLocation"/>
                 <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                 <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#named_location"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign"/>
-                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                <owl:onClass rdf:resource="http://purl.org/ppeo/PPEO.owl#experimental_design"/>
             </owl:Restriction>
         </rdfs:subClassOf>
         <rdfs:subClassOf>
@@ -2559,10 +2530,6 @@
                 </owl:onDataRange>
             </owl:Restriction>
         </rdfs:subClassOf>
-        <hasExactSynonym xml:lang="en">experiment</hasExactSynonym>
-        <rdfs:comment xml:lang="en">A study (or experiment) comprises a series of assays (or measurements) of one or more types, undertaken to answer a particular biological question.
-It is recommended that a Study have a description.</rdfs:comment>
-        <rdfs:label xml:lang="en">study</rdfs:label>
     </owl:Class>
     <owl:Axiom>
         <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
@@ -2679,6 +2646,186 @@ It is recommended that a Study have a description.</rdfs:comment>
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#hasAffiliation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasAffiliation">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEmailContact -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEmailContact">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasIdentifier -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasIdentifier">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasLicense -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasLicense">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSubmissionDate -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#institution -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#institution">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#institution"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#containsExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+        <MDO:hasExample xml:lang="en">ITQB</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Institute name</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Institute name</rdfs:label>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#investigation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#investigation">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#role"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasLicense"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate"/>
+        <MDO:isTopSection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</MDO:isTopSection>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#containsExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion"/>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1.1</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The version of MIAPPE used.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">MIAPPE version</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#containsExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+        <MDO:hasExample xml:lang="en">Adaptation of Maize to Temperate Climates: Mid-Density Genome-Wide Association Genetics and Diversity Patterns Reveal Key Genomic Regions, with a Major Contribution of the Vgt2 (ZCN8) Locus.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Human-readable string summarising the investigation.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investigation title</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainAtLeastOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication"/>
+        <MDO:hasExample>doi:10.1371/journal.pone.0071377</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">An identifier for a literature publication where the investigation is described. Use of DOIs is recommended.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Associated publication</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescription"/>
+        <MDO:hasExample xml:lang="en">The migration of maize from tropical to temperate climates was accompanied by a dramatic evolution in flowering time. To gain insight into the genetic architecture of this adaptive trait, we conducted a 50K SNP-based genome-wide association and diversity investigation on a panel of tropical and temperate American and European representatives.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Human-readable text describing the investigation in more detail.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investigation description</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+        <MDO:hasExample xml:lang="en">EBI:12345678</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Identifier comprising the unique name of the institution/database hosting the submission of the investigation data, and the accession number of the investigation in that institution.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investigation unique ID</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasLicense"/>
+        <MDO:hasExample xml:lang="en">CC BY-SA 4.0, Unreported</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">License for the reuse of the data associated with this investigation. The Creative Commons licenses cover most use cases and are recommended.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">License</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate"/>
+        <MDO:hasExample>2013-02-25</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Date of first public release of the dataset presently being described</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Public release date</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate"/>
+        <MDO:hasExample>2012-12-17</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Date of submission of the dataset presently being described to a host repository.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Submission date</rdfs:label>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#latitude -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#latitude">
@@ -2699,12 +2846,81 @@ It is recommended that a Study have a description.</rdfs:comment>
     
 
 
+    <!-- http://purl.org/ppeo/PPEO.owl#person -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#person">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAffiliation"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEmailContact"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#containsAtLeastOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAffiliation"/>
+        <rdfs:label xml:lang="en">Person affiliation</rdfs:label>
+        <rdfs:label xml:lang="en">The institution the person belongs to</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#containsExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+        <MDO:hasExample xml:lang="en">Ines Chaves</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The name of the person (either full name or as used in scientific publications)</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person name</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEmailContact"/>
+        <MDO:hasExample xml:lang="en">ichaves@itqb.unl.pt</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The electronic mail address of the person.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person email</rdfs:label>
+    </owl:Axiom>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasIdentifier"/>
+        <MDO:hasExample xml:lang="en">orcid.org/0000-0001-6494-0008; orcid.org/0000-0002-7054-800X</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">An identifier for the data submitter. If that submitter is an individual, ORCID identifiers are recommended.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person ID</rdfs:label>
+    </owl:Axiom>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#role -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#role">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+    </owl:NamedIndividual>
+    <owl:Axiom>
+        <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#role"/>
+        <owl:annotatedProperty rdf:resource="http://purl.org/ppeo/MDO.owl#containsExactlyOne"/>
+        <owl:annotatedTarget rdf:resource="http://purl.org/ppeo/PPEO.owl#hasName"/>
+        <MDO:hasExample xml:lang="en">data submitter; author; corresponding author</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Type of contribution of the person to the investigation</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person role</rdfs:label>
+    </owl:Axiom>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#row -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#row">
         <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">row</hasType>
         <rdfs:comment xml:lang="en">The local spatial coordinate identifying the row</rdfs:comment>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#study -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#study">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
     </owl:NamedIndividual>
     
 
@@ -2766,4 +2982,73 @@ It is recommended that a Study have a description.</rdfs:comment>
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z (m)</hasType>
         <rdfs:comment xml:lang="en">The local spatial coordinate z (in meters)</rdfs:comment>
     </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotations
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasAffiliation">
+        <rdfs:label xml:lang="en">has affiliation</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication">
+        <rdfs:label xml:lang="en">has associated publication</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescription">
+        <rdfs:label xml:lang="en">has description</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEmailContact">
+        <rdfs:comment xml:lang="en">The e-mail address of a person</rdfs:comment>
+        <rdfs:label xml:lang="en">has e-mail contact</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasIdentifier">
+        <rdfs:label xml:lang="en">has identifier</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasLicense">
+        <rdfs:label xml:lang="en">has license</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion">
+        <rdfs:label xml:lang="en">has MIAPPE version</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasName">
+        <hasExactSynonym xml:lang="en">has title</hasExactSynonym>
+        <rdfs:label xml:lang="en">has name</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate">
+        <rdfs:label xml:lang="en">has public release date</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate">
+        <rdfs:label xml:lang="en">has submission date</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#institution">
+        <rdfs:label xml:lang="en">institution</rdfs:label>
+        <rdfs:comment xml:lang="en">An institution (academic or industrial) involved in the investigation or study.</rdfs:comment>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#investigation">
+        <rdfs:label xml:lang="en">investigation</rdfs:label>
+        <rdfs:isDefinedBy xml:lang="en">Investigations are research programmes with defined aims. They can exist at various scales (for example, they could encompass a grant-funded programme of work, the various components comprising a peer-reviewed publication, or a single experiment).</rdfs:isDefinedBy>
+        <hasBrAPISynonym xml:lang="en">trial</hasBrAPISynonym>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#person">
+        <rdfs:label xml:lang="en">person</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#role">
+        <rdfs:label xml:lang="en">role</rdfs:label>
+    </rdf:Description>
+    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#study">
+        <rdfs:isDefinedBy xml:lang="en">A study (or experiment) comprises a series of assays (or measurements) of one or more types, undertaken to answer a particular biological question.
+It is recommended that a Study have a description.</rdfs:isDefinedBy>
+        <hasExactSynonym xml:lang="en">experiment</hasExactSynonym>
+        <rdfs:label xml:lang="en">study</rdfs:label>
+    </rdf:Description>
 </rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
