@@ -29,14 +29,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#hasInterfaceLabel -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasInterfaceLabel">
-        <rdfs:label xml:lang="en">has interface label</rdfs:label>
-    </owl:AnnotationProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
