@@ -1332,6 +1332,7 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:label xml:lang="en">Observation value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -3376,6 +3377,8 @@
         <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
         <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID"/>
         <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
         <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
         <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID"/>
         <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
@@ -3402,6 +3405,7 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#person">
         <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation"/>
         <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonName"/>
         <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEmailContact"/>
         <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonID"/>
