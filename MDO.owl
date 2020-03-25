@@ -167,6 +167,7 @@
     <!-- http://purl.org/ppeo/MDO.owl#hasDefinition -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasDefinition">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -184,6 +185,7 @@
     <!-- http://purl.org/ppeo/MDO.owl#hasDisplayName -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasDisplayName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">
@@ -227,6 +229,7 @@
     <!-- http://purl.org/ppeo/MDO.owl#isHead -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#isHead">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain>
             <owl:Class>
                 <owl:unionOf rdf:parseType="Collection">

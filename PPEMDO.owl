@@ -1,0 +1,927 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://purl.org/ppeo/PPEMDO.owl#"
+     xml:base="http://purl.org/ppeo/PPEMDO.owl"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:MDO="http://purl.org/ppeo/MDO.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:PPEO="http://purl.org/ppeo/PPEO.owl#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://purl.org/ppeo/PPEMDO.owl">
+        <owl:imports rdf:resource="http://purl.org/ppeo/MDO.owl"/>
+        <owl:imports rdf:resource="http://purl.org/ppeo/PPEO.owl"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#biological_material -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#biological_material">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialID"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasOrganism"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPreprocessing"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialAltitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialCoordinatesUncertainty"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLatitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLongitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasGenus"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInfraspecificName"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSpecies"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#data_file -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#data_file">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDataFileDescription"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDataFileLink"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDataFileVersion"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#environment -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#environment">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#environment_parameter"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#environment_parameter -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#environment_parameter">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterName"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#event -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#event">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventDateTime"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventType"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventAccessionNumber"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventDescription"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#factor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#factor">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorType"/>
+        <MDO:containsMoreThanOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorDescription"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#factor_value -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#factor_value">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorValue"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialAltitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialAltitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialCoordinatesUncertainty -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialCoordinatesUncertainty">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLatitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLatitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLongitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLongitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasCollectionDate -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasCollectionDate">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasContactInstitution -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasContactInstitution">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasCountryName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasCountryName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasCulturalPractices -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasCulturalPractices">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasDataFileDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasDataFileLink -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileLink">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasDataFileVersion -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileVersion">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasDescriptionOfGrowthFacility -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfGrowthFacility">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasDescriptionOfTheExperimentalDesign -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfTheExperimentalDesign">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEmailContact -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEmailContact">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEndDateTime -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEndDateTime">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterValue -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterValue">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEventAccessionNumber -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventAccessionNumber">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEventDateTime -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventDateTime">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEventDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasEventType -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventType">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorType -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorType">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorValue -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorValue">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalSiteName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalSiteName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasGenus -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasGenus">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasInfraspecificName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInfraspecificName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasInvestigationDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasInvestigationTitle -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationTitle">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasInvestigationUniqueID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationUniqueID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasLicense -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasLicense">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMapOfExperimentalDesign -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMapOfExperimentalDesign">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceAltitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceAltitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceCoordinatesUncertainty -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceCoordinatesUncertainty">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLatitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLatitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLongitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLongitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMethodAccessionNumber -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodAccessionNumber">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMethodDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasMethodName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitType -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasOrganism -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasOrganism">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPersonID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPersonName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPreprocessing -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPreprocessing">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasReferenceAssociatedToTheMethod -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasReferenceAssociatedToTheMethod">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasRoleName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasRoleName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSampleDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSampleExternalID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleExternalID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSampleID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasScaleAccessionNumber -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasScaleAccessionNumber">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasScaleName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasScaleName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSpecies -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSpecies">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStartDateTime -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStartDateTime">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyAltitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyAltitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyDescription -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyDescription">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyLatitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyLatitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyLongitude -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyLongitude">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyTitle -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyTitle">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyUniqueID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyUniqueID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasSubmissionDate -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasTimeScale -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTimeScale">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasTraitAccessionNumber -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTraitAccessionNumber">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasTraitName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTraitName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasTypeOfExperimentalDesign -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTypeOfExperimentalDesign">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasTypeOfGrowthFacility -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTypeOfGrowthFacility">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasVariableAccessionNumber -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableAccessionNumber">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasVariableID -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableID">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#hasVariableName -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableName">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#investigation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#investigation">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInvestigationTitle"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInvestigationDescription"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInvestigationUniqueID"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasLicense"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate"/>
+        <MDO:isTopSection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</MDO:isTopSection>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#material_source -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#material_source">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceID"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceAltitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceCoordinatesUncertainty"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDescription"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLatitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLongitude"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#method -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#method">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMethodName"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMethodAccessionNumber"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMethodDescription"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasReferenceAssociatedToTheMethod"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#observation_unit -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#observed_variable -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#observed_variable">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasVariableID"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#method"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#scale"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#trait"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTimeScale"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasVariableAccessionNumber"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasVariableName"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#person -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#person">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasRoleName"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonName"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEmailContact"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonID"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#sample -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#sample">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasCollectionDate"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSampleID"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSampleExternalID"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSampleDescription"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#scale -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#scale">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasScaleName"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasScaleAccessionNumber"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#study -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#study">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
+        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#observed_variable"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasContactInstitution"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasCountryName"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfGrowthFacility"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfTheExperimentalDesign"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalSiteName"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStartDateTime"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyTitle"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#data_file"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMapOfExperimentalDesign"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#environment"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasCulturalPractices"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEndDateTime"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyAltitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyDescription"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyLatitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyLongitude"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyUniqueID"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTypeOfExperimentalDesign"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTypeOfGrowthFacility"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEO.owl#trait -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#trait">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTraitName"/>
+        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTraitAccessionNumber"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

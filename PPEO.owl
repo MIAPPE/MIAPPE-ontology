@@ -10,7 +10,6 @@
      xmlns:PPEO="http://purl.org/ppeo/PPEO.owl#"
      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
     <owl:Ontology rdf:about="http://purl.org/ppeo/PPEO.owl">
-        <owl:imports rdf:resource="http://purl.org/ppeo/MDO.owl"/>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bruno Vasques Costa</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Cyril Pommier</dc:creator>
         <dc:creator rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Daniel Faria</dc:creator>
@@ -40,6 +39,12 @@
     <!-- http://purl.org/dc/elements/1.1/creator -->
 
     <owl:AnnotationProperty rdf:about="http://purl.org/dc/elements/1.1/creator"/>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#hasExample -->
+
+    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasExample"/>
     
 
 
@@ -456,7 +461,7 @@
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasAltitude">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:comment xml:lang="en">The altitude of a location in metres</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">The altitude of a location in metres</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Altitude</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -474,6 +479,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">doi:10.1371/journal.pone.0071377</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">An identifier for a literature publication where the investigation is described. Use of DOIs is recommended.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Associated publication</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -485,6 +493,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">10 m</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Altitude of the studied biological material, provided in meters (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Biological material altitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -496,6 +507,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">200 m</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Circular uncertainty of the coordinates, preferably provided in meters (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Biological material coordinates uncertainty</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -514,6 +528,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">INRA:W95115_inra_2001; INRA:inra_kernel_2351; Rothamsted:rres_GK090847</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Code used to identify the biological material in the data file. Should be unique within the Investigation. Can correspond to experimental plant ID, seed lot ID, etc… This material identification is different from a BiosampleID which corresponds to Observation Unit or Samples sections below.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Biological material ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -525,6 +542,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39.067</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Latitude of the studied biological material. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Biological material latitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -536,6 +556,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-8.73</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Longitude of the studied biological material. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Biological material longitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -547,6 +570,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <MDO:hasExample xml:lang="en">2005-08-15T15:52:01+00:00</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The date and time when the sample was collected / harvested</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Collection date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -557,6 +583,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">UMR de Génétique Végétale, INRA – Université Paris-Sud – CNRS, Gif-sur-Yvette, France</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name and address of the institution responsible for the study.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Contact institution</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -579,6 +608,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">FR</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The country where the experiment took place, either as a full name or preferably as a 2-letter code.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Geographic location (country)</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -589,6 +621,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Irrigation was applied according needs during summer to prevent water stress.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">General description of the cultural practices of the study.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Cultural practices</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -600,6 +635,11 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#data_file"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">FASTA
+tab-delimited
+column headers headers: 1. A 2. B 3. C</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Description of the format of the data file. May be a standard file format name, or a description of organization of the data in a tabular file.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Data file description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -617,6 +657,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ebi.ac.uk/arrayexpress/experiments/E-GEOD-32551/</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Link to the data file (or digital object) in a public database or in a persistent institutional repository; or identifier of the data file when submitted together with the MIAPPE submission.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Data file link</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -627,6 +670,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#data_file"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">1.0</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The version of the dataset (the actual data).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Data file version</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -674,6 +720,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">field environment condition
+NA</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Short description of the facility in which the study was carried out.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Description of growth facility</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -685,6 +735,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Lines were repeated twice at each location using a complete block design. In order to limit competition effects, each block was organized into four sub-blocks corresponding to earliness groups based on a priori information.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Short description of the experimental design, possibly including statistical design. In specific cases, e.g. legacy datasets or data computed from several studies, the experimental design can be &quot;unknown&quot;/&quot;NA&quot;, &quot;aggregated/reduced data&quot;, or simply &apos;none&apos;.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Description of the experimental design</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -695,6 +748,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">ichaves@itqb.unl.pt</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The electronic mail address of the person.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person email</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -706,6 +762,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <MDO:hasExample xml:lang="en">2002-11-27</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Date and, if relevant, time when the experiment ended</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">End date of study</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -715,7 +774,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEntryNumber">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
-        <rdfs:comment xml:lang="en">Used in BrAPI Phenotypes call</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">Used in BrAPI Phenotypes call</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Entry number</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -726,7 +785,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasEntryType">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
-        <rdfs:comment xml:lang="en">Used in BrAPI Phenotypes call</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">Used in BrAPI Phenotypes call</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Entry type</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -739,6 +798,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#environment_parameter"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">sowing density
+rooting medium composition; pH</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name of the environment parameter constant within the experiment.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Environment parameter name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -758,6 +821,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">300 seeds per m2
+Clay 50% plus sand; 6.5</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Value of the environment parameter (defined above) constant within the experiment.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Environment parameter value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -776,6 +843,11 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CO_715:0000007
+CO_715:0000011</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000006</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">Accession number of the event type in a suitable controlled vocabulary (Crop Ontology).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Event accession number</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -786,6 +858,10 @@
         <rdfs:subPropertyOf rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDateTime"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <MDO:hasExample xml:lang="en">2006-09-27T10:23:21+00:00
+2006-10-27; 2006-11-13; 2016-11-21</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Date and time of the event.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Event date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -797,6 +873,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Free text description of the experimental factor. This includes all relevant treatments planification and protocol planned for all the plants targeted by a given experimental factor.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Description of the event, including details such as amount applied and possibly duration of the event.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Event description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -808,6 +887,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Planting
+Fertilizing</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Short name of the event.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Event type</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -819,6 +902,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#factor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Daily watering 1 L per plant.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Free text description of the experimental factor. This includes all relevant treatments planification and protocol planned for all the plants targeted by a given experimental factor.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Experimental Factor description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -830,6 +916,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#factor"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Watering</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name/Acronym of the experimental factor.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Experimental Factor type</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -849,6 +938,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">Watered; Unwatered</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">List of possible values for the factor.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Experimental Factor value</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -860,6 +952,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">INRA, UE Diascope - Chemin de Mezouls - Domaine expérimental de Melgueil - 34130 Mauguio - France</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The name of the natural site, experimental field, greenhouse, phenotyping facility, etc. where the experiment took place.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Experimental site name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -876,7 +971,7 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:comment xml:lang="en">An identifier from another public resource, such as an ontology or database, either in the form of an accession number, or in the form of a URI. An external identifier should be globally unique.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">An identifier from another public resource, such as an ontology or database, either in the form of an accession number, or in the form of a URI. An external identifier should be globally unique.</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">External identifier</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -888,6 +983,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Zea
+Solanum</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Genus name for the organism under study, according to standard scientific nomenclature.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Genus</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -942,6 +1041,14 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">vinifera Pinot noir
+B73
+subspecies:vinifera ; cultivar:Pinot noir
+var:B73
+subsp. vinifera var. Pinot Noir
+var. B73</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name of any subtaxa level, including variety, crossing name, etc. It can be used to store any additional taxonomic identifier. Either free text description or key-value pair list format (the key is the name of the rank and the value is the value of  the rank). Ranks can be among the following terms: subspecies, cultivar, variety, subvariety, convariety, group, subgroup, hybrid, line, form, subform. For MCPD compliance, the following abbreviations are allowed: ‘subsp.’ (subspecies); ‘convar.’ (convariety); ‘var.’ (variety); ‘f.’ (form); ‘Group’ (cultivar group).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Infraspecific name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -970,7 +1077,7 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:comment xml:lang="en">An identifier used internally, either only in the MIAPPE submission itself, or also on a non-public database whence the information was retrieved. An internal identifier need only be unique among entities of the same type within a MIAPPE submission.</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">An identifier used internally, either only in the MIAPPE submission itself, or also on a non-public database whence the information was retrieved. An internal identifier need only be unique among entities of the same type within a MIAPPE submission.</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Internal identifier</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -983,6 +1090,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">The migration of maize from tropical to temperate climates was accompanied by a dramatic evolution in flowering time. To gain insight into the genetic architecture of this adaptive trait, we conducted a 50K SNP-based genome-wide association and diversity investigation on a panel of tropical and temperate American and European representatives.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Human-readable text describing the investigation in more detail.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investigation description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -994,6 +1104,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Adaptation of Maize to Temperate Climates: Mid-Density Genome-Wide Association Genetics and Diversity Patterns Reveal Key Genomic Regions, with a Major Contribution of the Vgt2 (ZCN8) Locus.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Human-readable string summarising the investigation.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investigation title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1012,6 +1125,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">EBI:12345678</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Identifier comprising the unique name of the institution/database hosting the submission of the investigation data, and the accession number of the investigation in that institution.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investigation unique ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1021,7 +1137,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasLatitude">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="en">The latitude of a location in degrees, in the decimal system</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">The latitude of a location in degrees, in the decimal system</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Latitude</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1033,6 +1149,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">CC BY-SA 4.0, Unreported</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">License for the reuse of the data associated with this investigation. The Creative Commons licenses cover most use cases and are recommended.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">License</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1042,7 +1161,7 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasLongitude">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
-        <rdfs:comment xml:lang="en">The longitude of a location in degrees, in the decimal system</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">The longitude of a location in degrees, in the decimal system</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Longitude</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1054,6 +1173,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">1.1</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The version of MIAPPE used.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">MIAPPE version</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1070,6 +1192,8 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <rdfs:isDefinedBy xml:lang="en">Representation of the experimental design.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Map of experimental design</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1094,7 +1218,7 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
-        <rdfs:comment xml:lang="en">An identifier used specifically for biological materials (and their sources) which can be internal or external. For material sources, it usually follows one of two forms: a key-value pair comprising the name/identifer of the repository from which the material was sourced plus the accession number of the repository for that material, or, where an accession number has not been assigned, but the material has been derived from the crossing of known accessions, &quot;mother_accession X father_accession&quot; (father_accession can be &quot;UNKNOWN&quot;).</rdfs:comment>
+        <rdfs:isDefinedBy xml:lang="en">An identifier used specifically for biological materials (and their sources) which can be internal or external. For material sources, it usually follows one of two forms: a key-value pair comprising the name/identifer of the repository from which the material was sourced plus the accession number of the repository for that material, or, where an accession number has not been assigned, but the material has been derived from the crossing of known accessions, &quot;mother_accession X father_accession&quot; (father_accession can be &quot;UNKNOWN&quot;).</rdfs:isDefinedBy>
         <rdfs:label xml:lang="en">Material identifier</rdfs:label>
     </owl:DatatypeProperty>
     
@@ -1107,6 +1231,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">10 m</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Altitude of the material source, provided in metres (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Material source altitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1118,6 +1245,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">200 m</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Circular uncertainty of the coordinates, provided in meters (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Material source coordinates uncertainty</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1136,6 +1266,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">doi:10.15454/1.4658436467893904E12</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">An external identifier that is specifically a DOI, given either as just the DOI code (string) or as an URI. The entity &lt;=&gt; DOI relation should be bijective.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Material source DOI</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1147,6 +1280,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Branches were collected from a 10-year-old tree growing in a progeny trial established in a loamy brown earth soil.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Description of the material source</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Material source description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1167,6 +1303,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">INRA:W95115_inra
+ICNF:PNB-RPI</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">An identifier for the source of the biological material, in the form of a key-value pair comprising the name/identifier of the repository from which the material was sourced plus the accession number of the repository for that material. Where an accession number has not been assigned, but the material has been derived from the crossing of known accessions, the material can be defined as follows: &quot;mother_accession X father_accession&quot;, or, if father is unknown, as &quot;mother_accession X UNKNOWN&quot;. For in situ material, the region of provenance may be used when an accession is not available.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Material source ID (Holding institute/stock centre, accession)</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1178,6 +1318,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39.067</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Latitude of the material source. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Material source latitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1189,6 +1332,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-8.73</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Longitude of the material source. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Material source longitude</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1207,6 +1353,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CO_322:0000189</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/ (Method)</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">Accession number of the method in a suitable controlled vocabulary (Crop Ontology, Trait Ontology).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Method accession number</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1218,6 +1368,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#method"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Days to anthesis for male flowering was measured in thermal time (GDD: growing degree-days) according to Ritchie J, NeSmith D (1991;Temperature and crop development. Modeling plant and soil systems American Society of Agronomy Madison, Wisconsin USA) with TBASE=8°C and T0=30°C.
+Plant height was measured at 5 years with a ruler, one year after Botritis inoculation.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Textual description of the method, which may extend a method defined in an external reference with specific parameters, e.g. growth stage, inoculation precise organ (leaf number)</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Method description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1229,6 +1383,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#method"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Growing degree days to anthesis</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name of the method of observation</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Method name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1250,6 +1407,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Observation units consisted in individual plots themselves consisting of a row of 15 plants at a density of approximately six plants per square meter.
+NA</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">General description of the observation units in the study.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Observation unit description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1267,6 +1428,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">Biosamples:SAMEA4202911</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Identifier for the observation unit in a persistent repository, comprises the name of the repository and the identifier of the observation unit therein. The EBI Biosamples repository can be used. URI are recommended when possible.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Observation unit external ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1285,6 +1449,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">plot:894</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Identifier used to identify the observation unit in data files containing the values observed or measured on that unit. Must be locally unique.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Observation unit ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1295,6 +1462,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">block&gt;rep&gt;plot</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Hierarchy of the different levels of repetitions between each others</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Observation unit level hierarchy</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1313,6 +1483,11 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">plot</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Type of observation unit in textual form, usually one of the following: study, block, sub-block, plot, sub-plot, pot, plant. Use of other observation unit types is possible but not recommended. 
+The observation unit type cannot be used to indicate sub-plant levels. However, observations can still be made on the sub-plant level, as long as the details are indicated in the associated observed variable (see observed variables).
+Alternatively, it is possible to use samples for more detailed tracing of sub-plant units, attaching the observations to them instead.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Observation unit type</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1351,6 +1526,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">NCBITAXON:4577</MDO:hasExample>
+        <hasExactSynonym xml:lang="en">Taxon identifier</hasExactSynonym>
+        <rdfs:isDefinedBy xml:lang="en">An identifier for the organism at the species level. Use of the NCBI taxon ID is recommended.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Organism</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1360,6 +1539,10 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">ITQB, Portugal;
+grid.10772.33</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The institution the person belongs to</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person affiliation</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1378,6 +1561,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">orcid.org/0000-0001-6494-0008; orcid.org/0000-0002-7054-800X</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">An identifier for the data submitter. If that submitter is an individual, ORCID identifiers are recommended.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1389,6 +1575,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Ines Chaves</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">The name of the person (either full name or as used in scientific publications)</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1406,6 +1595,11 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">PO:0000003
+PO:0025161</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0025131</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">A description of  the plant part (e.g. leaf) or the plant product (e.g. resin) from which the sample was taken, in the form of an accession number to a suitable controlled vocabulary (Plant Ontology).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Plant anatomical entity</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1423,6 +1617,11 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">PO:0025094
+BBCH-17</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0009012</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">The stage in the life of a plant structure during which the sample was taken, in the form of an accession number to a suitable controlled vocabulary (Plant Ontology, BBCH scale)</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Plant structure development stage</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1439,6 +1638,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">EO:0007210 - PVY(NTN); transplanted from study http://phenome-fppn.fr/maugio/2013/t2351 observation unit ID: pot:894</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Description of any process or treatment applied uniformly to the biological material, prior to the study itself. Can be provided as free text or as an accession number from a suitable controlled vocabulary.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Biological material preprocessing</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1450,6 +1652,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <MDO:hasExample xml:lang="en">2013-02-25</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Date of first public release of the dataset presently being described.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Public release date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1468,6 +1673,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">http://doi.org/10.2134/agronmonogr31.c2</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">URI/DOI of reference describing the method.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Reference associated to the method</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1479,6 +1687,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">data submitter; author; corresponding author</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Type of contribution of the person to the investigation</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Role name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1490,6 +1701,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Distal part of the leaf ; 100 mg of roots taken from 10 roots at 20°C, conserved in vacuum at 20 mM NaCl salinity, stored at -60 °C to -85 °C.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Any information not captured by the other sample fields, including quantification, sample treatments and processing.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Sample description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1507,6 +1721,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">Biosamples:SAMEA4202911</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">An identifier for the sample in a persistent repository, comprising the name of the repository and the accession number of the observation unit therein. Submission to the EBI Biosamples repository is recommended. URI are recommended when possible.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Sample external ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1525,6 +1742,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CEA:BE00034067</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Unique identifier for the sample.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Sample ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1543,6 +1763,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CO_322:0000510</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/ (Scale)</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">Accession number of the scale in a suitable controlled vocabulary (Crop Ontology).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Scale accession number</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1554,6 +1778,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#scale"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">°C day</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name of the scale associated with the variable</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Scale name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1575,6 +1802,11 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">mays
+lycosperium x pennellii</MDO:hasExample>
+        <hasExactSynonym xml:lang="en">Specific epithet</hasExactSynonym>
+        <rdfs:isDefinedBy xml:lang="en">Species name (formally: specific epithet) for the organism under study, according to standard scientific nomenclature.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Species</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1597,6 +1829,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <MDO:hasExample xml:lang="en">2002-04-04
+2006-09-27T10:23:21+00:00</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Date and, if relevant, time when the experiment started</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Start date of study</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1608,6 +1844,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">100 m</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Altitude of the experimental site, provided in metres (m).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Geographic location (altitude)</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1619,6 +1858,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">2002 evaluation of male and female flowering time for a panel of 375 maize lines representing the worldwide genetic diversity at the experimental station of Maugio, France.</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Human-readable text describing the study</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Study description</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1630,6 +1872,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">43.619263</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Latitude of the experimental site in degrees, in decimal format.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Geographic location (latitude)</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1641,6 +1886,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.967454</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Longitude of the experimental site in degrees, in decimal format.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Geographic location (longitude)</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1652,6 +1900,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">2002 evaluation of flowering time for a panel of 375 maize lines at the experimental station of Maugio (France).</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Unique identifier comprising the name or identifier for the institution/database hosting the submission of the study data, and the identifier of the study in that institution.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Study title</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1670,6 +1921,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">EBI:12345678
+http://phenome-fppn.fr/maugio/2013/t2351</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Unique identifier comprising the name or identifier for the institution/database hosting the submission of the study data, and the identifier of the study in that institution.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Study unique ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1681,6 +1936,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#investigation"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#dateTime"/>
+        <MDO:hasExample xml:lang="en">2012-12-17</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Date of submission of the dataset presently being described to a host repository.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Submission date</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1710,6 +1968,10 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasTimeScale">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#observed_variable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Growing degree day (GDD)
+Date/Time</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name of the scale or unit of time with which observations of this type were recorded in the data file (for time series studies).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Time scale</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1728,6 +1990,11 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CO_322:0000794</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/to.owl</hasOntologyRecommendation>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/ (traits)</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">Accession number of the trait in a suitable controlled vocabulary (Crop Ontology, Trait Ontology).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Trait accession number</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1739,6 +2006,10 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#trait"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Anthesis time
+Reproductive growth time</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name of the (plant or environmental) trait under observation</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Trait name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1765,6 +2036,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CO_715:0000145</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000003</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">Type of experimental  design of the study, in the form of an accession number from the Crop Ontology.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Type of experimental design</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1783,6 +2058,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CO_715:0000162</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000005</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">Type of growth facility in which the study was carried out, in the form of an accession number from the Crop Ontology.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Type of growth facility</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1818,6 +2097,10 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">CO_322:0000794</MDO:hasExample>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/Variable</hasOntologyRecommendation>
+        <rdfs:isDefinedBy xml:lang="en">Accession number of the variable in the Crop Ontology</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Variable accession number</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1836,6 +2119,9 @@
                 </owl:unionOf>
             </rdfs:Datatype>
         </rdfs:range>
+        <MDO:hasExample xml:lang="en">Ant_Cmp_Cday</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Code used to identify the variable in the data file. We recommend using a variable definition from the Crop Ontology where possible. Otherwise, the Crop Ontology naming convention is recommended: &lt;trait abbreviation&gt;_&lt;method abbreviation&gt;_&lt;scale abbreviation&gt;). A variable ID must be unique within a given investigation.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Variable ID</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1847,6 +2133,9 @@
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
         <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#observed_variable"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <MDO:hasExample xml:lang="en">Anthesis computed in growing degree days</MDO:hasExample>
+        <rdfs:isDefinedBy xml:lang="en">Name of the variable.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Variable name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -1901,6 +2190,9 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasBrAPISynonym xml:lang="en">germplasm</hasBrAPISynonym>
+        <rdfs:isDefinedBy xml:lang="en">The biological material being studied (e.g. plants grown from a certain bag or seed, or plants grown in a particular field). The original source of that material (e.g., the seeds or the original plant cloned) is called the material source, which, when held by a material repository, should have its stock identified.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Biological Material</rdfs:label>
     </owl:Class>
     
 
@@ -1933,6 +2225,8 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy xml:lang="en">A file or digital object holding observation data recorded during one or more assays of the study, typically in tabular form. Multiple data files may be provided per study, and each file can include observations for several observation units and several observed variables.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Data file</rdfs:label>
     </owl:Class>
     
 
@@ -1946,6 +2240,8 @@
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#environment_parameter"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy xml:lang="en">Environmental parameters that were kept constant throughout the study and did not change between observation units or assays. Environment characteristics that vary over time, i.e. environmental variables, should be recorded as Observed Variables (see below).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Environment</rdfs:label>
     </owl:Class>
     
 
@@ -1973,6 +2269,7 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Environment parameter</rdfs:label>
     </owl:Class>
     
 
@@ -1992,6 +2289,9 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasRelatedSynonym xml:lang="en">time factor</hasRelatedSynonym>
+        <rdfs:isDefinedBy xml:lang="en">An event is discrete occurrence at a particular time in the experiment (which can be natural, such as rain, or unnatural, such as planting, watering, etc). Events may be the realization of Factors or parts of Factors, or may be confounding to Factors. Can be applied at the whole study level or to only a subset of observation units.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Event</rdfs:label>
     </owl:Class>
     
 
@@ -2012,6 +2312,8 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy xml:lang="en">The object of a study is to ascertain the impact of one or more factors on the biological material. Thus, a factor is, by definition a condition that varies between observation units, which may be biotic (pest, disease interaction) or abiotic (treatment and cultural practice) in nature. Depending on the level of the data, an experimental factor can be either  &quot;what is the factor applied to the plant&quot; (i.e. Unwatered), or the &quot;environmental characterisation&quot; (i.e. if no rain on unwatered plant : Drought ;  if rain on unwatered plant: Irrigated)</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Experimental Factor</rdfs:label>
     </owl:Class>
     
 
@@ -2040,6 +2342,8 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy xml:lang="en">A value or modality of a factor.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Factor value</rdfs:label>
     </owl:Class>
     
 
@@ -2071,6 +2375,9 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasBrAPISynonym xml:lang="en">trial</hasBrAPISynonym>
+        <rdfs:isDefinedBy xml:lang="en">Investigations are research programmes with defined aims. They can exist at various scales (for example, they could encompass a grant-funded programme of work, the various components comprising a peer-reviewed publication, or a single experiment).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Investigation</rdfs:label>
     </owl:Class>
     
 
@@ -2091,6 +2398,7 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Material source</rdfs:label>
     </owl:Class>
     
 
@@ -2104,6 +2412,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Method</rdfs:label>
     </owl:Class>
     
 
@@ -2183,12 +2492,6 @@
     <owl:Class rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit">
         <rdfs:subClassOf>
             <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterial"/>
-                <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
-            </owl:Restriction>
-        </rdfs:subClassOf>
-        <rdfs:subClassOf>
-            <owl:Restriction>
                 <owl:onProperty rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationLevelDEPRECATED"/>
                 <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_level"/>
             </owl:Restriction>
@@ -2218,6 +2521,9 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasExactSynonym xml:lang="en">experiment unit</hasExactSynonym>
+        <rdfs:isDefinedBy>Observation units are objects that are subject to instances of observation and measurement. An observation unit comprises one or more plants, and/or their environment. There can be pure environment observation units with no plants.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Observation Unit</rdfs:label>
     </owl:Class>
     
 
@@ -2262,6 +2568,10 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasBrAPISynonym xml:lang="en">observation variable</hasBrAPISynonym>
+        <hasISASynonym xml:lang="en">assay</hasISASynonym>
+        <rdfs:isDefinedBy xml:lang="en">An observed variable describes how a measurement has been made. It typically takes the form of a measured characteristic of the observation unit (plant or environmental trait), associated to the method and unit of measurement. Multiple variables with the same combination of trait, method and scale can be used in association with different plant parts (leaf 1, leaf 2), when this distinction is necessary for observations referring to different parts of the same observation unit.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Observed Variable</rdfs:label>
     </owl:Class>
     
 
@@ -2300,6 +2610,8 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy xml:lang="en">A human involved in the investigation or specifically any of its studies.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Person</rdfs:label>
     </owl:Class>
     
 
@@ -2345,6 +2657,8 @@
                 </owl:someValuesFrom>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy xml:lang="en">A sample is a portion of plant tissue harvested, non-harvested or extracted from an observation unit for the purpose of sub-plant observations and/or molecular studies. A sample must be used when there is a physical sample that needs to be stored and traced. Otherwise, observations made at the sub-plant level should be recorded as plant level observations using the observed variables to characterize the object of the observation (e.g. Berry sugar content, Fruit weight, Grain Protein content, Leaf 1 width, Leaf 2 width, Leaf 2 length).</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Sample</rdfs:label>
     </owl:Class>
     
 
@@ -2358,6 +2672,7 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:label xml:lang="en">Scale</rdfs:label>
     </owl:Class>
     
 
@@ -2520,6 +2835,10 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <hasExactSynonym xml:lang="en">experiment</hasExactSynonym>
+        <rdfs:isDefinedBy xml:lang="en">A study (or experiment) comprises a series of assays (or measurements) of one or more types, undertaken to answer a particular biological question.
+It is recommended that a Study have a description.</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Study</rdfs:label>
     </owl:Class>
     
 
@@ -2533,6 +2852,8 @@
                 <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
             </owl:Restriction>
         </rdfs:subClassOf>
+        <rdfs:isDefinedBy xml:lang="en">Name of the (plant or environmental) trait under observation</rdfs:isDefinedBy>
+        <rdfs:label xml:lang="en">Trait</rdfs:label>
     </owl:Class>
     
 
@@ -2558,25 +2879,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#biological_material -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#biological_material">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialID"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasOrganism"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPreprocessing"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialAltitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialCoordinatesUncertainty"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLatitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLongitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasGenus"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInfraspecificName"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSpecies"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#column -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#column">
@@ -2587,748 +2889,10 @@
     
 
 
-    <!-- http://purl.org/ppeo/PPEO.owl#data_file -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#data_file">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDataFileDescription"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDataFileLink"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDataFileVersion"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#environment -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#environment">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#environment_parameter"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#environment_parameter -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#environment_parameter">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterName"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterValue"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#event -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#event">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventDateTime"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventType"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventAccessionNumber"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEventDescription"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#factor -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#factor">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorType"/>
-        <MDO:containsMoreThanOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorDescription"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#factor_value -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#factor_value">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorValue"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialAltitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialAltitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialCoordinatesUncertainty -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialCoordinatesUncertainty">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLatitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLatitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLongitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLongitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasCollectionDate -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasCollectionDate">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasContactInstitution -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasContactInstitution">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasCountryName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasCountryName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasCulturalPractices -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasCulturalPractices">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasDataFileDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasDataFileLink -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileLink">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasDataFileVersion -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileVersion">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasDescriptionOfGrowthFacility -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfGrowthFacility">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasDescriptionOfTheExperimentalDesign -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfTheExperimentalDesign">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEmailContact -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEmailContact">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEndDateTime -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEndDateTime">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterValue -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterValue">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEventAccessionNumber -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventAccessionNumber">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEventDateTime -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventDateTime">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEventDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasEventType -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventType">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorType -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorType">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorValue -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorValue">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasExperimentalSiteName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalSiteName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasGenus -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasGenus">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasInfraspecificName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInfraspecificName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasInvestigationDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasInvestigationTitle -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationTitle">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasInvestigationUniqueID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationUniqueID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasLicense -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasLicense">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMapOfExperimentalDesign -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMapOfExperimentalDesign">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceAltitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceAltitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceCoordinatesUncertainty -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceCoordinatesUncertainty">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLatitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLatitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLongitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLongitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMethodAccessionNumber -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodAccessionNumber">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMethodDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasMethodName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitType -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasOrganism -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasOrganism">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPersonID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPersonName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPreprocessing -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPreprocessing">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasReferenceAssociatedToTheMethod -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasReferenceAssociatedToTheMethod">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasRoleName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasRoleName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasSampleDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasSampleExternalID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleExternalID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasSampleID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasScaleAccessionNumber -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasScaleAccessionNumber">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasScaleName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasScaleName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasSpecies -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSpecies">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStartDateTime -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStartDateTime">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyAltitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyAltitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyDescription -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyDescription">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyLatitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyLatitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyLongitude -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyLongitude">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyTitle -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyTitle">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasStudyUniqueID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyUniqueID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasSubmissionDate -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasTimeScale -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTimeScale">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasTraitAccessionNumber -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTraitAccessionNumber">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasTraitName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTraitName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasTypeOfExperimentalDesign -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTypeOfExperimentalDesign">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasTypeOfGrowthFacility -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasTypeOfGrowthFacility">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasVariableAccessionNumber -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableAccessionNumber">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasVariableID -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableID">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#hasVariableName -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableName">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#investigation -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#investigation">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#study"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInvestigationTitle"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInvestigationDescription"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasInvestigationUniqueID"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasLicense"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate"/>
-        <MDO:isTopSection rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</MDO:isTopSection>
-    </owl:NamedIndividual>
-    
-
-
     <!-- http://purl.org/ppeo/PPEO.owl#latitude -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#latitude">
         <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
-        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">latitude</hasType>
         <rdfs:comment xml:lang="en">The global spatial coordinate latitude (in degrees in the decimal system)</rdfs:comment>
     </owl:NamedIndividual>
     
@@ -3338,87 +2902,7 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#longitude">
         <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
-        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">longitude</hasType>
         <rdfs:comment xml:lang="en">The global spatial coordinate latitude (in degrees in the decimal system)</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#material_source -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#material_source">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceID"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceAltitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceCoordinatesUncertainty"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDescription"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLatitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLongitude"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#method -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#method">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMethodName"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMethodAccessionNumber"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMethodDescription"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasReferenceAssociatedToTheMethod"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#observation_unit -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#observed_variable -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#observed_variable">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasVariableID"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#method"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#scale"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#trait"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTimeScale"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasVariableAccessionNumber"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasVariableName"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#person -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#person">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonName"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEmailContact"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPersonID"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#role -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#role">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasRoleName"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
     </owl:NamedIndividual>
     
 
@@ -3427,77 +2911,7 @@
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#row">
         <rdf:type rdf:resource="http://purl.org/ppeo/PPEO.owl#spatial_coordinate"/>
-        <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">row</hasType>
         <rdfs:comment xml:lang="en">The local spatial coordinate identifying the row</rdfs:comment>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#sample -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#sample">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasCollectionDate"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSampleID"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSampleExternalID"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasSampleDescription"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#scale -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#scale">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasScaleName"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasScaleAccessionNumber"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#study -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#study">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
-        <MDO:containsAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#observed_variable"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasContactInstitution"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasCountryName"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfGrowthFacility"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfTheExperimentalDesign"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasExperimentalSiteName"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStartDateTime"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyTitle"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#data_file"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasMapOfExperimentalDesign"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#person"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#environment"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasCulturalPractices"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasEndDateTime"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyAltitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyDescription"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyLatitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyLongitude"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasStudyUniqueID"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTypeOfExperimentalDesign"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTypeOfGrowthFacility"/>
-    </owl:NamedIndividual>
-    
-
-
-    <!-- http://purl.org/ppeo/PPEO.owl#trait -->
-
-    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#trait">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTraitName"/>
-        <MDO:mayContainExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasTraitAccessionNumber"/>
     </owl:NamedIndividual>
     
 
@@ -3559,537 +2973,6 @@
         <hasType rdf:datatype="http://www.w3.org/2001/XMLSchema#string">z (m)</hasType>
         <rdfs:comment xml:lang="en">The local spatial coordinate z (in meters)</rdfs:comment>
     </owl:NamedIndividual>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
-    // Annotations
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#biological_material">
-        <rdfs:label xml:lang="en">Biological Material</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">The biological material being studied (e.g. plants grown from a certain bag or seed, or plants grown in a particular field). The original source of that material (e.g., the seeds or the original plant cloned) is called the material source, which, when held by a material repository, should have its stock identified.</rdfs:isDefinedBy>
-        <hasBrAPISynonym xml:lang="en">germplasm</hasBrAPISynonym>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#data_file">
-        <rdfs:isDefinedBy xml:lang="en">A file or digital object holding observation data recorded during one or more assays of the study, typically in tabular form. Multiple data files may be provided per study, and each file can include observations for several observation units and several observed variables.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Data file</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#environment">
-        <rdfs:isDefinedBy xml:lang="en">Environmental parameters that were kept constant throughout the study and did not change between observation units or assays. Environment characteristics that vary over time, i.e. environmental variables, should be recorded as Observed Variables (see below).</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Environment</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#environment_parameter">
-        <rdfs:label xml:lang="en">Environment parameter</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#event">
-        <hasRelatedSynonym xml:lang="en">time factor</hasRelatedSynonym>
-        <rdfs:label xml:lang="en">Event</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">An event is discrete occurrence at a particular time in the experiment (which can be natural, such as rain, or unnatural, such as planting, watering, etc). Events may be the realization of Factors or parts of Factors, or may be confounding to Factors. Can be applied at the whole study level or to only a subset of observation units.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#factor">
-        <rdfs:isDefinedBy xml:lang="en">The object of a study is to ascertain the impact of one or more factors on the biological material. Thus, a factor is, by definition a condition that varies between observation units, which may be biotic (pest, disease interaction) or abiotic (treatment and cultural practice) in nature. Depending on the level of the data, an experimental factor can be either  &quot;what is the factor applied to the plant&quot; (i.e. Unwatered), or the &quot;environmental characterisation&quot; (i.e. if no rain on unwatered plant : Drought ;  if rain on unwatered plant: Irrigated)</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Experimental Factor</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#factor_value">
-        <rdfs:comment xml:lang="en">A value or modality of a factor.</rdfs:comment>
-        <rdfs:label xml:lang="en">Factor value</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication">
-        <rdfs:label xml:lang="en">Associated publication</rdfs:label>
-        <MDO:hasExample xml:lang="en">doi:10.1371/journal.pone.0071377</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">An identifier for a literature publication where the investigation is described. Use of DOIs is recommended.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialAltitude">
-        <MDO:hasExample xml:lang="en">10 m</MDO:hasExample>
-        <rdfs:label xml:lang="en">Biological material altitude</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Altitude of the studied biological material, provided in meters (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialCoordinatesUncertainty">
-        <rdfs:label xml:lang="en">Biological material coordinates uncertainty</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Circular uncertainty of the coordinates, preferably provided in meters (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">200 m</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialID">
-        <rdfs:isDefinedBy xml:lang="en">Code used to identify the biological material in the data file. Should be unique within the Investigation. Can correspond to experimental plant ID, seed lot ID, etc… This material identification is different from a BiosampleID which corresponds to Observation Unit or Samples sections below.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Biological material ID</rdfs:label>
-        <MDO:hasExample xml:lang="en">INRA:W95115_inra_2001; INRA:inra_kernel_2351; Rothamsted:rres_GK090847</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLatitude">
-        <rdfs:label xml:lang="en">Biological material latitude</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Latitude of the studied biological material. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39.067</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterialLongitude">
-        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-8.73</MDO:hasExample>
-        <rdfs:label xml:lang="en">Biological material longitude</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Longitude of the studied biological material. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasCollectionDate">
-        <rdfs:isDefinedBy xml:lang="en">The date and time when the sample was collected / harvested</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Collection date</rdfs:label>
-        <MDO:hasExample xml:lang="en">2005-08-15T15:52:01+00:00</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasContactInstitution">
-        <MDO:hasExample xml:lang="en">UMR de Génétique Végétale, INRA – Université Paris-Sud – CNRS, Gif-sur-Yvette, France</MDO:hasExample>
-        <rdfs:label xml:lang="en">Contact institution</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Name and address of the institution responsible for the study.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasCountryName">
-        <MDO:hasExample xml:lang="en">FR</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">The country where the experiment took place, either as a full name or preferably as a 2-letter code.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Geographic location (country)</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasCulturalPractices">
-        <MDO:hasExample xml:lang="en">Irrigation was applied according needs during summer to prevent water stress.</MDO:hasExample>
-        <rdfs:label xml:lang="en">Cultural practices</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">General description of the cultural practices of the study.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileDescription">
-        <rdfs:label xml:lang="en">Data file description</rdfs:label>
-        <rdfs:comment xml:lang="en">Description of the format of the data file. May be a standard file format name, or a description of organization of the data in a tabular file.</rdfs:comment>
-        <MDO:hasExample xml:lang="en">FASTA
-tab-delimited
-column headers headers: 1. A 2. B 3. C</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileLink">
-        <rdfs:label xml:lang="en">Data file link</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Link to the data file (or digital object) in a public database or in a persistent institutional repository; or identifier of the data file when submitted together with the MIAPPE submission.</rdfs:isDefinedBy>
-        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.ebi.ac.uk/arrayexpress/experiments/E-GEOD-32551/</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasDataFileVersion">
-        <rdfs:label xml:lang="en">Data file version</rdfs:label>
-        <MDO:hasExample xml:lang="en">1.0</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">The version of the dataset (the actual data).</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfGrowthFacility">
-        <MDO:hasExample xml:lang="en">field environment condition
-NA</MDO:hasExample>
-        <rdfs:label xml:lang="en">Description of growth facility</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Short description of the facility in which the study was carried out.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasDescriptionOfTheExperimentalDesign">
-        <rdfs:label xml:lang="en">Description of the experimental design</rdfs:label>
-        <MDO:hasExample xml:lang="en">Lines were repeated twice at each location using a complete block design. In order to limit competition effects, each block was organized into four sub-blocks corresponding to earliness groups based on a priori information.</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Short description of the experimental design, possibly including statistical design. In specific cases, e.g. legacy datasets or data computed from several studies, the experimental design can be &quot;unknown&quot;/&quot;NA&quot;, &quot;aggregated/reduced data&quot;, or simply &apos;none&apos;.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEmailContact">
-        <rdfs:label xml:lang="en">Person email</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">The electronic mail address of the person.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">ichaves@itqb.unl.pt</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEndDateTime">
-        <MDO:hasExample xml:lang="en">2002-11-27</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Date and, if relevant, time when the experiment ended</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">End date of study</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterName">
-        <rdfs:label xml:lang="en">Environment parameter name</rdfs:label>
-        <MDO:hasExample xml:lang="en">sowing density
-rooting medium composition; pH</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Name of the environment parameter constant within the experiment.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameterValue">
-        <rdfs:label xml:lang="en">Environment parameter value</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Value of the environment parameter (defined above) constant within the experiment.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">300 seeds per m2
-Clay 50% plus sand; 6.5</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventAccessionNumber">
-        <rdfs:label xml:lang="en">Event accession number</rdfs:label>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000006</hasOntologyRecommendation>
-        <rdfs:isDefinedBy xml:lang="en">Accession number of the event type in a suitable controlled vocabulary (Crop Ontology).</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">CO_715:0000007
-CO_715:0000011</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventDateTime">
-        <rdfs:isDefinedBy xml:lang="en">Date and time of the event.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">2006-09-27T10:23:21+00:00
-2006-10-27; 2006-11-13; 2016-11-21</MDO:hasExample>
-        <rdfs:label xml:lang="en">Event date</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventDescription">
-        <MDO:hasExample xml:lang="en">Free text description of the experimental factor. This includes all relevant treatments planification and protocol planned for all the plants targeted by a given experimental factor.</MDO:hasExample>
-        <rdfs:label xml:lang="en">Event description</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Description of the event, including details such as amount applied and possibly duration of the event.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasEventType">
-        <MDO:hasExample xml:lang="en">Planting
-Fertilizing</MDO:hasExample>
-        <rdfs:label xml:lang="en">Event type</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Short name of the event.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorDescription">
-        <rdfs:label xml:lang="en">Experimental Factor description</rdfs:label>
-        <MDO:hasExample xml:lang="en">Daily watering 1 L per plant.</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Free text description of the experimental factor. This includes all relevant treatments planification and protocol planned for all the plants targeted by a given experimental factor.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorType">
-        <rdfs:isDefinedBy xml:lang="en">Name/Acronym of the experimental factor.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Experimental Factor type</rdfs:label>
-        <MDO:hasExample xml:lang="en">Watering</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalFactorValue">
-        <rdfs:isDefinedBy xml:lang="en">List of possible values for the factor.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Experimental Factor value</rdfs:label>
-        <MDO:hasExample xml:lang="en">Watered; Unwatered</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasExperimentalSiteName">
-        <MDO:hasExample xml:lang="en">INRA, UE Diascope - Chemin de Mezouls - Domaine expérimental de Melgueil - 34130 Mauguio - France</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">The name of the natural site, experimental field, greenhouse, phenotyping facility, etc. where the experiment took place.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Experimental site name</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasGenus">
-        <rdfs:label xml:lang="en">Genus</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Genus name for the organism under study, according to standard scientific nomenclature.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">Zea
-Solanum</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasInfraspecificName">
-        <rdfs:isDefinedBy xml:lang="en">Name of any subtaxa level, including variety, crossing name, etc. It can be used to store any additional taxonomic identifier. Either free text description or key-value pair list format (the key is the name of the rank and the value is the value of  the rank). Ranks can be among the following terms: subspecies, cultivar, variety, subvariety, convariety, group, subgroup, hybrid, line, form, subform. For MCPD compliance, the following abbreviations are allowed: ‘subsp.’ (subspecies); ‘convar.’ (convariety); ‘var.’ (variety); ‘f.’ (form); ‘Group’ (cultivar group).</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">vinifera Pinot noir
-B73
-subspecies:vinifera ; cultivar:Pinot noir
-var:B73
-subsp. vinifera var. Pinot Noir
-var. B73</MDO:hasExample>
-        <rdfs:label xml:lang="en">Infraspecific name</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationDescription">
-        <rdfs:isDefinedBy xml:lang="en">Human-readable text describing the investigation in more detail.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">The migration of maize from tropical to temperate climates was accompanied by a dramatic evolution in flowering time. To gain insight into the genetic architecture of this adaptive trait, we conducted a 50K SNP-based genome-wide association and diversity investigation on a panel of tropical and temperate American and European representatives.</MDO:hasExample>
-        <rdfs:label xml:lang="en">Investigation description</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationTitle">
-        <rdfs:isDefinedBy xml:lang="en">Human-readable string summarising the investigation.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Investigation title</rdfs:label>
-        <MDO:hasExample xml:lang="en">Adaptation of Maize to Temperate Climates: Mid-Density Genome-Wide Association Genetics and Diversity Patterns Reveal Key Genomic Regions, with a Major Contribution of the Vgt2 (ZCN8) Locus.</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasInvestigationUniqueID">
-        <rdfs:label xml:lang="en">Investigation unique ID</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Identifier comprising the unique name of the institution/database hosting the submission of the investigation data, and the accession number of the investigation in that institution.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">EBI:12345678</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasLicense">
-        <rdfs:isDefinedBy xml:lang="en">License for the reuse of the data associated with this investigation. The Creative Commons licenses cover most use cases and are recommended.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">License</rdfs:label>
-        <MDO:hasExample xml:lang="en">CC BY-SA 4.0, Unreported</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion">
-        <rdfs:isDefinedBy xml:lang="en">The version of MIAPPE used.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">1.1</MDO:hasExample>
-        <rdfs:label xml:lang="en">MIAPPE version</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMapOfExperimentalDesign">
-        <rdfs:isDefinedBy xml:lang="en">Representation of the experimental design.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Map of experimental design</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceAltitude">
-        <rdfs:isDefinedBy xml:lang="en">Altitude of the material source, provided in metres (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">10 m</MDO:hasExample>
-        <rdfs:label xml:lang="en">Material source altitude</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceCoordinatesUncertainty">
-        <rdfs:label xml:lang="en">Material source coordinates uncertainty</rdfs:label>
-        <MDO:hasExample xml:lang="en">200 m</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Circular uncertainty of the coordinates, provided in meters (m). [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDOI">
-        <rdfs:label xml:lang="en">Material source DOI</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">An external identifier that is specifically a DOI, given either as just the DOI code (string) or as an URI. The entity &lt;=&gt; DOI relation should be bijective.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">doi:10.15454/1.4658436467893904E12</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceDescription">
-        <rdfs:isDefinedBy xml:lang="en">Description of the material source</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Material source description</rdfs:label>
-        <MDO:hasExample xml:lang="en">Branches were collected from a 10-year-old tree growing in a progeny trial established in a loamy brown earth soil.</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceID">
-        <rdfs:isDefinedBy xml:lang="en">An identifier for the source of the biological material, in the form of a key-value pair comprising the name/identifier of the repository from which the material was sourced plus the accession number of the repository for that material. Where an accession number has not been assigned, but the material has been derived from the crossing of known accessions, the material can be defined as follows: &quot;mother_accession X father_accession&quot;, or, if father is unknown, as &quot;mother_accession X UNKNOWN&quot;. For in situ material, the region of provenance may be used when an accession is not available.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Material source ID (Holding institute/stock centre, accession)</rdfs:label>
-        <MDO:hasExample xml:lang="en">INRA:W95115_inra
-ICNF:PNB-RPI</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLatitude">
-        <rdfs:isDefinedBy xml:lang="en">Latitude of the material source. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">39.067</MDO:hasExample>
-        <rdfs:label xml:lang="en">Material source latitude</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMaterialSourceLongitude">
-        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">-8.73</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Longitude of the material source. [Alternative identifier for in situ material]</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Material source longitude</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodAccessionNumber">
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/ (Method)</hasOntologyRecommendation>
-        <rdfs:isDefinedBy xml:lang="en">Accession number of the method in a suitable controlled vocabulary (Crop Ontology, Trait Ontology).</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Method accession number</rdfs:label>
-        <MDO:hasExample xml:lang="en">CO_322:0000189</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodDescription">
-        <MDO:hasExample xml:lang="en">Days to anthesis for male flowering was measured in thermal time (GDD: growing degree-days) according to Ritchie J, NeSmith D (1991;Temperature and crop development. Modeling plant and soil systems American Society of Agronomy Madison, Wisconsin USA) with TBASE=8°C and T0=30°C.
-Plant height was measured at 5 years with a ruler, one year after Botritis inoculation.</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Textual description of the method, which may extend a method defined in an external reference with specific parameters, e.g. growth stage, inoculation precise organ (leaf number)</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Method description</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasMethodName">
-        <rdfs:label xml:lang="en">Method name</rdfs:label>
-        <MDO:hasExample xml:lang="en">Growing degree days to anthesis</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Name of the method of observation</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription">
-        <rdfs:isDefinedBy xml:lang="en">General description of the observation units in the study.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Observation unit description</rdfs:label>
-        <MDO:hasExample xml:lang="en">Observation units consisted in individual plots themselves consisting of a row of 15 plants at a density of approximately six plants per square meter.
-NA</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID">
-        <MDO:hasExample xml:lang="en">Biosamples:SAMEA4202911</MDO:hasExample>
-        <rdfs:label xml:lang="en">Observation unit external ID</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Identifier for the observation unit in a persistent repository, comprises the name of the repository and the identifier of the observation unit therein. The EBI Biosamples repository can be used. URI are recommended when possible.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID">
-        <rdfs:isDefinedBy xml:lang="en">Identifier used to identify the observation unit in data files containing the values observed or measured on that unit. Must be locally unique.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">plot:894</MDO:hasExample>
-        <rdfs:label xml:lang="en">Observation unit ID</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy">
-        <rdfs:isDefinedBy xml:lang="en">Hierarchy of the different levels of repetitions between each others</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">block&gt;rep&gt;plot</MDO:hasExample>
-        <rdfs:label xml:lang="en">Observation unit level hierarchy</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType">
-        <rdfs:label xml:lang="en">Observation unit type</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Type of observation unit in textual form, usually one of the following: study, block, sub-block, plot, sub-plot, pot, plant. Use of other observation unit types is possible but not recommended. 
-The observation unit type cannot be used to indicate sub-plant levels. However, observations can still be made on the sub-plant level, as long as the details are indicated in the associated observed variable (see observed variables).
-Alternatively, it is possible to use samples for more detailed tracing of sub-plant units, attaching the observations to them instead.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">plot</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasOrganism">
-        <hasExactSynonym xml:lang="en">Taxon identifier</hasExactSynonym>
-        <rdfs:isDefinedBy xml:lang="en">An identifier for the organism at the species level. Use of the NCBI taxon ID is recommended.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">NCBITAXON:4577</MDO:hasExample>
-        <rdfs:label xml:lang="en">Organism</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonAffiliation">
-        <rdfs:isDefinedBy xml:lang="en">The institution the person belongs to</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Person affiliation</rdfs:label>
-        <MDO:hasExample xml:lang="en">ITQB, Portugal;
-grid.10772.33</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonID">
-        <rdfs:label xml:lang="en">Person ID</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">An identifier for the data submitter. If that submitter is an individual, ORCID identifiers are recommended.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">orcid.org/0000-0001-6494-0008; orcid.org/0000-0002-7054-800X</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPersonName">
-        <rdfs:label xml:lang="en">Person name</rdfs:label>
-        <MDO:hasExample xml:lang="en">Ines Chaves</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">The name of the person (either full name or as used in scientific publications)</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity">
-        <rdfs:label xml:lang="en">Plant anatomical entity</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">A description of  the plant part (e.g. leaf) or the plant product (e.g. resin) from which the sample was taken, in the form of an accession number to a suitable controlled vocabulary (Plant Ontology).</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">PO:0000003
-PO:0025161</MDO:hasExample>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0025131</hasOntologyRecommendation>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage">
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/PO_0009012</hasOntologyRecommendation>
-        <MDO:hasExample xml:lang="en">PO:0025094
-BBCH-17</MDO:hasExample>
-        <rdfs:label xml:lang="en">Plant structure development stage</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">The stage in the life of a plant structure during which the sample was taken, in the form of an accession number to a suitable controlled vocabulary (Plant Ontology, BBCH scale)</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPreprocessing">
-        <MDO:hasExample xml:lang="en">EO:0007210 - PVY(NTN); transplanted from study http://phenome-fppn.fr/maugio/2013/t2351 observation unit ID: pot:894</MDO:hasExample>
-        <rdfs:label xml:lang="en">Biological material preprocessing</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Description of any process or treatment applied uniformly to the biological material, prior to the study itself. Can be provided as free text or as an accession number from a suitable controlled vocabulary.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate">
-        <MDO:hasExample xml:lang="en">2013-02-25</MDO:hasExample>
-        <rdfs:label xml:lang="en">Public release date</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Date of first public release of the dataset presently being described.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasReferenceAssociatedToTheMethod">
-        <MDO:hasExample xml:lang="en">http://doi.org/10.2134/agronmonogr31.c2</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">URI/DOI of reference describing the method.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Reference associated to the method</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasRoleName">
-        <MDO:hasExample xml:lang="en">data submitter; author; corresponding author</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Type of contribution of the person to the investigation</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Role name</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleDescription">
-        <rdfs:isDefinedBy xml:lang="en">Any information not captured by the other sample fields, including quantification, sample treatments and processing.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Sample description</rdfs:label>
-        <MDO:hasExample xml:lang="en">Distal part of the leaf ; 100 mg of roots taken from 10 roots at 20°C, conserved in vacuum at 20 mM NaCl salinity, stored at -60 °C to -85 °C.</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleExternalID">
-        <MDO:hasExample xml:lang="en">Biosamples:SAMEA4202911</MDO:hasExample>
-        <rdfs:label xml:lang="en">Sample external ID</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">An identifier for the sample in a persistent repository, comprising the name of the repository and the accession number of the observation unit therein. Submission to the EBI Biosamples repository is recommended. URI are recommended when possible.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasSampleID">
-        <rdfs:isDefinedBy xml:lang="en">Unique identifier for the sample.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Sample ID</rdfs:label>
-        <MDO:hasExample xml:lang="en">CEA:BE00034067</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasScaleAccessionNumber">
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/ (Scale)</hasOntologyRecommendation>
-        <rdfs:label xml:lang="en">Scale accession number</rdfs:label>
-        <MDO:hasExample xml:lang="en">CO_322:0000510</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Accession number of the scale in a suitable controlled vocabulary (Crop Ontology).</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasScaleName">
-        <rdfs:isDefinedBy xml:lang="en">Name of the scale associated with the variable</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">°C day</MDO:hasExample>
-        <rdfs:label xml:lang="en">Scale name</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasSpecies">
-        <rdfs:isDefinedBy xml:lang="en">Species name (formally: specific epithet) for the organism under study, according to standard scientific nomenclature.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Species</rdfs:label>
-        <hasExactSynonym xml:lang="en">Specific epithet</hasExactSynonym>
-        <MDO:hasExample xml:lang="en">mays
-lycosperium x pennellii</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasStartDateTime">
-        <rdfs:isDefinedBy xml:lang="en">Date and, if relevant, time when the experiment started</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Start date of study</rdfs:label>
-        <MDO:hasExample xml:lang="en">2002-04-04
-2006-09-27T10:23:21+00:00</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyAltitude">
-        <rdfs:label xml:lang="en">Geographic location (altitude)</rdfs:label>
-        <MDO:hasExample xml:lang="en">100 m</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Altitude of the experimental site, provided in metres (m).</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyDescription">
-        <rdfs:label xml:lang="en">Study description</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Human-readable text describing the study</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">2002 evaluation of male and female flowering time for a panel of 375 maize lines representing the worldwide genetic diversity at the experimental station of Maugio, France.</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyLatitude">
-        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">43.619263</MDO:hasExample>
-        <rdfs:label xml:lang="en">Geographic location (latitude)</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Latitude of the experimental site in degrees, in decimal format.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyLongitude">
-        <MDO:hasExample rdf:datatype="http://www.w3.org/2001/XMLSchema#float">3.967454</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Longitude of the experimental site in degrees, in decimal format.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Geographic location (longitude)</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyTitle">
-        <rdfs:isDefinedBy xml:lang="en">Unique identifier comprising the name or identifier for the institution/database hosting the submission of the study data, and the identifier of the study in that institution.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Study title</rdfs:label>
-        <MDO:hasExample xml:lang="en">2002 evaluation of flowering time for a panel of 375 maize lines at the experimental station of Maugio (France).</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasStudyUniqueID">
-        <rdfs:label xml:lang="en">Study unique ID</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Unique identifier comprising the name or identifier for the institution/database hosting the submission of the study data, and the identifier of the study in that institution.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">EBI:12345678
-http://phenome-fppn.fr/maugio/2013/t2351</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasSubmissionDate">
-        <MDO:hasExample xml:lang="en">2012-12-17</MDO:hasExample>
-        <rdfs:label xml:lang="en">Submission date</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Date of submission of the dataset presently being described to a host repository.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasTimeScale">
-        <rdfs:isDefinedBy xml:lang="en">Name of the scale or unit of time with which observations of this type were recorded in the data file (for time series studies).</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">Growing degree day (GDD)
-Date/Time</MDO:hasExample>
-        <rdfs:label xml:lang="en">Time scale</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasTraitAccessionNumber">
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/to.owl</hasOntologyRecommendation>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/ (traits)</hasOntologyRecommendation>
-        <MDO:hasExample xml:lang="en">CO_322:0000794</MDO:hasExample>
-        <rdfs:label xml:lang="en">Trait accession number</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Accession number of the trait in a suitable controlled vocabulary (Crop Ontology, Trait Ontology).</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasTraitName">
-        <rdfs:isDefinedBy xml:lang="en">Name of the (plant or environmental) trait under observation</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">Anthesis time
-Reproductive growth time</MDO:hasExample>
-        <rdfs:label xml:lang="en">Trait name</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasTypeOfExperimentalDesign">
-        <rdfs:label xml:lang="en">Type of experimental design</rdfs:label>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000003</hasOntologyRecommendation>
-        <rdfs:isDefinedBy xml:lang="en">Type of experimental  design of the study, in the form of an accession number from the Crop Ontology.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">CO_715:0000145</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasTypeOfGrowthFacility">
-        <rdfs:isDefinedBy xml:lang="en">Type of growth facility in which the study was carried out, in the form of an accession number from the Crop Ontology.</rdfs:isDefinedBy>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/CO_715:0000005</hasOntologyRecommendation>
-        <MDO:hasExample xml:lang="en">CO_715:0000162</MDO:hasExample>
-        <rdfs:label xml:lang="en">Type of growth facility</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableAccessionNumber">
-        <MDO:hasExample xml:lang="en">CO_322:0000794</MDO:hasExample>
-        <rdfs:isDefinedBy xml:lang="en">Accession number of the variable in the Crop Ontology</rdfs:isDefinedBy>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://www.cropontology.org/rdf/Variable</hasOntologyRecommendation>
-        <rdfs:label xml:lang="en">Variable accession number</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableID">
-        <MDO:hasExample xml:lang="en">Ant_Cmp_Cday</MDO:hasExample>
-        <rdfs:label xml:lang="en">Variable ID</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Code used to identify the variable in the data file. We recommend using a variable definition from the Crop Ontology where possible. Otherwise, the Crop Ontology naming convention is recommended: &lt;trait abbreviation&gt;_&lt;method abbreviation&gt;_&lt;scale abbreviation&gt;). A variable ID must be unique within a given investigation.</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#hasVariableName">
-        <rdfs:label xml:lang="en">Variable name</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Name of the variable.</rdfs:isDefinedBy>
-        <MDO:hasExample xml:lang="en">Anthesis computed in growing degree days</MDO:hasExample>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#investigation">
-        <rdfs:label xml:lang="en">Investigation</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">Investigations are research programmes with defined aims. They can exist at various scales (for example, they could encompass a grant-funded programme of work, the various components comprising a peer-reviewed publication, or a single experiment).</rdfs:isDefinedBy>
-        <hasBrAPISynonym xml:lang="en">trial</hasBrAPISynonym>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#material_source">
-        <rdfs:label xml:lang="en">Material source</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#method">
-        <rdfs:label xml:lang="en">Method</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit">
-        <rdfs:isDefinedBy>Observation units are objects that are subject to instances of observation and measurement. An observation unit comprises one or more plants, and/or their environment. There can be pure environment observation units with no plants.</rdfs:isDefinedBy>
-        <hasExactSynonym xml:lang="en">experiment unit</hasExactSynonym>
-        <rdfs:label xml:lang="en">Observation Unit</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#observed_variable">
-        <rdfs:label xml:lang="en">Observed Variable</rdfs:label>
-        <hasISASynonym xml:lang="en">assay</hasISASynonym>
-        <rdfs:isDefinedBy xml:lang="en">An observed variable describes how a measurement has been made. It typically takes the form of a measured characteristic of the observation unit (plant or environmental trait), associated to the method and unit of measurement. Multiple variables with the same combination of trait, method and scale can be used in association with different plant parts (leaf 1, leaf 2), when this distinction is necessary for observations referring to different parts of the same observation unit.</rdfs:isDefinedBy>
-        <hasBrAPISynonym xml:lang="en">observation variable</hasBrAPISynonym>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#person">
-        <rdfs:isDefinedBy xml:lang="en">A human involved in the investigation or specifically any of its studies.</rdfs:isDefinedBy>
-        <rdfs:label xml:lang="en">Person</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#sample">
-        <rdfs:label xml:lang="en">Sample</rdfs:label>
-        <rdfs:isDefinedBy xml:lang="en">A sample is a portion of plant tissue harvested, non-harvested or extracted from an observation unit for the purpose of sub-plant observations and/or molecular studies. A sample must be used when there is a physical sample that needs to be stored and traced. Otherwise, observations made at the sub-plant level should be recorded as plant level observations using the observed variables to characterize the object of the observation (e.g. Berry sugar content, Fruit weight, Grain Protein content, Leaf 1 width, Leaf 2 width, Leaf 2 length).</rdfs:isDefinedBy>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#scale">
-        <rdfs:label xml:lang="en">Scale</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#study">
-        <rdfs:isDefinedBy xml:lang="en">A study (or experiment) comprises a series of assays (or measurements) of one or more types, undertaken to answer a particular biological question.
-It is recommended that a Study have a description.</rdfs:isDefinedBy>
-        <hasExactSynonym xml:lang="en">experiment</hasExactSynonym>
-        <rdfs:label xml:lang="en">Study</rdfs:label>
-    </rdf:Description>
-    <rdf:Description rdf:about="http://purl.org/ppeo/PPEO.owl#trait">
-        <rdfs:comment>Name of the (plant or environmental) trait under observation</rdfs:comment>
-        <rdfs:label xml:lang="en">Trait</rdfs:label>
-    </rdf:Description>
 </rdf:RDF>
 
 
