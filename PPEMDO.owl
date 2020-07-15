@@ -27,6 +27,27 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor_value"/>
+        <MDO:takes_values_from rdf:resource="http://purl.org/ppeo/PPEO.owl#factor"/>
+        <rdfs:label xml:lang="en">Observation unit factor</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor_value -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor_value">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:takes_values_from rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
+        <rdfs:label xml:lang="en">Observation unit factor value</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/ppeo/PPEO.owl#biological_material -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#biological_material">
@@ -1019,9 +1040,9 @@
         <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID"/>
         <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType"/>
         <MDO:hasNext rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
+        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor"/>
         <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#biological_material"/>
         <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#event"/>
-        <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#factor_value"/>
         <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID"/>
         <MDO:mayContainAtLeastOne rdf:resource="http://purl.org/ppeo/PPEO.owl#sample"/>
         <MDO:hasDisplayName xml:lang="en">Observation Unit</MDO:hasDisplayName>
