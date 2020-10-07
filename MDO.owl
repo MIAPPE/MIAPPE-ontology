@@ -153,6 +153,16 @@
     
 
 
+    <!-- http://purl.org/ppeo/MDO.owl#references -->
+
+    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#references">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/MDO.owl#selection_field"/>
+        <rdfs:label xml:lang="en">references</rdfs:label>
+    </owl:ObjectProperty>
+    
+
+
     <!-- http://purl.org/ppeo/MDO.owl#takes_values_from -->
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#takes_values_from">
@@ -171,6 +181,14 @@
     ///////////////////////////////////////////////////////////////////////////////////////
      -->
 
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#hasDataType -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasDataType">
+        <rdfs:label xml:lang="en">data type</rdfs:label>
+    </owl:DatatypeProperty>
     
 
 
@@ -294,10 +312,55 @@
     
 
 
+    <!-- http://purl.org/ppeo/MDO.owl#ID_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#ID_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:label xml:lang="en">ID field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#controlled_vocabulary_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#controlled_vocabulary_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:label xml:lang="en">controlled vocabulary field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#enumeration_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#enumeration_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:label xml:lang="en">enumeration field</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ppeo/MDO.owl#field -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#field">
         <rdfs:label xml:lang="en">field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#free_value_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#free_value_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:label xml:lang="en">free value field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#long_text_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#long_text_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:label xml:lang="en">long text field</rdfs:label>
     </owl:Class>
     
 
@@ -310,11 +373,29 @@
     
 
 
+    <!-- http://purl.org/ppeo/MDO.owl#restriction_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#restriction_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#selection_field"/>
+        <rdfs:label xml:lang="en">restriction field</rdfs:label>
+    </owl:Class>
+    
+
+
     <!-- http://purl.org/ppeo/MDO.owl#section -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#section">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
         <rdfs:label xml:lang="en">section</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#selection_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#selection_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:label xml:lang="en">selection field</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
