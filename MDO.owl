@@ -163,16 +163,6 @@
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#takes_values_from -->
-
-    <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#takes_values_from">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <rdfs:range rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <rdfs:label xml:lang="en">takes values from</rdfs:label>
-    </owl:ObjectProperty>
-    
-
-
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
