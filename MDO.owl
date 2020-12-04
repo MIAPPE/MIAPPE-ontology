@@ -483,7 +483,6 @@ The enumerated values can be specified, for example, as {“value1”, “value2
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:comment xml:lang="en">A field that is expected to take as value a class from among those in one or more given ontologies or from the subclasses of one or more given ontology class, listed through the from ontology property. Ontology classes should be searched using an ontology lookup service. Free-text values can be accepted if no suitable ontology concepts exist.</rdfs:comment>
         <rdfs:label xml:lang="en">ontology class field</rdfs:label>
     </owl:Class>
@@ -505,7 +504,6 @@ The enumerated values can be specified, for example, as {“value1”, “value2
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:comment xml:lang="en">A field where a string must be entered that matches a specified pattern, provided using the property has pattern.</rdfs:comment>
         <rdfs:label xml:lang="en">pattern field</rdfs:label>
     </owl:Class>
@@ -560,7 +558,6 @@ The enumerated values can be specified, for example, as {“value1”, “value2
                 </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:comment xml:lang="en">A field where the user is expected to select from among a list of possible values. This list can either be a list field linked through the references property (note the list field must have been filled before the selection is made), or a fixed list provided through the property from list. If pointing to a list field that has plural cardinality, the user should be first asked to select an instance of that  field, identified by the containing object’s primary field if applicable.</rdfs:comment>
         <rdfs:label xml:lang="en">selection field</rdfs:label>
     </owl:Class>
