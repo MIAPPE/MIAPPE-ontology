@@ -240,24 +240,6 @@ The enumerated values can be specified, for example, as {“value1”, “value2
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#hasOntologyRecommendation -->
-
-    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasOntologyRecommendation">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:range>
-            <rdfs:Datatype>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                </owl:unionOf>
-            </rdfs:Datatype>
-        </rdfs:range>
-        <rdfs:comment xml:lang="en">Can be used to point to ontologies / controlled vocabularies for a field.</rdfs:comment>
-        <rdfs:label xml:lang="en">has ontology recommendation</rdfs:label>
-    </owl:DatatypeProperty>
-    
-
-
     <!-- http://purl.org/ppeo/MDO.owl#hasOrderFactor -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasOrderFactor">
