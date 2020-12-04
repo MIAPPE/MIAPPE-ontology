@@ -346,19 +346,23 @@ The enumerated values can be specified, for example, as {“value1”, “value2
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#controlled_vocabulary_field">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_vocabulary"/>
-                <owl:someValuesFrom>
-                    <rdfs:Datatype>
-                        <owl:unionOf rdf:parseType="Collection">
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
-                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
-                        </owl:unionOf>
-                    </rdfs:Datatype>
-                </owl:someValuesFrom>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#field"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_vocabulary"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                                </owl:unionOf>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
-        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:comment xml:lang="en">A field that is expected to take values from a recommended controlled vocabulary that is not available through an ontology lookup service, and therefore has to be manually searched by the user.</rdfs:comment>
         <rdfs:label xml:lang="en">controlled vocabulary field</rdfs:label>
     </owl:Class>
@@ -469,10 +473,15 @@ The enumerated values can be specified, for example, as {“value1”, “value2
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#ontology_class_field">
         <owl:equivalentClass>
-            <owl:Restriction>
-                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_ontology"/>
-                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
-            </owl:Restriction>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#field"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_ontology"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:comment xml:lang="en">A field that is expected to take as value a class from among those in one or more given ontologies or from the subclasses of one or more given ontology class, listed through the from ontology property. Ontology classes should be searched using an ontology lookup service. Free-text values can be accepted if no suitable ontology concepts exist.</rdfs:comment>
@@ -486,18 +495,14 @@ The enumerated values can be specified, for example, as {“value1”, “value2
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#pattern_field">
         <owl:equivalentClass>
             <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#field"/>
                     <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#references"/>
-                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                        <owl:onClass rdf:resource="http://purl.org/ppeo/MDO.owl#list_field"/>
-                    </owl:Restriction>
-                    <owl:Restriction>
-                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_list"/>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#has_pattern"/>
                         <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
                         <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
                     </owl:Restriction>
-                </owl:unionOf>
+                </owl:intersectionOf>
             </owl:Class>
         </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
@@ -534,6 +539,27 @@ The enumerated values can be specified, for example, as {“value1”, “value2
     <!-- http://purl.org/ppeo/MDO.owl#selection_field -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#selection_field">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#field"/>
+                    <owl:Class>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#references"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onClass rdf:resource="http://purl.org/ppeo/MDO.owl#list_field"/>
+                            </owl:Restriction>
+                            <owl:Restriction>
+                                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_list"/>
+                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                            </owl:Restriction>
+                        </owl:unionOf>
+                    </owl:Class>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:comment xml:lang="en">A field where the user is expected to select from among a list of possible values. This list can either be a list field linked through the references property (note the list field must have been filled before the selection is made), or a fixed list provided through the property from list. If pointing to a list field that has plural cardinality, the user should be first asked to select an instance of that  field, identified by the containing object’s primary field if applicable.</rdfs:comment>
         <rdfs:label xml:lang="en">selection field</rdfs:label>
@@ -554,7 +580,22 @@ The enumerated values can be specified, for example, as {“value1”, “value2
     <!-- http://purl.org/ppeo/MDO.owl#top_section -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#top_section">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#section"/>
+                    <owl:Restriction>
+                        <owl:onProperty>
+                            <rdf:Description>
+                                <owl:inverseOf rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+                            </rdf:Description>
+                        </owl:onProperty>
+                        <owl:maxQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:maxQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
         <rdfs:comment xml:lang="en">The topmost entity in the metadata schema, containing all other sections, objects and fields.</rdfs:comment>
         <rdfs:label xml:lang="en">top section</rdfs:label>
     </owl:Class>
