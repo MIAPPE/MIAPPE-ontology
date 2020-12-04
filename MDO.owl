@@ -139,8 +139,8 @@
 
     <owl:ObjectProperty rdf:about="http://purl.org/ppeo/MDO.owl#references">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#selection_field"/>
-        <rdfs:range rdf:resource="http://purl.org/ppeo/MDO.owl#enumeration_field"/>
-        <rdfs:comment xml:lang="en">Used to connect two fields, when a selection must be made from the object field (enumeration) for the subject field (selection field).</rdfs:comment>
+        <rdfs:range rdf:resource="http://purl.org/ppeo/MDO.owl#list_field"/>
+        <rdfs:comment xml:lang="en">Connects a selection field to a list field, the values of which will be the object of selection.</rdfs:comment>
         <rdfs:label xml:lang="en">references</rdfs:label>
     </owl:ObjectProperty>
     
@@ -157,13 +157,50 @@
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#hasDataType -->
+    <!-- http://purl.org/ppeo/MDO.owl#from_list -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasDataType">
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
-        <rdfs:comment xml:lang="en">Indicates the type of data (e.g. string, number, date) that is expected in a Fixed datatype field. A pattern can also be defined using regular expressions (e.g. xsd:string[pattern &quot;[0-9]{5}(-[0-9]{4})?&quot;]).</rdfs:comment>
-        <rdfs:label xml:lang="en">data type</rdfs:label>
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#from_list">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#multiple_choice_field"/>
+                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#selection_field"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies a comma-separated list of possible values for a selection or multiple choice field.
+The enumerated values can be specified, for example, as {“value1”, “value2”}.</rdfs:comment>
+        <rdfs:label xml:lang="en">from list</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#from_ontology -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#from_ontology">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#ontology_class_field"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+        <rdfs:comment xml:lang="en">Indicates a controlled vocabulary recommendation for a controlled vocabulary field that is specifically an ontology and can be the subject of an ontology lookup search.</rdfs:comment>
+        <rdfs:label xml:lang="en">from ontology</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#from_vocabulary -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#from_vocabulary">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#controlled_vocabulary_field"/>
+        <rdfs:range>
+            <rdfs:Datatype>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                    <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                </owl:unionOf>
+            </rdfs:Datatype>
+        </rdfs:range>
+        <rdfs:comment xml:lang="en">Indicates a controlled vocabulary recommendation for a controlled vocabulary field.</rdfs:comment>
+        <rdfs:label xml:lang="en">from vocabulary</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -175,7 +212,7 @@
         <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#metadata_entity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">Shows the definition for fields that the users have to fill in.</rdfs:comment>
-        <rdfs:label xml:lang="en">definition</rdfs:label>
+        <rdfs:label xml:lang="en">has definition</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -187,7 +224,7 @@
         <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#metadata_entity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">The name of the fields/section/object that will be shown on the interface.</rdfs:comment>
-        <rdfs:label xml:lang="en">display name</rdfs:label>
+        <rdfs:label xml:lang="en">has display name</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -198,7 +235,7 @@
         <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
         <rdfs:comment xml:lang="en">An example value for a field.</rdfs:comment>
-        <rdfs:label xml:lang="en">example</rdfs:label>
+        <rdfs:label xml:lang="en">has example</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -216,7 +253,7 @@
             </rdfs:Datatype>
         </rdfs:range>
         <rdfs:comment xml:lang="en">Can be used to point to ontologies / controlled vocabularies for a field.</rdfs:comment>
-        <rdfs:label xml:lang="en">ontology recommendation</rdfs:label>
+        <rdfs:label xml:lang="en">has ontology recommendation</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -226,20 +263,31 @@
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasOrderFactor">
         <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#metadata_entity"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
-        <rdfs:comment xml:lang="en">A number used for ordering elements in the interface. Elements with a smaller number will appear first, then elements with a larger number. Order factor is irrelevant in between sections.</rdfs:comment>
-        <rdfs:label xml:lang="en">order factor</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies a number for the appearance order of elements in the interface. Elements with a smaller number will appear first, then elements with a larger number. Order factor is irrelevant in between sections.</rdfs:comment>
+        <rdfs:label xml:lang="en">has order factor</rdfs:label>
     </owl:DatatypeProperty>
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#isTopSection -->
+    <!-- http://purl.org/ppeo/MDO.owl#has_pattern -->
 
-    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#isTopSection">
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#has_pattern">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#pattern_field"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment xml:lang="en">Specifies a pattern to be used in a pattern field, using a standard regular expression (e.g. &quot;[0-9]{5}(-[0-9]{4})?&quot;).</rdfs:comment>
+        <rdfs:label xml:lang="en">has pattern</rdfs:label>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#is_primary_key -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/MDO.owl#is_primary_key">
         <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
-        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
         <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#boolean"/>
-        <rdfs:comment xml:lang="en">Marks a section that has no parent.</rdfs:comment>
-        <rdfs:label xml:lang="en">top section</rdfs:label>
+        <rdfs:comment xml:lang="en">Specifies whether a field is the primary key for the containing object. If it is, then values for that field must be unique within the superobject that contains the object for which the field is the primary key. It will also be used as the identifier for the containing object, whenever it would be the target of a selection.</rdfs:comment>
+        <rdfs:label xml:lang="en">is primary key</rdfs:label>
     </owl:DatatypeProperty>
     
 
@@ -255,12 +303,12 @@
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#ID_field -->
+    <!-- http://purl.org/ppeo/MDO.owl#URI_field -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#ID_field">
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#URI_field">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:comment xml:lang="en">A field holding the main identifier for the resource being described.</rdfs:comment>
-        <rdfs:label xml:lang="en">ID field</rdfs:label>
+        <rdfs:comment xml:lang="en">A field where a URI must be entered.</rdfs:comment>
+        <rdfs:label xml:lang="en">URI field</rdfs:label>
     </owl:Class>
     
 
@@ -269,8 +317,45 @@
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#abstract_object">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#includes"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#includes"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
         <owl:disjointWith rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <rdfs:comment xml:lang="en">An entity that requires (typically multiple) fields to describe.</rdfs:comment>
         <rdfs:label xml:lang="en">abstract object</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#boolean_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#boolean_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:comment xml:lang="en">A field where a boolean value must be entered.</rdfs:comment>
+        <rdfs:label xml:lang="en">boolean field</rdfs:label>
     </owl:Class>
     
 
@@ -278,19 +363,32 @@
     <!-- http://purl.org/ppeo/MDO.owl#controlled_vocabulary_field -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#controlled_vocabulary_field">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_vocabulary"/>
+                <owl:someValuesFrom>
+                    <rdfs:Datatype>
+                        <owl:unionOf rdf:parseType="Collection">
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#anyURI"/>
+                            <rdf:Description rdf:about="http://www.w3.org/2001/XMLSchema#string"/>
+                        </owl:unionOf>
+                    </rdfs:Datatype>
+                </owl:someValuesFrom>
+            </owl:Restriction>
+        </owl:equivalentClass>
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:comment xml:lang="en">A field that is expected to take values from a recommended external ontology or controlled vocabulary, but also accepts free-text values if no suitable ontology concepts exist.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A field that is expected to take values from a recommended controlled vocabulary that is not available through an ontology lookup service, and therefore has to be manually searched by the user.</rdfs:comment>
         <rdfs:label xml:lang="en">controlled vocabulary field</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#enumeration_field -->
+    <!-- http://purl.org/ppeo/MDO.owl#date_field -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#enumeration_field">
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#date_field">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:comment xml:lang="en">A field that expects a list  of possible values. It can be paired with a selection field to allow the user to specify any number of those values elsewhere in the metadata structure.</rdfs:comment>
-        <rdfs:label xml:lang="en">enumeration field</rdfs:label>
+        <rdfs:comment xml:lang="en">A field where a date must be entered.</rdfs:comment>
+        <rdfs:label xml:lang="en">date field</rdfs:label>
     </owl:Class>
     
 
@@ -300,28 +398,48 @@
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#field">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#metadata_entity"/>
         <owl:disjointWith rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
-        <rdfs:comment xml:lang="en">A metadata field (or attribute) for which the user is expected to enter a value.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A metadata field (or attribute) for which the user is expected to enter or select a value. It should not be directly instantiated.A metadata field (or attribute) for which the user is expected to enter or select a value. It should not be directly instantiated.</rdfs:comment>
         <rdfs:label xml:lang="en">field</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#fixed_datatype_field -->
+    <!-- http://purl.org/ppeo/MDO.owl#float_field -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#fixed_datatype_field">
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#float_field">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:comment xml:lang="en">A field where a specified value type is expected  (e.g. number, date).</rdfs:comment>
-        <rdfs:label xml:lang="en">fixed datatype field</rdfs:label>
+        <rdfs:comment xml:lang="en">A field where a floating point value must be entered.</rdfs:comment>
+        <rdfs:label xml:lang="en">float field</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#free_value_field -->
+    <!-- http://purl.org/ppeo/MDO.owl#free_text_field -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#free_value_field">
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#free_text_field">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:comment xml:lang="en">A field where any value can be entered without type restrictions but with expected short length.</rdfs:comment>
-        <rdfs:label xml:lang="en">free value field</rdfs:label>
+        <rdfs:comment xml:lang="en">A field where (short) free text can be entered.</rdfs:comment>
+        <rdfs:label xml:lang="en">free text field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#integer_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#integer_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:comment xml:lang="en">A field where an integer value must be entered.</rdfs:comment>
+        <rdfs:label xml:lang="en">integer field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#list_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#list_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:comment xml:lang="en">A field where a list of values is expected, typically used to enumerate possible values an object can have.</rdfs:comment>
+        <rdfs:label xml:lang="en">list field</rdfs:label>
     </owl:Class>
     
 
@@ -339,16 +457,18 @@
     <!-- http://purl.org/ppeo/MDO.owl#metadata_entity -->
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#metadata_entity">
-        <owl:equivalentClass>
-            <owl:Class>
-                <owl:unionOf rdf:parseType="Collection">
-                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#field"/>
-                    <rdf:Description rdf:about="http://purl.org/ppeo/MDO.owl#object"/>
-                </owl:unionOf>
-            </owl:Class>
-        </owl:equivalentClass>
-        <rdfs:comment xml:lang="en">A metadata entity, which can be a field XOR an object (grouping fields)</rdfs:comment>
+        <rdfs:comment xml:lang="en">A metadata entity, which can be a field or an object. It should not be directly instantiated.</rdfs:comment>
         <rdfs:label xml:lang="en">metadata entity</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#multiple_choice_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#multiple_choice_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#selection_field"/>
+        <rdfs:comment xml:lang="en">A selection field where the user can select several values from among those listed.</rdfs:comment>
+        <rdfs:label xml:lang="en">multiple choice field</rdfs:label>
     </owl:Class>
     
 
@@ -357,18 +477,50 @@
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#object">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#metadata_entity"/>
-        <rdfs:comment xml:lang="en">An entity that requires (typically multiple) fields to describe. It may also contain other sub-objects.</rdfs:comment>
+        <rdfs:comment xml:lang="en">An entity that requires (typically multiple) fields to describe. It may also contain other sub-objects. It serves exclusively for organization and reasoning and should not be directly instantiated.</rdfs:comment>
         <rdfs:label xml:lang="en">object</rdfs:label>
     </owl:Class>
     
 
 
-    <!-- http://purl.org/ppeo/MDO.owl#restriction_field -->
+    <!-- http://purl.org/ppeo/MDO.owl#ontology_class_field -->
 
-    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#restriction_field">
-        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#selection_field"/>
-        <rdfs:comment xml:lang="en">A field that can only take a single value from a specified enumeration field.</rdfs:comment>
-        <rdfs:label xml:lang="en">restriction field</rdfs:label>
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#ontology_class_field">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_ontology"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#anyURI"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:comment xml:lang="en">A field that is expected to take as value a class from among those in one or more given ontologies or from the subclasses of one or more given ontology class, listed through the from ontology property. Ontology classes should be searched using an ontology lookup service. Free-text values can be accepted if no suitable ontology concepts exist.</rdfs:comment>
+        <rdfs:label xml:lang="en">ontology class field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#pattern_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#pattern_field">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#references"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onClass rdf:resource="http://purl.org/ppeo/MDO.owl#list_field"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_list"/>
+                        <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
+        <rdfs:comment xml:lang="en">A field where a string must be entered that matches a specified pattern, provided using the property has pattern.</rdfs:comment>
+        <rdfs:label xml:lang="en">pattern field</rdfs:label>
     </owl:Class>
     
 
@@ -377,6 +529,20 @@
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#section">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#contains"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/MDO.owl#metadata_entity"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#includes"/>
+                        <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/MDO.owl#metadata_entity"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
         <rdfs:comment xml:lang="en">An object that should be visualized on its own, typically because it contains numerous fields or sub-objects and/or because it represents a conceptually independent portion of a metadata scheme.</rdfs:comment>
         <rdfs:label xml:lang="en">section</rdfs:label>
     </owl:Class>
@@ -387,8 +553,28 @@
 
     <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#selection_field">
         <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#field"/>
-        <rdfs:comment xml:lang="en">A field that can only take values from among those listed in a specified  enumeration field.</rdfs:comment>
+        <rdfs:comment xml:lang="en">A field where the user is expected to select from among a list of possible values. This list can either be a list field linked through the references property (note the list field must have been filled before the selection is made), or a fixed list provided through the property from list. If pointing to a list field that has plural cardinality, the user should be first asked to select an instance of that  field, identified by the containing object’s primary field if applicable.</rdfs:comment>
         <rdfs:label xml:lang="en">selection field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#single_choice_field -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#single_choice_field">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#selection_field"/>
+        <rdfs:comment xml:lang="en">A selection field where the user can only select one value from among those listed.</rdfs:comment>
+        <rdfs:label xml:lang="en">single choice field</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/ppeo/MDO.owl#top_section -->
+
+    <owl:Class rdf:about="http://purl.org/ppeo/MDO.owl#top_section">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
+        <rdfs:comment xml:lang="en">The topmost entity in the metadata schema, containing all other sections, objects and fields.</rdfs:comment>
+        <rdfs:label xml:lang="en">top section</rdfs:label>
     </owl:Class>
 </rdf:RDF>
 
