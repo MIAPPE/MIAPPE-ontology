@@ -86,6 +86,30 @@
     
 
 
+    <!-- http://purl.org/ppeo/PPEMDO.owl#Distribution_type -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEMDO.owl#Distribution_type">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#selection_field"/>
+        <MDO:references rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy"/>
+        <MDO:from_list>{&apos;latitude&apos;, &apos;longitude&apos;, &apos;altitude&apos;, &apos;row&apos;, &apos;column&apos;, &apos;x&apos;, &apos;x_m&apos;, &apos;y&apos;, &apos;y_m&apos;, &apos;z&apos;, &apos;z_m&apos;}</MDO:from_list>
+        <MDO:hasDisplayName xml:lang="en">Distribution type</MDO:hasDisplayName>
+        <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">807</MDO:hasOrderFactor>
+        <rdfs:label xml:lang="en">Distribution type</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEMDO.owl#Distribution_value -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEMDO.owl#Distribution_value">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#free_text_field"/>
+        <MDO:hasDisplayName xml:lang="en">Distribution value</MDO:hasDisplayName>
+        <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">808</MDO:hasOrderFactor>
+        <rdfs:label xml:lang="en">Distribution value</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
     <!-- http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor_value -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor_value">
@@ -97,6 +121,20 @@
         <MDO:hasExample xml:lang="en">Watered</MDO:hasExample>
         <MDO:isTail rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</MDO:isTail>
         <rdfs:label xml:lang="en">Observation unit factor value</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/ppeo/PPEMDO.owl#Observation_unit_spatial_distribution -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_spatial_distribution">
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#object"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEMDO.owl#Distribution_type"/>
+        <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEMDO.owl#Distribution_value"/>
+        <MDO:hasDefinition xml:lang="en">Type and value of a spatial coordinate (georeference or relative) or level of observation (plot 45, subblock 7, block 2) provided as a key-value pair of the form type:value. Levels of observation must be consistent with those listed in the Study section.</MDO:hasDefinition>
+        <MDO:hasDisplayName xml:lang="en">Observation unit spatial distribution</MDO:hasDisplayName>
+        <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">806</MDO:hasOrderFactor>
+        <rdfs:label xml:lang="en">Observation unit spatial distribution</rdfs:label>
     </owl:NamedIndividual>
     
 
@@ -884,8 +922,9 @@ NA</MDO:hasExample>
     <!-- http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy -->
 
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#hasObservationUnitLevelHierarchy">
-        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#free_text_field"/>
-        <MDO:hasDefinition xml:lang="en">Hierarchy of the different levels of repetitions between each others</MDO:hasDefinition>
+        <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#list_field"/>
+        <MDO:hasDefinition xml:lang="en">Hierarchy of the different levels of repetitions between each others.
+Levels listed first are higher in the hierarchy than the ones that follow.</MDO:hasDefinition>
         <MDO:hasDisplayName xml:lang="en">Observation unit level hierarchy</MDO:hasDisplayName>
         <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">314</MDO:hasOrderFactor>
         <MDO:hasExample>block&gt;rep&gt;plot</MDO:hasExample>
@@ -1433,6 +1472,7 @@ Reproductive growth time</MDO:hasExample>
     <owl:NamedIndividual rdf:about="http://purl.org/ppeo/PPEO.owl#observation_unit">
         <rdf:type rdf:resource="http://purl.org/ppeo/MDO.owl#section"/>
         <MDO:contains rdf:resource="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_factor_value"/>
+        <MDO:contains rdf:resource="http://purl.org/ppeo/PPEMDO.owl#Observation_unit_spatial_distribution"/>
         <MDO:contains rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitExternalID"/>
         <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitID"/>
         <MDO:containsExactlyOne rdf:resource="http://purl.org/ppeo/PPEO.owl#hasObservationUnitType"/>
