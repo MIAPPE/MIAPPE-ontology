@@ -559,13 +559,11 @@ Primary keys cannot be optional.</rdfs:comment>
                         <owl:unionOf rdf:parseType="Collection">
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#references"/>
-                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                <owl:onClass rdf:resource="http://purl.org/ppeo/MDO.owl#list_field"/>
+                                <owl:someValuesFrom rdf:resource="http://purl.org/ppeo/MDO.owl#list_field"/>
                             </owl:Restriction>
                             <owl:Restriction>
                                 <owl:onProperty rdf:resource="http://purl.org/ppeo/MDO.owl#from_list"/>
-                                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
-                                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
                             </owl:Restriction>
                         </owl:unionOf>
                     </owl:Class>
