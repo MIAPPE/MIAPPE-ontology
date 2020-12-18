@@ -19,65 +19,6 @@
     <!-- 
     ///////////////////////////////////////////////////////////////////////////////////////
     //
-    // Annotation properties
-    //
-    ///////////////////////////////////////////////////////////////////////////////////////
-     -->
-
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#hasNext -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasNext"/>
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#hasOntologyRecommendation -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#hasOntologyRecommendation"/>
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#isHead -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#isHead"/>
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#isTail -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#isTail"/>
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#isTopSection -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#isTopSection"/>
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#mayContainAtLeastOne -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#mayContainAtLeastOne"/>
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#mayContainExactlyOne -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#mayContainExactlyOne"/>
-    
-
-
-    <!-- http://purl.org/ppeo/MDO.owl#takes_values_from -->
-
-    <owl:AnnotationProperty rdf:about="http://purl.org/ppeo/MDO.owl#takes_values_from"/>
-    
-
-
-    <!-- 
-    ///////////////////////////////////////////////////////////////////////////////////////
-    //
     // Individuals
     //
     ///////////////////////////////////////////////////////////////////////////////////////
@@ -558,7 +499,6 @@ Fertilizing</MDO:hasExample>
         <MDO:hasDisplayName xml:lang="en">Experimental Factor value</MDO:hasDisplayName>
         <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">703</MDO:hasOrderFactor>
         <MDO:hasExample xml:lang="en">Watered; Unwatered</MDO:hasExample>
-        <MDO:isTail rdf:datatype="http://www.w3.org/2001/XMLSchema#boolean">true</MDO:isTail>
     </owl:NamedIndividual>
     
 
@@ -940,8 +880,6 @@ PO:0025161</MDO:hasExample>
         <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1002</MDO:hasOrderFactor>
         <MDO:hasExample>PO:0025094
 BBCH-17</MDO:hasExample>
-        <MDO:hasOntologyRecommendation>BBCH</MDO:hasOntologyRecommendation>
-        <MDO:hasOntologyRecommendation>http://purl.obolibrary.org/obo/PO_</MDO:hasOntologyRecommendation>
     </owl:NamedIndividual>
     
 
@@ -954,7 +892,6 @@ BBCH-17</MDO:hasExample>
         <MDO:hasDisplayName xml:lang="en">Biological material preprocessing</MDO:hasDisplayName>
         <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">510</MDO:hasOrderFactor>
         <MDO:hasExample xml:lang="en">EO:0007210 - PVY(NTN); transplanted from study http://phenome-fppn.fr/maugio/2013/t2351 observation unit ID: pot:894</MDO:hasExample>
-        <MDO:hasNext rdf:resource="http://purl.org/ppeo/PPEO.owl#material_source"/>
     </owl:NamedIndividual>
     
 
@@ -1041,7 +978,6 @@ BBCH-17</MDO:hasExample>
         <MDO:hasDisplayName xml:lang="en">Scale accession number</MDO:hasDisplayName>
         <MDO:hasOrderFactor rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1132</MDO:hasOrderFactor>
         <MDO:hasExample xml:lang="en">CO_322:0000510</MDO:hasExample>
-        <MDO:hasOntologyRecommendation>Crop Ontology</MDO:hasOntologyRecommendation>
     </owl:NamedIndividual>
     
 
