@@ -1246,6 +1246,7 @@
     <!-- http://purl.org/ppeo/PPEO.owl#hasType -->
 
     <owl:DatatypeProperty rdf:about="http://purl.org/ppeo/PPEO.owl#hasType">
+        <rdfs:domain rdf:resource="http://purl.org/ppeo/PPEO.owl#observation_unit"/>
         <rdfs:range>
             <rdfs:Datatype>
                 <owl:unionOf rdf:parseType="Collection">
@@ -2556,8 +2557,8 @@ It is recommended that a Study have a description.</rdfs:comment>
         <owl:annotatedSource rdf:resource="http://purl.org/ppeo/PPEO.owl#trait"/>
         <owl:annotatedProperty rdf:resource="http://www.w3.org/2000/01/rdf-schema#subClassOf"/>
         <owl:annotatedTarget rdf:nodeID="genid297"/>
-        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/to.owl</hasOntologyRecommendation>
         <hasOntologyRecommendation>http://www.cropontology.org/ (traits)</hasOntologyRecommendation>
+        <hasOntologyRecommendation rdf:datatype="http://www.w3.org/2001/XMLSchema#anyURI">http://purl.obolibrary.org/obo/to.owl</hasOntologyRecommendation>
     </owl:Axiom>
     
 

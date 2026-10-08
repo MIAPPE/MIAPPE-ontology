@@ -857,6 +857,7 @@ PPEO:hasTimeScale rdf:type owl:DatatypeProperty ;
 
 ###  http://purl.org/ppeo/PPEO.owl#hasType
 PPEO:hasType rdf:type owl:DatatypeProperty ;
+             rdfs:domain PPEO:observation_unit ;
              rdfs:range [ rdf:type rdfs:Datatype ;
                           owl:unionOf ( xsd:anyURI
                                         xsd:string
@@ -1809,8 +1810,8 @@ _:genid297 rdf:type owl:Restriction ;
    owl:annotatedSource PPEO:trait ;
    owl:annotatedProperty rdfs:subClassOf ;
    owl:annotatedTarget _:genid297 ;
-   PPEO:hasOntologyRecommendation "http://purl.obolibrary.org/obo/to.owl"^^xsd:anyURI ,
-                                  "http://www.cropontology.org/ (traits)"
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/ (traits)" ,
+                                  "http://purl.obolibrary.org/obo/to.owl"^^xsd:anyURI
  ] .
 
 
