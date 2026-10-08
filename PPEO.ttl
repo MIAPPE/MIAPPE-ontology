@@ -1,0 +1,1899 @@
+@prefix : <http://purl.org/ppeo/PPEO.owl#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix PPEO: <http://purl.org/ppeo/PPEO.owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@base <http://purl.org/ppeo/PPEO.owl#> .
+
+<http://purl.org/ppeo/PPEO.owl> rdf:type owl:Ontology ;
+                                 dc:creator "Bruno Vasques Costa" ,
+                                            "Cyril Pommier" ,
+                                            "Daniel Faria" ,
+                                            "Evangelia Papoutsoglou" ,
+                                            "Guillaume Cornut" ,
+                                            "Hanna Cwiek-Kupczynska" ,
+                                            "Ines Chaves" ,
+                                            "Manuel Ruiz" ,
+                                            "Marie Angélique Laporte" ,
+                                            "Pascal Neveu" ,
+                                            "Pierre Larmande" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/creator
+dc:creator rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasBrAPISynonym
+PPEO:hasBrAPISynonym rdf:type owl:AnnotationProperty ;
+                     rdfs:label "has BrAPI synonym"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasExactSynonym
+PPEO:hasExactSynonym rdf:type owl:AnnotationProperty ;
+                     rdfs:label "has exact synonym"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasISASynonym
+PPEO:hasISASynonym rdf:type owl:AnnotationProperty ;
+                   rdfs:label "has ISA synonym"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasMIAPPESynonym
+PPEO:hasMIAPPESynonym rdf:type owl:AnnotationProperty ;
+                      rdfs:label "has MIAPPE synonym"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasOntologyRecommendation
+PPEO:hasOntologyRecommendation rdf:type owl:AnnotationProperty ;
+                               rdfs:label "has ontology recommendation"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasRelatedSynonym
+PPEO:hasRelatedSynonym rdf:type owl:AnnotationProperty ;
+                       rdfs:label "has related synonym"@en .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://purl.org/ppeo/PPEO.owl#derivesFrom
+PPEO:derivesFrom rdf:type owl:ObjectProperty ;
+                 rdfs:domain PPEO:sample ;
+                 rdfs:range PPEO:observation_unit ;
+                 rdfs:label "derives from"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasAffiliation
+PPEO:hasAffiliation rdf:type owl:ObjectProperty ;
+                    rdfs:domain PPEO:person ;
+                    rdfs:range PPEO:institution ;
+                    rdfs:label "has affiliation"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasBiologicalMaterial
+PPEO:hasBiologicalMaterial rdf:type owl:ObjectProperty ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( PPEO:observation_unit
+                                                       PPEO:study
+                                                     )
+                                       ] ;
+                           rdfs:range PPEO:biological_material ;
+                           rdfs:label "has biological material"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasContactInstitution
+PPEO:hasContactInstitution rdf:type owl:ObjectProperty ;
+                           rdfs:domain PPEO:study ;
+                           rdfs:range PPEO:institution ;
+                           rdfs:label "has contact institution"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasCountry
+PPEO:hasCountry rdf:type owl:ObjectProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain PPEO:location ;
+                rdfs:range PPEO:country ;
+                rdfs:label "has country"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasCountryOfOrigin
+PPEO:hasCountryOfOrigin rdf:type owl:ObjectProperty ;
+                        rdfs:domain PPEO:biological_material ;
+                        rdfs:range PPEO:country ;
+                        owl:propertyChainAxiom ( PPEO:hasMaterialSource
+                                                 PPEO:hasLocation
+                                                 PPEO:hasCountry
+                                               ) ;
+                        rdfs:label "has country of origin"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasDataFile
+PPEO:hasDataFile rdf:type owl:ObjectProperty ;
+                 rdfs:domain PPEO:study ;
+                 rdfs:range PPEO:data_file ;
+                 rdfs:label "has data file"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEnvironment
+PPEO:hasEnvironment rdf:type owl:ObjectProperty ;
+                    rdfs:domain PPEO:study ;
+                    rdfs:range PPEO:environment ;
+                    rdfs:label "has environment"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEnvironmentParameter
+PPEO:hasEnvironmentParameter rdf:type owl:ObjectProperty ;
+                             rdfs:domain PPEO:environment ;
+                             rdfs:range PPEO:environment_parameter ;
+                             rdfs:label "has environment parameter"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEvent
+PPEO:hasEvent rdf:type owl:ObjectProperty ;
+              rdfs:domain [ rdf:type owl:Class ;
+                            owl:unionOf ( PPEO:observation_unit
+                                          PPEO:study
+                                        )
+                          ] ;
+              rdfs:range PPEO:event ;
+              rdfs:label "has event"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasExperimentalDesign
+PPEO:hasExperimentalDesign rdf:type owl:ObjectProperty ;
+                           rdfs:domain PPEO:study ;
+                           rdfs:range PPEO:experimental_design ;
+                           rdfs:label "has experimental design"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasFactor
+PPEO:hasFactor rdf:type owl:ObjectProperty ;
+               rdfs:domain PPEO:study ;
+               rdfs:range PPEO:factor ;
+               rdfs:label "has factor"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasFactorValue
+PPEO:hasFactorValue rdf:type owl:ObjectProperty ;
+                    rdfs:domain PPEO:observation_unit ;
+                    rdfs:range PPEO:factor_value ;
+                    rdfs:label "has factor value"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasGrowthFacility
+PPEO:hasGrowthFacility rdf:type owl:ObjectProperty ;
+                       rdfs:domain PPEO:study ;
+                       rdfs:range PPEO:growth_facility ;
+                       rdfs:label "has growth facility"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasLocation
+PPEO:hasLocation rdf:type owl:ObjectProperty ;
+                 rdfs:range PPEO:location ;
+                 rdfs:label "has location"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasMaterialSource
+PPEO:hasMaterialSource rdf:type owl:ObjectProperty ;
+                       rdfs:domain PPEO:biological_material ;
+                       rdfs:range PPEO:material_source ;
+                       rdfs:label "has material source"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasMethod
+PPEO:hasMethod rdf:type owl:ObjectProperty ;
+               rdfs:domain PPEO:observed_variable ;
+               rdfs:range PPEO:method ;
+               rdfs:label "has method"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasModality
+PPEO:hasModality rdf:type owl:ObjectProperty ;
+                 owl:inverseOf PPEO:isModalityOf ;
+                 rdfs:domain PPEO:factor ;
+                 rdfs:range PPEO:factor_value ;
+                 rdfs:label "has modality"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasObservation
+PPEO:hasObservation rdf:type owl:ObjectProperty ;
+                    rdfs:domain PPEO:data_file ;
+                    rdfs:range PPEO:observation ;
+                    rdfs:label "has observation"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasObservationLevel
+PPEO:hasObservationLevel rdf:type owl:ObjectProperty ;
+                         rdfs:domain PPEO:observation_unit ;
+                         rdfs:range PPEO:observation_level ;
+                         rdfs:label "has observation level"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasObservationLevelHierarchy
+PPEO:hasObservationLevelHierarchy rdf:type owl:ObjectProperty ;
+                                  rdfs:domain PPEO:study ;
+                                  rdfs:range PPEO:observation_level_hierarchy ;
+                                  rdfs:label "has observation level hierarchy"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasObservedSubject
+PPEO:hasObservedSubject rdf:type owl:ObjectProperty ;
+                        owl:inverseOf PPEO:isSubjectOfObservation ;
+                        rdfs:domain PPEO:observation ;
+                        rdfs:range [ rdf:type owl:Class ;
+                                     owl:unionOf ( PPEO:observation_unit
+                                                   PPEO:sample
+                                                 )
+                                   ] ;
+                        rdfs:label "has observed subject"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasPart
+PPEO:hasPart rdf:type owl:ObjectProperty ;
+             owl:inverseOf PPEO:partOf ;
+             rdf:type owl:TransitiveProperty ;
+             rdfs:label "has part"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasParticipatingInstitution
+PPEO:hasParticipatingInstitution rdf:type owl:ObjectProperty ;
+                                 rdfs:domain [ rdf:type owl:Class ;
+                                               owl:unionOf ( PPEO:investigation
+                                                             PPEO:study
+                                                           )
+                                             ] ;
+                                 rdfs:range PPEO:institution ;
+                                 owl:propertyChainAxiom ( PPEO:hasPersonWithRole
+                                                          PPEO:isRoleOf
+                                                          PPEO:hasAffiliation
+                                                        ) ;
+                                 rdfs:label "has participating institution"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasPersonWithRole
+PPEO:hasPersonWithRole rdf:type owl:ObjectProperty ;
+                       owl:inverseOf PPEO:isRoleOfPersonIn ;
+                       rdfs:domain [ rdf:type owl:Class ;
+                                     owl:unionOf ( PPEO:investigation
+                                                   PPEO:study
+                                                 )
+                                   ] ;
+                       rdfs:range PPEO:role ;
+                       rdfs:label "has person with role"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasRole
+PPEO:hasRole rdf:type owl:ObjectProperty ;
+             owl:inverseOf PPEO:isRoleOf ;
+             rdfs:domain PPEO:person ;
+             rdfs:range PPEO:role ;
+             rdfs:label "has role"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasScale
+PPEO:hasScale rdf:type owl:ObjectProperty ;
+              rdfs:domain PPEO:observed_variable ;
+              rdfs:range PPEO:scale ;
+              rdfs:label "has scale"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSpatialDistribution
+PPEO:hasSpatialDistribution rdf:type owl:ObjectProperty ;
+                            rdfs:domain PPEO:observation_unit ;
+                            rdfs:range PPEO:spatial_distribution ;
+                            rdfs:label "has spatial distribution"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSpatialDistributionType
+PPEO:hasSpatialDistributionType rdf:type owl:ObjectProperty ;
+                                rdfs:domain PPEO:spatial_distribution ;
+                                rdfs:range PPEO:spatial_distribution_type ;
+                                rdfs:label "has spatial distribution type"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSublevel
+PPEO:hasSublevel rdf:type owl:ObjectProperty ;
+                 owl:inverseOf PPEO:hasSuperlevel ;
+                 rdf:type owl:IrreflexiveProperty ;
+                 rdfs:domain PPEO:observation_level ;
+                 rdfs:range PPEO:observation_level ;
+                 rdfs:label "has sublevel"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSuperlevel
+PPEO:hasSuperlevel rdf:type owl:ObjectProperty ,
+                            owl:IrreflexiveProperty ;
+                   rdfs:domain PPEO:observation_level ;
+                   rdfs:range PPEO:observation_level ;
+                   rdfs:label "has superlevel"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasTrait
+PPEO:hasTrait rdf:type owl:ObjectProperty ;
+              rdfs:domain PPEO:observed_variable ;
+              rdfs:range PPEO:trait ;
+              rdfs:label "has trait"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasVariable
+PPEO:hasVariable rdf:type owl:ObjectProperty ;
+                 rdfs:domain PPEO:observation ;
+                 rdfs:range PPEO:observed_variable ;
+                 rdfs:label "has variable"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#isModalityOf
+PPEO:isModalityOf rdf:type owl:ObjectProperty ;
+                  rdfs:domain PPEO:factor_value ;
+                  rdfs:range PPEO:factor ;
+                  rdfs:label "is modality of"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#isRoleOf
+PPEO:isRoleOf rdf:type owl:ObjectProperty ;
+              rdfs:domain PPEO:role ;
+              rdfs:range PPEO:person ;
+              rdfs:label "is role of"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#isRoleOfPersonIn
+PPEO:isRoleOfPersonIn rdf:type owl:ObjectProperty ;
+                      rdfs:domain PPEO:role ;
+                      rdfs:range [ rdf:type owl:Class ;
+                                   owl:unionOf ( PPEO:investigation
+                                                 PPEO:study
+                                               )
+                                 ] ;
+                      rdfs:label "is role of person in"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#isSubjectOfObservation
+PPEO:isSubjectOfObservation rdf:type owl:ObjectProperty ;
+                            rdfs:domain [ rdf:type owl:Class ;
+                                          owl:unionOf ( PPEO:observation_unit
+                                                        PPEO:sample
+                                                      )
+                                        ] ;
+                            rdfs:range PPEO:observation ;
+                            rdfs:label "is subject of observation"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#partOf
+PPEO:partOf rdf:type owl:ObjectProperty ,
+                     owl:TransitiveProperty ;
+            rdfs:label "part of"@en .
+
+
+#################################################################
+#    Data properties
+#################################################################
+
+###  http://purl.org/ppeo/PPEO.owl#hasAbbreviation
+PPEO:hasAbbreviation rdf:type owl:DatatypeProperty ;
+                     rdfs:range xsd:string ;
+                     rdfs:label "has abbreviation"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasAccessionName
+PPEO:hasAccessionName rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain PPEO:material_source ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has accession name" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasAccessionNumber
+PPEO:hasAccessionNumber rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf owl:topDataProperty ;
+                        rdfs:domain PPEO:material_source ;
+                        rdfs:range xsd:string ;
+                        rdfs:label "has accession number" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasAddress
+PPEO:hasAddress rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain PPEO:location ;
+                rdfs:range xsd:string ;
+                rdfs:label "has address"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasAltitude
+PPEO:hasAltitude rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain PPEO:location ;
+                 rdfs:range xsd:float ;
+                 rdfs:comment "The altitude of a location in metres"@en ;
+                 rdfs:label "has altitude"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasAssociatedPublication
+PPEO:hasAssociatedPublication rdf:type owl:DatatypeProperty ;
+                              rdfs:domain [ rdf:type owl:Class ;
+                                            owl:unionOf ( PPEO:investigation
+                                                          PPEO:method
+                                                        )
+                                          ] ;
+                              rdfs:range [ rdf:type rdfs:Datatype ;
+                                           owl:unionOf ( xsd:anyURI
+                                                         xsd:string
+                                                       )
+                                         ] ;
+                              rdfs:label "has associated publication"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasCharacteristic
+PPEO:hasCharacteristic rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf owl:topDataProperty ;
+                       rdfs:domain PPEO:trait ;
+                       rdfs:range xsd:string ;
+                       rdfs:label "has characteristic" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasCharacteristicAccessionNumber
+PPEO:hasCharacteristicAccessionNumber rdf:type owl:DatatypeProperty ;
+                                      rdfs:subPropertyOf owl:topDataProperty ;
+                                      rdfs:domain PPEO:trait ;
+                                      rdfs:range xsd:string ;
+                                      rdfs:label "has characteristic accession number" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasCollectionDate
+PPEO:hasCollectionDate rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf PPEO:hasDateTime ;
+                       rdfs:domain PPEO:sample ;
+                       rdfs:range xsd:dateTime ;
+                       rdfs:label "has collection date"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasCountryCode
+PPEO:hasCountryCode rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf PPEO:hasExternalIdentifier ;
+                    rdfs:domain PPEO:country ;
+                    rdfs:range xsd:string ;
+                    rdfs:comment "An ISO 3166-1 country code with either 2 or 3 letters (alpha-2 or alpha-3)."@en ;
+                    rdfs:label "has country code"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasCulturalPractices
+PPEO:hasCulturalPractices rdf:type owl:DatatypeProperty ;
+                          rdfs:domain PPEO:study ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "has cultural practices"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasDOI
+PPEO:hasDOI rdf:type owl:DatatypeProperty ;
+            rdfs:subPropertyOf PPEO:hasExternalIdentifier ;
+            rdf:type owl:FunctionalProperty ;
+            rdfs:range [ rdf:type rdfs:Datatype ;
+                         owl:unionOf ( xsd:anyURI
+                                       xsd:string
+                                     )
+                       ] ;
+            rdfs:comment "An external identifier that is specifically a DOI, given either as just the DOI code (string) or as an URI. The entity <=> DOI relation should be bijective."@en ;
+            rdfs:label "has DOI"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasDatabaseId
+PPEO:hasDatabaseId rdf:type owl:DatatypeProperty ;
+                   rdfs:subPropertyOf PPEO:hasExternalIdentifier ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
+                   rdfs:comment "An external identifier that is specifically a database identifier."@en ;
+                   rdfs:label "has database identifier"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasDateTime
+PPEO:hasDateTime rdf:type owl:DatatypeProperty ;
+                 rdfs:range xsd:dateTime ;
+                 rdfs:label "has date-time"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasDescription
+PPEO:hasDescription rdf:type owl:DatatypeProperty ;
+                    rdfs:range xsd:string ;
+                    rdfs:label "has description"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasDigitalLocation
+PPEO:hasDigitalLocation rdf:type owl:DatatypeProperty ;
+                        rdfs:domain PPEO:data_file ;
+                        rdfs:range [ rdf:type rdfs:Datatype ;
+                                     owl:unionOf ( xsd:anyURI
+                                                   xsd:string
+                                                 )
+                                   ] ;
+                        rdfs:comment "The location of the file in the form of a URI or,  if the file is contained within a local MIAPPE submission (e.g. ISA-Tab), a path or file name."@en ;
+                        rdfs:label "has digital location"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEmailContact
+PPEO:hasEmailContact rdf:type owl:DatatypeProperty ;
+                     rdfs:domain PPEO:person ;
+                     rdfs:range xsd:string ;
+                     rdfs:comment "The e-mail address of a person"@en ;
+                     rdfs:label "has e-mail contact"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEndDateTime
+PPEO:hasEndDateTime rdf:type owl:DatatypeProperty ;
+                    rdfs:subPropertyOf PPEO:hasDateTime ;
+                    rdf:type owl:FunctionalProperty ;
+                    rdfs:range xsd:dateTime ;
+                    rdfs:label "has end date-time"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEntity
+PPEO:hasEntity rdf:type owl:DatatypeProperty ;
+               rdfs:subPropertyOf owl:topDataProperty ;
+               rdfs:domain PPEO:trait ;
+               rdfs:range xsd:string ;
+               rdfs:label "has entity" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEntityAccessionNumber
+PPEO:hasEntityAccessionNumber rdf:type owl:DatatypeProperty ;
+                              rdfs:subPropertyOf owl:topDataProperty ;
+                              rdfs:domain PPEO:trait ;
+                              rdfs:range xsd:string ;
+                              rdfs:label "has entity accession number" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEntryNumber
+PPEO:hasEntryNumber rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:range xsd:int ;
+                    rdfs:comment "Used in BrAPI Phenotypes call"@en ;
+                    rdfs:label "has entry number"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasEntryType
+PPEO:hasEntryType rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:range xsd:string ;
+                  rdfs:comment "Used in BrAPI Phenotypes call"@en ;
+                  rdfs:label "has entry type"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasExperimentalDesignMap
+PPEO:hasExperimentalDesignMap rdf:type owl:DatatypeProperty ;
+                              rdfs:domain PPEO:study ;
+                              rdfs:range [ rdf:type rdfs:Datatype ;
+                                           owl:unionOf ( xsd:anyURI
+                                                         xsd:string
+                                                       )
+                                         ] ;
+                              rdfs:comment "A map of the experimental design of the study, in gis or excel"@en ;
+                              rdfs:label "has experimental design map"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasExternalIdentifier
+PPEO:hasExternalIdentifier rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf PPEO:hasIdentifier ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:unionOf ( xsd:anyURI
+                                                      xsd:string
+                                                    )
+                                      ] ;
+                           rdfs:comment "An identifier from another public resource, such as an ontology or database, either in the form of an accession number, or in the form of a URI. An external identifier should be globally unique."@en ;
+                           rdfs:label "has external identifier"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasGenus
+PPEO:hasGenus rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:domain PPEO:biological_material ;
+              rdfs:range xsd:string ;
+              rdfs:label "has genus"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasGermplasmAccessionNumber
+PPEO:hasGermplasmAccessionNumber rdf:type owl:DatatypeProperty ;
+                                 rdfs:subPropertyOf PPEO:hasExternalIdentifier ,
+                                                    PPEO:hasMaterialIdentifier ;
+                                 rdfs:domain [ rdf:type owl:Class ;
+                                               owl:unionOf ( PPEO:biological_material
+                                                             PPEO:material_source
+                                                           )
+                                             ] ;
+                                 rdfs:range [ rdf:type rdfs:Datatype ;
+                                              owl:unionOf ( xsd:anyURI
+                                                            xsd:string
+                                                          )
+                                            ] ;
+                                 rdfs:comment "A unique identifier for a germplasm."@en ;
+                                 rdfs:label "has germplasm accession number"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasIdentifier
+PPEO:hasIdentifier rdf:type owl:DatatypeProperty ;
+                   rdfs:range [ rdf:type rdfs:Datatype ;
+                                owl:unionOf ( xsd:anyURI
+                                              xsd:string
+                                            )
+                              ] ;
+                   rdfs:label "has identifier"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasInfraspecificName
+PPEO:hasInfraspecificName rdf:type owl:DatatypeProperty ;
+                          rdfs:domain PPEO:biological_material ;
+                          rdfs:range xsd:string ;
+                          rdfs:comment "Name of any subtaxa level, including variety, crossing name, etc. It can be used to store any additional taxonomic identifier. Either free text description or key-value pair list format (the key is the name of the rank and the value is the value of  the rank). Ranks can be among the following terms: subspecies, cultivar, variety, subvariety, convariety, group, subgroup, hybrid, line, form, subform. For MCPD compliance, the following abbreviations are allowed: ‘subsp.’ (subspecies); ‘convar.’ (convariety); ‘var.’ (variety); ‘f.’ (form); ‘Group’ (cultivar group)."@en ;
+                          rdfs:label "has infraspecific name"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasInstituteCode
+PPEO:hasInstituteCode rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf PPEO:hasExternalIdentifier ,
+                                         owl:topDataProperty ;
+                      rdf:type owl:FunctionalProperty ;
+                      rdfs:domain PPEO:institution ;
+                      rdfs:range xsd:string ;
+                      rdfs:comment "A code or acronym of an institution."@en ;
+                      rdfs:label "has institute code"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasInstituteName
+PPEO:hasInstituteName rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf owl:topDataProperty ;
+                      rdfs:domain PPEO:material_source ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has institute name" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasInternalIdentifier
+PPEO:hasInternalIdentifier rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf PPEO:hasIdentifier ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:unionOf ( xsd:anyURI
+                                                      xsd:string
+                                                    )
+                                      ] ;
+                           rdfs:comment "An identifier used internally, either only in the MIAPPE submission itself, or also on a non-public database whence the information was retrieved. An internal identifier need only be unique among entities of the same type within a MIAPPE submission."@en ;
+                           rdfs:label "has internal identifier"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasLatitude
+PPEO:hasLatitude rdf:type owl:DatatypeProperty ,
+                          owl:FunctionalProperty ;
+                 rdfs:domain PPEO:location ;
+                 rdfs:range xsd:float ;
+                 rdfs:comment "The latitude of a location in degrees, in the decimal system"@en ;
+                 rdfs:label "has latitude"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasLicense
+PPEO:hasLicense rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain PPEO:investigation ;
+                rdfs:range xsd:string ;
+                rdfs:label "has license"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasLongitude
+PPEO:hasLongitude rdf:type owl:DatatypeProperty ,
+                           owl:FunctionalProperty ;
+                  rdfs:domain PPEO:location ;
+                  rdfs:range xsd:float ;
+                  rdfs:comment "The longitude of a location in degrees, in the decimal system"@en ;
+                  rdfs:label "has longitude"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasMIAPPEVersion
+PPEO:hasMIAPPEVersion rdf:type owl:DatatypeProperty ;
+                      rdfs:domain PPEO:investigation ;
+                      rdfs:range xsd:string ;
+                      rdfs:label "has MIAPPE version"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasMaterialIdentifier
+PPEO:hasMaterialIdentifier rdf:type owl:DatatypeProperty ;
+                           rdfs:subPropertyOf PPEO:hasIdentifier ;
+                           rdfs:domain [ rdf:type owl:Class ;
+                                         owl:unionOf ( PPEO:biological_material
+                                                       PPEO:material_source
+                                                     )
+                                       ] ;
+                           rdfs:range [ rdf:type rdfs:Datatype ;
+                                        owl:unionOf ( xsd:anyURI
+                                                      xsd:string
+                                                    )
+                                      ] ;
+                           rdfs:comment "An identifier used specifically for biological materials (and their sources) which can be internal or external. For material sources, it usually follows one of two forms: a key-value pair comprising the name/identifer of the repository from which the material was sourced plus the accession number of the repository for that material, or, where an accession number has not been assigned, but the material has been derived from the crossing of known accessions, \"mother_accession X father_accession\" (father_accession can be \"UNKNOWN\")."@en ;
+                           rdfs:label "has material identifier"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasName
+PPEO:hasName rdf:type owl:DatatypeProperty ;
+             rdfs:range xsd:string ;
+             PPEO:hasExactSynonym "has title"@en ;
+             rdfs:label "has name"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasObservationUnitDescription
+PPEO:hasObservationUnitDescription rdf:type owl:DatatypeProperty ;
+                                   rdfs:domain PPEO:study ;
+                                   rdfs:range xsd:string ;
+                                   rdfs:label "has observation unit description"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasOtherIdentifiers
+PPEO:hasOtherIdentifiers rdf:type owl:DatatypeProperty ;
+                         rdfs:subPropertyOf owl:topDataProperty ;
+                         rdfs:domain PPEO:material_source ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "has other identifiers" .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasPlantAnatomicalEntity
+PPEO:hasPlantAnatomicalEntity rdf:type owl:DatatypeProperty ;
+                              rdfs:domain PPEO:sample ;
+                              rdfs:range [ rdf:type rdfs:Datatype ;
+                                           owl:unionOf ( xsd:anyURI
+                                                         xsd:string
+                                                       )
+                                         ] ;
+                              rdfs:label "has plant anatomical entity"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasPlantStructureDevelopmentStage
+PPEO:hasPlantStructureDevelopmentStage rdf:type owl:DatatypeProperty ;
+                                       rdfs:domain PPEO:sample ;
+                                       rdfs:range [ rdf:type rdfs:Datatype ;
+                                                    owl:unionOf ( xsd:anyURI
+                                                                  xsd:string
+                                                                )
+                                                  ] ;
+                                       rdfs:label "has plant structure development stage"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasPreprocessing
+PPEO:hasPreprocessing rdf:type owl:DatatypeProperty ;
+                      rdfs:domain PPEO:biological_material ;
+                      rdfs:range [ rdf:type rdfs:Datatype ;
+                                   owl:unionOf ( xsd:anyURI
+                                                 xsd:string
+                                               )
+                                 ] ;
+                      rdfs:label "has preprocessing"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasPublicReleaseDate
+PPEO:hasPublicReleaseDate rdf:type owl:DatatypeProperty ;
+                          rdfs:subPropertyOf PPEO:hasDateTime ;
+                          rdf:type owl:FunctionalProperty ;
+                          rdfs:domain PPEO:investigation ;
+                          rdfs:range xsd:dateTime ;
+                          rdfs:label "has public release date"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSeason
+PPEO:hasSeason rdf:type owl:DatatypeProperty ,
+                        owl:FunctionalProperty ;
+               rdfs:domain PPEO:observation ;
+               rdfs:range xsd:string ;
+               rdfs:label "has season"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSpecies
+PPEO:hasSpecies rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain PPEO:biological_material ;
+                rdfs:range xsd:string ;
+                PPEO:hasExactSynonym "has specific epithet"@en ;
+                rdfs:label "has species"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSpeciesAuthority
+PPEO:hasSpeciesAuthority rdf:type owl:DatatypeProperty ,
+                                  owl:FunctionalProperty ;
+                         rdfs:domain PPEO:biological_material ;
+                         rdfs:range xsd:string ;
+                         rdfs:label "has species authority"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasStartDateTime
+PPEO:hasStartDateTime rdf:type owl:DatatypeProperty ;
+                      rdfs:subPropertyOf PPEO:hasDateTime ;
+                      rdf:type owl:FunctionalProperty ;
+                      rdfs:range xsd:dateTime ;
+                      rdfs:label "has start date-time"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSubmissionDate
+PPEO:hasSubmissionDate rdf:type owl:DatatypeProperty ;
+                       rdfs:subPropertyOf PPEO:hasDateTime ;
+                       rdf:type owl:FunctionalProperty ;
+                       rdfs:domain PPEO:investigation ;
+                       rdfs:range xsd:dateTime ;
+                       rdfs:label "has submission date"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSubtaxon
+PPEO:hasSubtaxon rdf:type owl:DatatypeProperty ;
+                 rdfs:domain PPEO:biological_material ;
+                 rdfs:range xsd:string ;
+                 rdfs:label "has subtaxon"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasSubtaxonAuthority
+PPEO:hasSubtaxonAuthority rdf:type owl:DatatypeProperty ;
+                          rdfs:domain PPEO:biological_material ;
+                          rdfs:range xsd:string ;
+                          rdfs:label "has subtaxon authority"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasTaxonIdentifier
+PPEO:hasTaxonIdentifier rdf:type owl:DatatypeProperty ;
+                        rdfs:subPropertyOf PPEO:hasExternalIdentifier ;
+                        rdfs:domain PPEO:biological_material ;
+                        rdfs:range [ rdf:type rdfs:Datatype ;
+                                     owl:unionOf ( xsd:anyURI
+                                                   xsd:string
+                                                 )
+                                   ] ;
+                        rdfs:comment "An external identifier for a taxon that is either an NCBI Taxon identifier or an equivalent."@en ;
+                        rdfs:label "has taxon identifier"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasTimeScale
+PPEO:hasTimeScale rdf:type owl:DatatypeProperty ;
+                  rdfs:domain PPEO:observed_variable ;
+                  rdfs:range xsd:string ;
+                  rdfs:label "has time scale"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasType
+PPEO:hasType rdf:type owl:DatatypeProperty ;
+             rdfs:domain PPEO:observation_unit ;
+             rdfs:range [ rdf:type rdfs:Datatype ;
+                          owl:unionOf ( xsd:anyURI
+                                        xsd:string
+                                      )
+                        ] ;
+             rdfs:label "has type"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasUncertainty
+PPEO:hasUncertainty rdf:type owl:DatatypeProperty ,
+                             owl:FunctionalProperty ;
+                    rdfs:domain PPEO:location ;
+                    rdfs:range xsd:float ;
+                    rdfs:label "has uncertainty"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasValue
+PPEO:hasValue rdf:type owl:DatatypeProperty ;
+              rdfs:label "has value"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#hasVersion
+PPEO:hasVersion rdf:type owl:DatatypeProperty ,
+                         owl:FunctionalProperty ;
+                rdfs:domain PPEO:data_file ;
+                rdfs:range xsd:string ;
+                rdfs:label "has version"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#isActive
+PPEO:isActive rdf:type owl:DatatypeProperty ,
+                       owl:FunctionalProperty ;
+              rdfs:range xsd:boolean ;
+              rdfs:label "is active"@en .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://purl.org/ppeo/PPEO.owl#GPS_location
+PPEO:GPS_location rdf:type owl:Class ;
+                  owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                               owl:onProperty PPEO:hasLatitude ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:float
+                                                             ]
+                                                             [ rdf:type owl:Restriction ;
+                                                               owl:onProperty PPEO:hasLongitude ;
+                                                               owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                               owl:onDataRange xsd:float
+                                                             ]
+                                                           ) ;
+                                        rdf:type owl:Class
+                                      ] ;
+                  rdfs:subClassOf PPEO:location ;
+                  rdfs:label "GPS location"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#biological_material
+PPEO:biological_material rdf:type owl:Class ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty PPEO:hasLocation ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass PPEO:GPS_location
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty PPEO:hasMaterialSource ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onClass PPEO:material_source
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty PPEO:hasMaterialIdentifier ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                             owl:unionOf ( xsd:anyURI
+                                                                           xsd:string
+                                                                         )
+                                                           ]
+                                         ] ,
+                                         _:genid93 ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty PPEO:hasGenus ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         [ rdf:type owl:Restriction ;
+                                           owl:onProperty PPEO:hasSpecies ;
+                                           owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ;
+                         PPEO:hasBrAPISynonym "germplasm"@en ;
+                         rdfs:comment "An organism that was the subject of the study and/or was observed in an observation unit."@en ;
+                         rdfs:label "biological material"@en .
+
+_:genid93 rdf:type owl:Restriction ;
+           owl:onProperty PPEO:hasTaxonIdentifier ;
+           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+           owl:onDataRange [ rdf:type rdfs:Datatype ;
+                             owl:unionOf ( xsd:anyURI
+                                           xsd:string
+                                         )
+                           ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:biological_material ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid93 ;
+   PPEO:hasMIAPPESynonym "organism"@en
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#country
+PPEO:country rdf:type owl:Class ;
+             rdfs:subClassOf [ rdf:type owl:Restriction ;
+                               owl:onProperty PPEO:hasName ;
+                               owl:someValuesFrom xsd:string
+                             ] ;
+             rdfs:comment "A country in the world that either presently exists (i.e. is recognized in status by most entities) or existed at the time of the study."@en ;
+             rdfs:label "country"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#data_file
+PPEO:data_file rdf:type owl:Class ;
+               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                 owl:onProperty PPEO:hasDescription ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty PPEO:hasDigitalLocation ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                   owl:unionOf ( xsd:anyURI
+                                                                 xsd:string
+                                                               )
+                                                 ]
+                               ] ,
+                               [ rdf:type owl:Restriction ;
+                                 owl:onProperty PPEO:hasVersion ;
+                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                 owl:onDataRange xsd:string
+                               ] ;
+               rdfs:comment "A description of and link to a file or data stream holding some or all of the data described by the MIAPPE submission."@en ;
+               rdfs:label "data file"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#environment
+PPEO:environment rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty PPEO:hasEnvironmentParameter ;
+                                   owl:someValuesFrom PPEO:environment_parameter
+                                 ] ;
+                 rdfs:comment "The set of environmental parameters or experimental conditions that were kept constant during the study and did not change betweeen observation units or assays."@en ;
+                 rdfs:label "environment"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#environment_parameter
+PPEO:environment_parameter rdf:type owl:Class ;
+                           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                             owl:onProperty PPEO:hasName ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange xsd:string
+                                           ] ,
+                                           [ rdf:type owl:Restriction ;
+                                             owl:onProperty PPEO:hasValue ;
+                                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                             owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                               owl:unionOf ( xsd:float
+                                                                             xsd:int
+                                                                             xsd:string
+                                                                           )
+                                                             ]
+                                           ] ;
+                           rdfs:comment "A parameter of the environment which is represented by a name and a value."@en ;
+                           rdfs:label "environment parameter"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#event
+PPEO:event rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasDateTime ;
+                             owl:someValuesFrom xsd:dateTime
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasType ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasDescription ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           _:genid117 ;
+           PPEO:hasRelatedSynonym "time factor"@en ;
+           rdfs:comment "A discrete change to the state of one or more observation units that happened at a given point in time, be it deliberate or inadvertent."@en ;
+           rdfs:label "event"@en .
+
+_:genid117 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasExternalIdentifier ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:event ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid117 ;
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/rdf/CO_715:0000006"^^xsd:anyURI
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#experimental_design
+PPEO:experimental_design rdf:type owl:Class ;
+                         rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                           owl:onProperty PPEO:hasDescription ;
+                                           owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                           owl:onDataRange xsd:string
+                                         ] ,
+                                         _:genid123 ;
+                         rdfs:label "experimental design"@en .
+
+_:genid123 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasType ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:experimental_design ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid123 ;
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/rdf/CO_715:0000003"^^xsd:anyURI
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#factor
+PPEO:factor rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasModality ;
+                              owl:minQualifiedCardinality "2"^^xsd:nonNegativeInteger ;
+                              owl:onClass PPEO:factor_value
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasType ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasDescription ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ;
+            rdfs:comment "A condition that varies between observation units, by taking different values or modalities, assessing the effect of which is the goal of the study. A factor may be biotic (pest, disease interaction) or abiotic (treatment, cultural practice) in nature. It must have at least two values or modalities."@en ;
+            rdfs:label "factor"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#factor_value
+PPEO:factor_value rdf:type owl:Class ;
+                  rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                    owl:onProperty PPEO:isModalityOf ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onClass PPEO:factor
+                                  ] ,
+                                  [ rdf:type owl:Restriction ;
+                                    owl:onProperty PPEO:hasValue ;
+                                    owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                    owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                      owl:unionOf ( xsd:float
+                                                                    xsd:int
+                                                                    xsd:string
+                                                                  )
+                                                    ]
+                                  ] ;
+                  rdfs:comment "A value or modality of a factor."@en ;
+                  rdfs:label "factor value"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#growth_facility
+PPEO:growth_facility rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty PPEO:hasDescription ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:string
+                                     ] ,
+                                     _:genid138 ;
+                     rdfs:comment "A facility in which plants can be grown, such as a field or greenhouse."@en ;
+                     rdfs:label "growth facility"@en .
+
+_:genid138 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasType ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:growth_facility ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid138 ;
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/rdf/CO_715:0000005"^^xsd:anyURI
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#institution
+PPEO:institution rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty PPEO:hasLocation ;
+                                   owl:someValuesFrom PPEO:named_location
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty PPEO:hasName ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onDataRange xsd:string
+                                 ] ;
+                 rdfs:comment "An institution (academic or industrial) involved in the investigation or study."@en ;
+                 rdfs:label "institution"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#investigation
+PPEO:investigation rdf:type owl:Class ;
+                   rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                     owl:onProperty PPEO:hasPart ;
+                                     owl:someValuesFrom PPEO:study
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty PPEO:hasPersonWithRole ;
+                                     owl:someValuesFrom PPEO:role
+                                   ] ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty PPEO:hasMIAPPEVersion ;
+                                     owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:string
+                                   ] ,
+                                   _:genid148 ,
+                                   [ rdf:type owl:Restriction ;
+                                     owl:onProperty PPEO:hasDescription ;
+                                     owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                     owl:onDataRange xsd:string
+                                   ] ,
+                                   _:genid151 ;
+                   PPEO:hasBrAPISynonym "trial"@en ;
+                   rdfs:comment "A research programme with defined aims, which can vary in scale from a single experiment, to a grant-funded programme or various components comprising a peer-reviewed publication."@en ;
+                   rdfs:label "investigation"@en .
+
+_:genid148 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasName ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string .
+
+_:genid151 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasIdentifier ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:investigation ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid148 ;
+   PPEO:hasMIAPPESynonym "investigation title"@en
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:investigation ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid151 ;
+   PPEO:hasMIAPPESynonym "investigation unique ID"@en
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#location
+PPEO:location rdf:type owl:Class ;
+              rdfs:comment "A physical location, typically on planet Earth, identified by GPS coordinates and/or name and address."@en ;
+              rdfs:label "location"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#material_source
+PPEO:material_source rdf:type owl:Class ;
+                     rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                       owl:onProperty PPEO:hasLocation ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onClass PPEO:GPS_location
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty PPEO:hasMaterialIdentifier ;
+                                       owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                         owl:unionOf ( xsd:anyURI
+                                                                       xsd:string
+                                                                     )
+                                                       ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty PPEO:hasDOI ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                         owl:unionOf ( xsd:anyURI
+                                                                       xsd:string
+                                                                     )
+                                                       ]
+                                     ] ,
+                                     [ rdf:type owl:Restriction ;
+                                       owl:onProperty PPEO:hasDescription ;
+                                       owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                       owl:onDataRange xsd:string
+                                     ] ;
+                     rdfs:comment "An organism from which the organism(s) used in the study were derived. It should be identified with a unique external identifier (such as germplasm accession number) and possibly a DOI."@en ;
+                     rdfs:label "material source"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#method
+PPEO:method rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasName ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasAssociatedPublication ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasDescription ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            _:genid169 ;
+            rdfs:label "method"@en .
+
+_:genid169 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasExternalIdentifier ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:method ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid169 ;
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/ (Method)"
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#named_location
+PPEO:named_location rdf:type owl:Class ;
+                    owl:equivalentClass [ owl:intersectionOf ( [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty PPEO:hasCountry ;
+                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onClass PPEO:country
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty PPEO:hasAddress ;
+                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onDataRange xsd:string
+                                                               ]
+                                                               [ rdf:type owl:Restriction ;
+                                                                 owl:onProperty PPEO:hasName ;
+                                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                                 owl:onDataRange xsd:string
+                                                               ]
+                                                             ) ;
+                                          rdf:type owl:Class
+                                        ] ;
+                    rdfs:subClassOf PPEO:location ;
+                    rdfs:label "named location"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#observation
+PPEO:observation rdf:type owl:Class ;
+                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                   owl:onProperty PPEO:hasObservedSubject ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass [ rdf:type owl:Class ;
+                                                 owl:unionOf ( PPEO:observation_unit
+                                                               PPEO:sample
+                                                             )
+                                               ]
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty PPEO:hasVariable ;
+                                   owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                   owl:onClass PPEO:observed_variable
+                                 ] ,
+                                 [ rdf:type owl:Restriction ;
+                                   owl:onProperty PPEO:hasValue ;
+                                   owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                       owl:unionOf ( xsd:float
+                                                                     xsd:int
+                                                                     xsd:string
+                                                                   )
+                                                     ]
+                                 ] ;
+                 rdfs:label "observation"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#observation_level
+PPEO:observation_level rdf:type owl:Class ;
+                       rdfs:subClassOf PPEO:spatial_distribution_type ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty PPEO:partOf ;
+                                         owl:minQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass PPEO:observation_level_hierarchy
+                                       ] ;
+                       rdfs:label "observation level"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#observation_level_hierarchy
+PPEO:observation_level_hierarchy rdf:type owl:Class ;
+                                 rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                   owl:onProperty PPEO:hasPart ;
+                                                   owl:someValuesFrom PPEO:observation_level
+                                                 ] ;
+                                 rdfs:label "observation level hierarchy"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#observation_unit
+PPEO:observation_unit rdf:type owl:Class ;
+                      rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                        owl:onProperty PPEO:hasBiologicalMaterial ;
+                                        owl:someValuesFrom PPEO:biological_material
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty PPEO:partOf ;
+                                        owl:someValuesFrom PPEO:study
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty PPEO:hasObservationLevel ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onClass PPEO:observation_level
+                                      ] ,
+                                      [ rdf:type owl:Restriction ;
+                                        owl:onProperty PPEO:hasInternalIdentifier ;
+                                        owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                        owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                          owl:unionOf ( xsd:anyURI
+                                                                        xsd:string
+                                                                      )
+                                                        ]
+                                      ] ;
+                      PPEO:hasExactSynonym "experiment unit"@en ;
+                      rdfs:label "observation unit"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#observed_variable
+PPEO:observed_variable rdf:type owl:Class ;
+                       rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                         owl:onProperty PPEO:partOf ;
+                                         owl:someValuesFrom PPEO:study
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty PPEO:hasMethod ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass PPEO:method
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty PPEO:hasScale ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass PPEO:scale
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty PPEO:hasTrait ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onClass PPEO:trait
+                                       ] ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty PPEO:hasInternalIdentifier ;
+                                         owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                           owl:unionOf ( xsd:anyURI
+                                                                         xsd:string
+                                                                       )
+                                                         ]
+                                       ] ,
+                                       _:genid208 ,
+                                       [ rdf:type owl:Restriction ;
+                                         owl:onProperty PPEO:hasName ;
+                                         owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                         owl:onDataRange xsd:string
+                                       ] ;
+                       PPEO:hasBrAPISynonym "observation variable"@en ;
+                       PPEO:hasISASynonym "assay"@en ;
+                       rdfs:label "observed variable"@en .
+
+_:genid208 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasExternalIdentifier ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:observed_variable ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid208 ;
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/rdf/Variable"^^xsd:anyURI
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#person
+PPEO:person rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasAffiliation ;
+                              owl:someValuesFrom PPEO:institution
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasRole ;
+                              owl:someValuesFrom PPEO:role
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasName ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasEmailContact ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasIdentifier ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ;
+            rdfs:label "person"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#role
+PPEO:role rdf:type owl:Class ;
+          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                            owl:onProperty PPEO:isRoleOf ;
+                            owl:someValuesFrom PPEO:person
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty PPEO:isRoleOfPersonIn ;
+                            owl:someValuesFrom [ rdf:type owl:Class ;
+                                                 owl:unionOf ( PPEO:investigation
+                                                               PPEO:study
+                                                             )
+                                               ]
+                          ] ,
+                          [ rdf:type owl:Restriction ;
+                            owl:onProperty PPEO:hasName ;
+                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                            owl:onDataRange xsd:string
+                          ] ;
+          rdfs:label "role"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#sample
+PPEO:sample rdf:type owl:Class ;
+            rdfs:subClassOf [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:derivesFrom ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onClass PPEO:observation_unit
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasExternalIdentifier ;
+                              owl:allValuesFrom [ rdf:type rdfs:Datatype ;
+                                                  owl:unionOf ( xsd:anyURI
+                                                                xsd:string
+                                                              )
+                                                ]
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasCollectionDate ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:dateTime
+                            ] ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasInternalIdentifier ;
+                              owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                owl:unionOf ( xsd:anyURI
+                                                              xsd:string
+                                                            )
+                                              ]
+                            ] ,
+                            _:genid235 ,
+                            [ rdf:type owl:Restriction ;
+                              owl:onProperty PPEO:hasDescription ;
+                              owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                              owl:onDataRange xsd:string
+                            ] ,
+                            _:genid241 ;
+            rdfs:label "sample"@en .
+
+_:genid235 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasPlantAnatomicalEntity ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+_:genid241 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasPlantStructureDevelopmentStage ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:sample ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid235 ;
+   PPEO:hasOntologyRecommendation "http://purl.obolibrary.org/obo/PO_0025131"^^xsd:anyURI
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:sample ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid241 ;
+   PPEO:hasOntologyRecommendation "http://purl.obolibrary.org/obo/PO_0009012"^^xsd:anyURI
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#scale
+PPEO:scale rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           _:genid247 ;
+           rdfs:label "scale"@en .
+
+_:genid247 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasExternalIdentifier ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:scale ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid247 ;
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/ (Scale)"
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#spatial_coordinate
+PPEO:spatial_coordinate rdf:type owl:Class ;
+                        owl:equivalentClass [ rdf:type owl:Class ;
+                                              owl:oneOf ( PPEO:altitude
+                                                          PPEO:column
+                                                          PPEO:latitude
+                                                          PPEO:longitude
+                                                          PPEO:row
+                                                          PPEO:x
+                                                          PPEO:x_m
+                                                          PPEO:y
+                                                          PPEO:y_m
+                                                          PPEO:z
+                                                          PPEO:z_m
+                                                        )
+                                            ] ;
+                        rdfs:subClassOf PPEO:spatial_distribution_type ;
+                        rdfs:label "spatial coordinate"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#spatial_distribution
+PPEO:spatial_distribution rdf:type owl:Class ;
+                          rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                            owl:onProperty PPEO:hasSpatialDistributionType ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onClass PPEO:spatial_distribution_type
+                                          ] ,
+                                          [ rdf:type owl:Restriction ;
+                                            owl:onProperty PPEO:hasValue ;
+                                            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                              owl:unionOf ( xsd:float
+                                                                            xsd:int
+                                                                            xsd:string
+                                                                          )
+                                                            ]
+                                          ] ;
+                          rdfs:label "spatial distribution"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#spatial_distribution_type
+PPEO:spatial_distribution_type rdf:type owl:Class ;
+                               rdfs:subClassOf [ rdf:type owl:Restriction ;
+                                                 owl:onProperty PPEO:hasType ;
+                                                 owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                                                 owl:onDataRange [ rdf:type rdfs:Datatype ;
+                                                                   owl:unionOf ( xsd:anyURI
+                                                                                 xsd:string
+                                                                               )
+                                                                 ]
+                                               ] ;
+                               rdfs:label "spatial distribution type"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#study
+PPEO:study rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasBiologicalMaterial ;
+                             owl:someValuesFrom PPEO:biological_material
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasPart ;
+                             owl:someValuesFrom PPEO:observation_unit
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasPart ;
+                             owl:someValuesFrom PPEO:observed_variable
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:partOf ;
+                             owl:someValuesFrom PPEO:investigation
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasContactInstitution ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass PPEO:institution
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasExperimentalDesign ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass PPEO:experimental_design
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasGrowthFacility ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass PPEO:growth_facility
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasLocation ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass PPEO:named_location
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasEnvironment ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass PPEO:environment
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasObservationLevelHierarchy ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onClass PPEO:observation_level_hierarchy
+                           ] ,
+                           _:genid284 ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasObservationUnitDescription ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasStartDateTime ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:dateTime
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasCulturalPractices ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasDescription ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasEndDateTime ;
+                             owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:dateTime
+                           ] ,
+                           _:genid291 ;
+           PPEO:hasExactSynonym "experiment"@en ;
+           rdfs:comment """A study (or experiment) comprises a series of assays (or measurements) of one or more types, undertaken to answer a particular biological question.
+It is recommended that a Study have a description."""@en ;
+           rdfs:label "study"@en .
+
+_:genid284 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasName ;
+            owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange xsd:string .
+
+_:genid291 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasIdentifier ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:study ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid284 ;
+   PPEO:hasMIAPPESynonym "study title"@en
+ ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:study ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid291 ;
+   PPEO:hasMIAPPESynonym "study unique ID"@en
+ ] .
+
+
+###  http://purl.org/ppeo/PPEO.owl#trait
+PPEO:trait rdf:type owl:Class ;
+           rdfs:subClassOf [ rdf:type owl:Restriction ;
+                             owl:onProperty PPEO:hasName ;
+                             owl:qualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+                             owl:onDataRange xsd:string
+                           ] ,
+                           _:genid297 ;
+           rdfs:comment "Name of the (plant or environmental) trait under observation" ;
+           rdfs:label "trait"@en .
+
+_:genid297 rdf:type owl:Restriction ;
+            owl:onProperty PPEO:hasExternalIdentifier ;
+            owl:maxQualifiedCardinality "1"^^xsd:nonNegativeInteger ;
+            owl:onDataRange [ rdf:type rdfs:Datatype ;
+                              owl:unionOf ( xsd:anyURI
+                                            xsd:string
+                                          )
+                            ] .
+
+[ rdf:type owl:Axiom ;
+   owl:annotatedSource PPEO:trait ;
+   owl:annotatedProperty rdfs:subClassOf ;
+   owl:annotatedTarget _:genid297 ;
+   PPEO:hasOntologyRecommendation "http://www.cropontology.org/ (traits)" ,
+                                  "http://purl.obolibrary.org/obo/to.owl"^^xsd:anyURI
+ ] .
+
+
+#################################################################
+#    Individuals
+#################################################################
+
+###  http://purl.org/ppeo/PPEO.owl#altitude
+PPEO:altitude rdf:type owl:NamedIndividual ,
+                       PPEO:spatial_coordinate ;
+              PPEO:hasType "altitude" ;
+              rdfs:comment "The global spatial coordinate altitude (in meters)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#column
+PPEO:column rdf:type owl:NamedIndividual ,
+                     PPEO:spatial_coordinate ;
+            PPEO:hasType "column" ;
+            rdfs:comment "The local spatial coordinate identifying the column"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#latitude
+PPEO:latitude rdf:type owl:NamedIndividual ,
+                       PPEO:spatial_coordinate ;
+              PPEO:hasType "latitude" ;
+              rdfs:comment "The global spatial coordinate latitude (in degrees in the decimal system)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#longitude
+PPEO:longitude rdf:type owl:NamedIndividual ,
+                        PPEO:spatial_coordinate ;
+               PPEO:hasType "longitude" ;
+               rdfs:comment "The global spatial coordinate latitude (in degrees in the decimal system)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#row
+PPEO:row rdf:type owl:NamedIndividual ,
+                  PPEO:spatial_coordinate ;
+         PPEO:hasType "row" ;
+         rdfs:comment "The local spatial coordinate identifying the row"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#x
+PPEO:x rdf:type owl:NamedIndividual ,
+                PPEO:spatial_coordinate ;
+       PPEO:hasType "x" ;
+       rdfs:comment "The local spatial coordinate x (numeric, discrete)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#x_m
+PPEO:x_m rdf:type owl:NamedIndividual ,
+                  PPEO:spatial_coordinate ;
+         PPEO:hasType "x (m)" ;
+         rdfs:comment "The local spatial coordinate x (in meters)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#y
+PPEO:y rdf:type owl:NamedIndividual ,
+                PPEO:spatial_coordinate ;
+       PPEO:hasType "y" ;
+       rdfs:comment "The local spatial coordinate y (numeric, discrete)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#y_m
+PPEO:y_m rdf:type owl:NamedIndividual ,
+                  PPEO:spatial_coordinate ;
+         PPEO:hasType "y (m)" ;
+         rdfs:comment "The local spatial coordinate y (in meters)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#z
+PPEO:z rdf:type owl:NamedIndividual ,
+                PPEO:spatial_coordinate ;
+       PPEO:hasType "z" ;
+       rdfs:comment "The local spatial coordinate z (numeric, discrete)"@en .
+
+
+###  http://purl.org/ppeo/PPEO.owl#z_m
+PPEO:z_m rdf:type owl:NamedIndividual ,
+                  PPEO:spatial_coordinate ;
+         PPEO:hasType "z (m)" ;
+         rdfs:comment "The local spatial coordinate z (in meters)"@en .
+
+
+###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
